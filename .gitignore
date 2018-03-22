@@ -9,6 +9,9 @@ Thumbs.db
 *.css.map
 node_modules
 
+# portal-a specific
+/wp-content/themes/portala-2015
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
