@@ -38,24 +38,25 @@ gulp.task('styles', function() {
 });
 
 // Scripts
-// gulp.task('scripts', function() {
-//   return gulp.src(['assets/js/src/*.js'])
-// 		.pipe(jshint())
-// 		.pipe(jshint.reporter('default'))
-// 		.pipe(sourcemaps.init())
-// 		.pipe(concat('main.js'))
-// 		.pipe(concat.header(banner, { pkg : pkg }))
-// 		.pipe(sourcemaps.write())
-// 		.pipe(gulp.dest('assets/js'))
-// 		.pipe(rename({suffix: '.min'}))
-// 		.pipe(uglify({preserveComments: 'license'}))
-// 		.pipe(gulp.dest('assets/js'))
-//         .pipe(livereload());
-// });
+gulp.task('scripts', function() {
+  return gulp.src(['assets/js/src/*.js'])
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(addsrc.prepend('assets/js/includes/*.js'))
+		.pipe(sourcemaps.init())
+		.pipe(concat('scripts.js'))
+		.pipe(concat.header(banner, { pkg : pkg }))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('assets/js'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify({preserveComments: 'license'}))
+		.pipe(gulp.dest('assets/js'))
+        .pipe(livereload());
+});
 
 // Default task
 gulp.task('default', [], function() {
-	gulp.start('styles');
+	gulp.start('styles', 'scripts');
 });
 
 // Watch
@@ -67,6 +68,6 @@ gulp.task('watch', function() {
     gulp.watch('assets/css/**/*.scss', ['styles']);
 
     // Watch .js files
-    // gulp.watch('assets/js/**/*.js', ['scripts']);
+    gulp.watch('assets/js/**/*.js', ['scripts']);
 
 });

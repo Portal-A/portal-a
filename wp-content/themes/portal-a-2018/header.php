@@ -24,7 +24,7 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 		<!--[if lt IE 9]>
-		<script src="<?= get_template_directory_uri(); ?>/-/js/html5.js"></script>
+		<script src="<?php echo PA_ASSETS . 'js/html5.js' ?>"></script>
 		<![endif]-->
 		<?php fuzzco_head(); ?>
 

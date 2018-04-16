@@ -25,7 +25,7 @@ function theme_setup() {
 
 
 function scripts() {
-    wp_enqueue_script('theme_scripts', PA_TEMPLATE_URL . '/-/js/scripts.js', 'jquery', '', true);
+    wp_enqueue_script('theme_scripts', PA_ASSETS . 'js/scripts.js', 'jquery', '', true);
     wp_deregister_script('comment-reply');
 }
 
@@ -35,7 +35,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'style',
-		PA_TEMPLATE_URL . "/assets/css/style{$min}.css",
+		PA_ASSETS . "css/style{$min}.css",
 		array(),
 		PA_VERSION
 	);
