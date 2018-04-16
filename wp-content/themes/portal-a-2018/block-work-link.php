@@ -7,7 +7,7 @@
 <a href="<?php echo get_permalink($item->ID) ?>" class="work-link <?php echo $work_index%3 == 0 ? 'right' : '' ?> <?php echo $preview_mp4 != '' ? 'video' : '' ?> <?php echo has_term('work-page', 'work-featured', $item->ID) ? 'featured' : '' ?>">
 	<div class="work <?php echo $work_index % 3 == 0 && $work_index != 0 ? 'last' : '' ?>">
 		<?php if ($image != false) : ?>
-			<img src="<?php bloginfo('template_directory'); ?>/-/img/blank.gif" data-src="<?php echo $image[0] ?>" alt="<?php echo $image_info->post_title ?>" title="<?php echo $image_info->post_excerpt ?>" />
+			<img src="<?php bloginfo('template_directory'); ?>/assets/img/blank.gif" data-src="<?php echo $image[0] ?>" alt="<?php echo $image_info->post_title ?>" title="<?php echo $image_info->post_excerpt ?>" />
 		<?php endif; ?>
     <div class="title-holder">
       <h3 class="main-title"><?php echo get_post_meta($item->ID, 'client', TRUE) ?></h3>

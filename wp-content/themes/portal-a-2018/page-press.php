@@ -73,7 +73,7 @@ $bottoms_index = 0;
 
 				<?php echo $opening_tag; ?>
 			
-					<img src="<?php bloginfo('template_directory'); ?>/-/img/blank.gif" data-src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
+					<img src="<?php bloginfo('template_directory'); ?>/assets/img/blank.gif" data-src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
 					<?php endif; ?>
 					<div class="shade"></div>
 					<div class="quote">

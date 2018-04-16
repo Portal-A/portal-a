@@ -17,7 +17,7 @@
 		<meta name="viewport" content="width=1032"/>
 		<meta name="blog-title" content="<?php bloginfo('title'); ?>" />
 
-		<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/-/img/favicon.ico?v1.1"/>
+		<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/img/favicon.ico?v1.1"/>
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('title'); ?> Feed" href="<?= get_bloginfo('rss2_url') ?>" />
 
 		<script type="text/javascript" src="//use.typekit.net/rln3vwl.js"></script>
@@ -53,7 +53,7 @@
 				</ul>
 			</div>
 			<div class="middle">
-				<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/-/img/icon-logo.png' ?>" alt="Portal A"></a>
+				<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
 			</div>
 			<div class="right">
 				<ul>

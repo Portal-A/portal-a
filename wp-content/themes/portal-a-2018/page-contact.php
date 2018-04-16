@@ -14,7 +14,7 @@ TEMPLATE NAME: Contact
 	$image_info = get_post(get_post_thumbnail_id($post->ID));
 	?>
 	<?php if ($image != false) : ?>				
-	<img src="<?php bloginfo('template_directory'); ?>/-/img/blank.gif" data-src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
+	<img src="<?php bloginfo('template_directory'); ?>/assets/img/blank.gif" data-src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
 	<?php endif; ?>
 	
 	<h2>Here's our number:</h2>
@@ -61,7 +61,7 @@ $item_index = 1;
 					<div id="map_sanfran" class="location-map" style="height: 280px; width: 480px;"></div>
 					<script>
 				      var sf_map;
-				      var image = '<?= get_template_directory_uri(); ?>/-/img/map-pin.png';
+				      var image = '<?= get_template_directory_uri(); ?>/assets/img/map-pin.png';
 				      
 				      function initialize() {
 				        var mapOptions = {
