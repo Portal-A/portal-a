@@ -296,37 +296,6 @@ $(document).ready(function(){
 			$(this).find('video').get(0).pause();
 		});
 
-		// Infinite scroll
-		/*
-		var offset = 0;
-        var count = how_many.workPosts;
-        var postsUrl = how_many.workPostsUrl;
-
-	    $(window).scroll(function(){
-
-	    	// User scrolls to bottom
-            if  ($(window).scrollTop() == $(document).height() - $(window).height()) {
-
-		        // If more posts
-		        if (count > offset) {
-
-		        	offset = offset+6;
-			        $('.additional-posts.last').removeClass('last').load(postsUrl+offset, function() {
-		                var posts = $(this);
-		                posts.fadeIn(400, function(){
-			                $('img').each(function() {
-								// LOAD IMG/VID SOURCES
-							});
-							$('.works').append('<div class="additional-posts last"></div>');
-		                });
-		            });
-			        return false;
-
-			    }
-	        }
-	    });
-	    */
-
 	}
 
 
