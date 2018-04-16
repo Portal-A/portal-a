@@ -1,0 +1,99 @@
+/* $global
+--------------------------------------------- */
+
+body {
+    font: normal 17px/21px "futura-pt", Futura, Helvetica, Arial, sans-serif;
+    background: url('../img/backgrounds/white_texture.png') repeat #FFF;
+    color: #414042;
+    -webkit-text-size-adjust: 100%;
+}
+/* Background Options */
+/* body {background: url('../img/backgrounds/absurdidad.png') repeat #FFF;}	*/
+/* body {background: url('../img/backgrounds/grid_noise.png') repeat #FFF;} */
+/* body {background: url('../img/backgrounds/groovepaper.png') repeat #FFF;} */
+/* body {background: url('../img/backgrounds/subtlenet2.png') repeat #FFF;} */
+/* body {background: url('../img/backgrounds/white_texture.png') repeat #FFF;} */
+/* body {background: url('../img/backgrounds/old_wall.png') repeat #FFF;} */
+
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: 600;
+}
+a {
+    outline: none;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #42B1E1;
+}
+a:hover {
+    color: #000;
+    -webkit-transition: color .5s linear;
+    transition: color .5s linear;
+}
+p {
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 48px;
+    line-height: 56px;
+}
+h2 {
+    font: 600 normal 24px/1 "kulturista-web", Georgia, Times, serif;
+    color: #42B1E1;
+    margin-bottom: 20px;
+}
+h3 {
+    font: 600 normal 21px/24px "kulturista-web", Georgia, Times, serif;
+    color: #000;
+}
+h4 {
+    font: 600 normal 18px/26px "kulturista-web", Georgia, Times, serif;
+    color: #000;
+}
+h5 {
+    font-size: 24px;
+    line-height: 32px;
+}
+h6 {
+    font-size: 18px;
+    line-height: 26px;
+}
+::selection {
+    background: #42B1E1;
+    color: #fff;
+}
+::-moz-selection {
+    background: #42B1E1;
+    color: #fff;
+}
+*:focus {
+    outline: none
+}
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+.clear {
+    zoom: 1;
+}
+::-webkit-input-placeholder {}:-moz-placeholder {} input[type=text],
+input[type=submit] {
+    -webkit-appearance: none;
+}
+.tame {
+    width: 992px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+}
+.hide {
+    display: none;
+}

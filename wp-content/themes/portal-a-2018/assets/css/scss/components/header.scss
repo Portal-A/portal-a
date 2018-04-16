@@ -1,0 +1,89 @@
+/* $header
+--------------------------------------------- */
+
+.mainhead {
+    background: #000;
+    height: 80px;
+    font: normal 12px/80px "futura-pt", Futura, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #808081;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+}
+.mainhead li {
+    display: inline;
+    margin: 0 25px;
+}
+.mainhead .left {
+    width: 421px;
+    float: left;
+    text-align: right;
+}
+.mainhead .middle {
+    width: 150px;
+    float: left;
+    text-align: center;
+}
+.mainhead .right {
+    width: 421px;
+    float: left;
+}
+.mainhead li a:link,
+.mainhead li a:visited {
+    color: #efefef;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: .2em;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+.single-work li.page-item-12 a:link,
+.single-work li.page-item-12 a:visited,
+.mainhead li.current_page_item a:link,
+.mainhead li.current_page_item a:visited,
+.mainhead li a:hover {
+    color: #42B1E1;
+    /* border-bottom: 2px solid #96DAED; */
+}
+.mainhead .middle a:link,
+.mainhead .middle a:visited {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border: none;
+    margin: 0 auto;
+    position: relative;
+}
+.mainhead .middle img {
+    max-width: 100%;
+}
+.mainhead .middle a .line {
+    display: none;
+}
+
+.mainhead a .line {
+    -webkit-transition: all 150ms ease-in-out 0;
+    -moz-transition: all 150ms ease-in-out;
+    -moz-transition-delay: 0;
+    -ms-transition: all 150ms ease-in-out 0;
+    -o-transition: all 150ms ease-in-out 0;
+    transition: all 150ms ease-in-out 0;
+    background: #42B1E1;
+    bottom: -2px;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    width: 0;
+}
+.mainhead li.current_page_item a:link .line,
+.mainhead li.current_page_item a:visited .line,
+.mainhead a:hover .line {
+    left: 0;
+    width: 100%;
+}

@@ -1,0 +1,151 @@
+/* $contact
+--------------------------------------------- */
+
+.page-id-6 .top {
+    position: relative;
+    height: 600px;
+    text-align: center;
+}
+.page-id-6 .top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.page-id-6 .top h2,
+.page-id-6 .top h6 {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+}
+.page-id-6 .top h2 {
+    width: 360px;
+    left: 50%;
+    margin-left: -180px;
+    bottom: 220px;
+    text-shadow: #333 0.1em 0.1em 0.2em;
+}
+.page-id-6 .top h2 {
+    width: 360px;
+    left: 50%;
+    margin-left: -180px;
+    bottom: 220px;
+    text-shadow: #333 0.1em 0.1em 0.2em;
+}
+.page-id-6 .top h6 {
+    width: 820px;
+    left: 50%;
+    margin-left: -410px;
+    bottom: 100px;
+    text-shadow: #333 0.1em 0.1em 0.2em;
+    font-size: 120px;
+    font: 600 normal 120px/120px "kulturista-web", Georgia, Times, serif;
+}
+.page-id-6 .quarter {
+    text-align: center;
+    width: 225px;
+    float: left;
+    margin-right: 30px;
+}
+.page-id-6 .quarter-last {
+    margin-right: 0;
+}
+.page-id-6 .quarter h2 a:link,
+.page-id-6 .quarter h2 a:visited {
+    color: #000;
+}
+.page-id-6 .quarter a:link,
+.page-id-6 .quarter a:visited {
+    color: #414042;
+}
+.page-id-6 .quarter a:hover,
+.page-id-6 .quarter h2 a:hover {
+    color: #42B1E1;
+}
+.page-id-6 .quarter h2 {
+    margin-bottom: 10px;
+}
+.page-id-6 .email-wrapper .social {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+.page-id-6 .email-wrapper .social a:link,
+.page-id-6 .email-wrapper .social a:visited {
+    height: 20px;
+}
+.page-id-6 .email-wrapper .social a.facebook {
+    background-position: -44px -840px;
+}
+.page-id-6 .email-wrapper .social a.twitter {
+    background-position: -44px -1040px;
+}
+.page-id-6 .email-wrapper .social a.youtube {
+    background-position: -35px -1240px;
+}
+.page-id-6 .email-wrapper .social a.facebook:hover {
+    background-position: -44px -1440px;
+}
+.page-id-6 .email-wrapper .social a.twitter:hover {
+    background-position: -44px -1640px;
+}
+.page-id-6 .email-wrapper .social a.youtube:hover {
+    background-position: -35px -1840px;
+}
+.page-id-6 .offices-wrapper,
+.page-id-6 .email-wrapper {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #42B1E1;
+}
+.page-id-6 .offices-wrapper {
+    height: 440px;
+}
+.page-id-6 .location {
+    text-align: center;
+    width: 480px;
+    margin-right: 32px;
+    float: left;
+    opacity: 0;
+}
+.page-id-6 .location.last {
+    margin-right: 0;
+}
+.page-id-6 .location-imagery {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 280px;
+    width: 100%;
+}
+.page-id-6 .location-imagery img {
+    position: absolute;
+    display: block;
+    height: auto;
+    width: 100%;
+    z-index: 2;
+}
+.page-id-6 .location-imagery:hover .location-photo {
+    display: none;
+}
+.page-id-6 .location-imagery .location-map {
+    position: relative;
+    z-index: 1;
+}
+.page-id-6 .location h3 {
+    margin-bottom: 5px;
+}
+.page-id-6 .content .phone-wrapper {
+    padding-bottom: 40px;
+    text-align: center;
+}
+.page-id-6 .content .phone-wrapper h2 {
+    font-size: 32px;
+    line-height: 100%;
+}
+.page-id-6 .content .phone-wrapper h6 {
+    font: 600 normal 120px/120px "kulturista-web", Georgia, Times, serif;
+    color: #42B1E1;
+}
+.page-id-6 .content .email-wrapper {
+    margin-bottom: 40px;
+}

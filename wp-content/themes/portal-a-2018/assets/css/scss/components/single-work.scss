@@ -1,0 +1,121 @@
+/* $single work
+--------------------------------------------- */
+
+.single-work .mainhead {
+    margin-bottom: 20px;
+}
+.single-work .video-embed {} .single-work .middle .press {
+    width: 230px;
+    margin-right: 24px;
+    min-height: 260px;
+}
+.single-work .middle .press img {
+    width: 100%;
+}
+.single-work .middle .press h4 {
+    width: 230px;
+    height: 59px;
+    line-height: 49px;
+    text-align: center;
+    color: #fff;
+}
+.single-work .middle .press h5 {
+    font: 400 17px/21px "futura-pt", Futura, Helvetica, Arial, sans-serif;
+}
+.single-work h2 {
+    margin-bottom: 30px;
+}
+.single-work .work-meta {
+    position: absolute;
+    bottom: 0;
+}
+.single-work .top,
+.single-work .presses,
+.post-controls,
+.single-work .videos,
+.single-work .photos {
+    border-top: 4px solid #42B1E1;
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+.single-work .work-controls,
+.post-controls {
+    border-color: #42B1E1;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.single-work .work-controls-bottom a:hover,
+.post-controls a:hover {
+    background: url('../img/arrows.png') no-repeat center 0;
+    -webkit-transition: none;
+    transition: none;
+}
+.single-work .work-controls-top {
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+.single-work .work-controls-top .previous-post {
+    left: 0;
+}
+.single-work .work-controls-top .next-post {
+    right: 0;
+}
+.single-work .work-controls-bottom a,
+.blog .post-controls a {
+    padding-bottom: 30px;
+}
+.single-work .work-controls .previous-post,
+.blog .post-controls .older-link {
+    float: left;
+}
+.single-work .work-controls .next-post,
+.blog .post-controls .newer-link {
+    float: right;
+}
+.single-work .work-controls-bottom .previous-post:hover,
+.blog .post-controls .older-link a:hover {
+    background-position: center -70px;
+}
+.single-work .work-controls-bottom .next-post:hover,
+.blog .post-controls .newer-link a:hover {
+    background-position: center -120px;
+}
+.single-work .top .left {
+    width: 260px;
+    margin-right: 52px;
+    float: left;
+    position: relative;
+    min-height: 395px;
+}
+.single-work .top .left h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 30px;
+}
+.single-work .top .left h4 {
+    font-size: 42px;
+    line-height: 45px;
+}
+.single-work .top .left p {
+    font-size: 16px;
+    line-height: 22px;
+}
+.single-work .top .right {
+    width: 680px;
+    float: right;
+}
+.single-work .videos .video-embed,
+.single-work .additional-photo {
+    width: 480px;
+    float: left;
+    margin: 0 32px 0 0;
+}
+.single-work .videos .video-embed.last,
+.single-work .additional-photo.last {
+    margin-right: 0;
+}
+.single-work .additional-photo img {
+    height: auto;
+    max-width: 100%;
+}
