@@ -1,0 +1,53 @@
+
+// Media queries
+// ------------------------------------- //
+@mixin media($size, $minmax: min) {
+  
+  @if map-has-key( $breakpoints, $size ) {
+
+    @media screen and (#{$minmax}-width: #{ map-get($breakpoints,$size) }) {
+      @content;
+    }
+
+  } @else {
+
+    @media screen and (#{$minmax}-width: $size) {
+        @content;
+    }
+
+  }
+
+}
+
+// Selection
+// ------------------------------------- //
+@mixin selection($current-selector: false) {
+    @if $current-selector {
+      &::-moz-selection {
+        @content;
+      }
+  
+      &::selection {
+        @content;
+      }
+    } @else {
+      ::-moz-selection {
+        @content;
+      }
+  
+      ::selection {
+        @content;
+      }
+    }
+  }
+
+// Placeholder text
+// ------------------------------------- //
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}

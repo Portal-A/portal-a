@@ -1,0 +1,100 @@
+$utilities: (
+
+    'display-block' : ( display: block ),
+    'hide' : ( display: none ),
+    
+    'text-center' : ( text-align: center ),
+    
+    'bg-primary' :  ( background-color: $primary ),
+    'color-primary' :  ( color: $primary ),
+    'color-white' :  ( color: white ),
+    
+    'transition' : ( transition: all 250ms ease-out ),
+    'scale-hover:hover' : ( transform: scale(1.05) ),
+
+    'opaque' : ( opacity: 1 ),
+    'faded' : ( opacity: $faded )
+
+);
+
+$utilities-sm: (
+    // 'hide' : ( display: none ),
+);
+
+$utilities-md: (
+    'hide' : ( display: none ),
+);
+
+$utilities-lg: (
+    // 'hide' : ( display: none ),
+);
+
+$utilities-xl: (
+    // 'hide' : ( display: none ),
+);
+
+@each $class, $props in $utilities {
+
+    .#{$namespace}-u-#{$class} {
+        @each $prop, $val in $props {
+            #{$prop}: $val !important; 
+        }
+    }
+
+}
+
+@each $class, $props in $utilities-sm {
+
+    @include media( map-get($breakpoints,'sm') ) {
+        
+        .#{$namespace}-u-#{$class}-sm {
+            @each $prop, $val in $props {
+                #{$prop}: $val !important; 
+            }
+        }
+
+    }
+
+}
+
+@each $class, $props in $utilities-md {
+
+    @include media( map-get($breakpoints,'md') ) {
+        
+        .#{$namespace}-u-#{$class}-md {
+            @each $prop, $val in $props {
+                #{$prop}: $val !important; 
+            }
+        }
+
+    }
+
+}
+
+@each $class, $props in $utilities-lg {
+
+    @include media( map-get($breakpoints,'lg') ) {
+        
+        .#{$namespace}-u-#{$class}-lg {
+            @each $prop, $val in $props {
+                #{$prop}: $val !important; 
+            }
+        }
+
+    }
+
+}
+
+@each $class, $props in $utilities-xl {
+
+    @include media( map-get($breakpoints,'xl') ) {
+        
+        .#{$namespace}-u-#{$class}-xl {
+            @each $prop, $val in $props {
+                #{$prop}: $val !important; 
+            }
+        }
+
+    }
+
+}

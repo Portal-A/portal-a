@@ -1,0 +1,19 @@
+/**
+ * Variables
+ */
+
+$namespace: 'pa';
+
+$breakpoints: (
+    'sm' : 600px,
+    'md' : 900px,
+    'lg' : 1200px,
+    'xl' : 1500px
+);
+$columns: 12;
+$spacer: 1.5rem; 
+
+$primary: #42b1e1;
+$faded: 0.7;
+
+$font-primary: "Lato", Helvetica, Arial, sans-serif;

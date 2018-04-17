@@ -43,10 +43,16 @@
 
 	<body <?php body_class(); ?>>
 
-		<div class="wrap">
+		<header class="pa-c-masthead">
+			<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
+			
+			<?php wp_nav_menu( array( 
+				'theme_location' => 'header',
+				'container' => '',
+				'menu_class' => 'pa-c-header-menu',
+				'fallback_cb' => false
+			) ) ?>
 
-			<header class="pa-c-masthead">
-				<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
-			</header>
+		</header>
 
-			<div class="content">
+		<main class="content">

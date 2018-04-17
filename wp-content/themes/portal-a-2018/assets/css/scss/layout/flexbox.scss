@@ -1,0 +1,21 @@
+$flexbox-classes: (
+
+    'flexbox' : ( display: flex ),
+    'flex' : ( box-sizing: border-box ),
+    'flex-wrap' : ( flex-wrap: wrap ),
+    'flex-grow' : ( flex-grow: 1 ),
+    'flex-no-shrink' : ( flex-shrink: 0 ),
+    'align-center' : ( align-items: center ),
+    'justify-center' : ( justify-content: center )
+
+);
+
+@each $class, $props in $flexbox-classes {
+
+    .#{$namespace}-l-#{$class} {
+        @each $prop, $val in $props {
+            #{$prop}: $val; 
+        }
+    }
+
+}

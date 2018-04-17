@@ -6,16 +6,16 @@ function setup() {
     $n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
-
-    remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'feed_links_extra', 3);
-    remove_action('wp_head', 'feed_links', 2);
     
     add_action( 'after_setup_theme', $n('theme_setup') );
     add_action( 'wp_enqueue_scripts', $n('scripts') );
     add_action( 'wp_enqueue_scripts', $n('styles') );
+    add_action( 'init', $n( 'add_menus' ) );
     
+    remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'feed_links', 2);
 }
 
 function theme_setup() {
@@ -41,3 +41,9 @@ function styles() {
 	);
 }
 
+
+function add_menus() {
+    register_nav_menus( array(
+        'header' => 'Header'
+    ) );
+}

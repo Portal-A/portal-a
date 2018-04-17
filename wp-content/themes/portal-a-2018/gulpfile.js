@@ -65,7 +65,7 @@ gulp.task('watch', function() {
     livereload.listen();
 
     // Watch .scss files
-    gulp.watch('assets/css/**/*.scss', ['styles']);
+    gulp.watch('assets/css/scss/**/*.scss', ['styles']);
 
     // Watch .js files
     gulp.watch(['assets/js/includes/*.js', 'assets/js/src/*.js'], ['scripts']);

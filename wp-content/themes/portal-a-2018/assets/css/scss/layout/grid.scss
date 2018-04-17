@@ -1,0 +1,37 @@
+.#{$namespace}-l-flex[class*="#{$namespace}-l-span-"] {
+    flex-basis: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+@for $i from 1 through $columns {
+
+    // .#{$namespace}-l-span-#{$i} {
+    //     width: #{$i/$columns}%;
+    // }
+    .#{$namespace}-l-flex.#{$namespace}-l-span-#{$i} {
+        flex-basis: $i / $columns * 100%;
+    }
+
+}
+
+@each $bp, $size in $breakpoints {
+
+    @include media($size) {
+
+        @for $i from 1 through $columns {
+            
+            // .#{$namespace}-l-span-#{$i} {
+            //     width: #{$i/$columns}%;
+            // }
+            .#{$namespace}-l-flex.#{$namespace}-l-span-#{$i}-#{$bp} {
+                flex-basis: $i / $columns * 100%;
+            }
+        
+        }
+
+    }
+
+}
+

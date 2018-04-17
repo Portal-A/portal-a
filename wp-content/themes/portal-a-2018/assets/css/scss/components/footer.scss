@@ -1,70 +1,39 @@
 /* $footer
 --------------------------------------------- */
-
-* {
-    margin: 0;
-}
-html,
-body {
-    height: 100%;
-}
-.wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -60px;
-}
-.mainfoot,
-.push {
-    height: 60px;
-}
 .mainfoot {
-    bottom: 0;
-    background: #000;
-    line-height: 60px;
-    text-align: center;
+    background: #fff;
+    line-height: 82px;
     text-transform: uppercase;
-    font-size: 11px;
-    position: relative;
-    letter-spacing: .1em;
-    z-index: 2;
-    color: #959595;
+    font-size: 15px;
+    font-weight: 700;
+    color: #626F74;
 }
-.mainfoot a:link,
-.mainfoot a:visited {
-    color: #959595;
-}
-.mainfoot a:hover {
-    color: #fff;
-}
-.mainfoot p {
-    margin-bottom: 0;
+.mainfoot a {
+    opacity: 1;
 }
 .mainfoot .social {
     float: right;
 }
-.mainfoot .byline:link,
-.mainfoot .byline:visited {
-    font-size: 9px;
-    color: #666;
-}
-.mainfoot .byline:hover {
-    color: #fff;
-}
-.social a:link,
-.social a:visited {
+.social a {
     display: block;
     margin: 0 5px;
     float: left;
     position: relative;
     z-index: 4;
+
+    &.blog-link {
+        color: #9B9B9B;
+        &:hover {
+            color: $primary
+        }
+    }
 }
 
 .social a.facebook {
     background: transparent url('../img/icons.png') no-repeat -44px -820px;
     text-indent: -9999px;
     width: 30px;
-    height: 60px;
+    height: 82px;
 }
 .social a.facebook:hover {
     background-position: -44px -1420px;
@@ -75,7 +44,7 @@ body {
     background-size: 100%;
     text-indent: -9999px;
     width: 30px;
-    height: 60px;
+    height: 82px;
 }
 .social a.linkedin:hover {
     background-position: 0 -64px;
@@ -86,7 +55,7 @@ body {
     background-size: 100% auto;
     text-indent: -9999px;
     width: 30px;
-    height: 60px;
+    height: 82px;
 }
 .social a.instagram:hover {
     background-position: 0 -64px;
@@ -96,7 +65,7 @@ body {
     background: transparent url('../img/icons.png') no-repeat -44px -1020px;
     text-indent: -9999px;
     width: 30px;
-    height: 60px;
+    height: 82px;
 }
 .social a.twitter:hover {
     background-position: -44px -1620px;
@@ -106,7 +75,7 @@ body {
     background: transparent url('../img/icons.png') no-repeat -35px -1220px;
     text-indent: -9999px;
     width: 60px;
-    height: 60px;
+    height: 82px;
 }
 .social a.youtube:hover {
     background-position: -35px -1820px;
