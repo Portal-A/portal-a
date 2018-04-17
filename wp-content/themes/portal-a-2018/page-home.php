@@ -14,18 +14,33 @@ $bgVideo = get_field('background_video');
 ?>
 
 <div class="pa-c-hero is-video">
-	<video class="pa-c-hero__media" muted autoplay loop>
-		<source src="<?php echo $fileWEBM['url']; ?>" type="video/webm">
-		<source src="<?php echo $fileMP4['url']; ?>" type="video/mp4">
-		<source src="<?php echo $fileOGV['url']; ?>" type="video/ogv"> Your browser does not support the video tag.
-	</video>
+	<div class="pa-c-hero__media">
+		<video muted autoplay loop>
+			<source src="<?php echo $fileWEBM['url']; ?>" type="video/webm">
+			<source src="<?php echo $fileMP4['url']; ?>" type="video/mp4">
+			<source src="<?php echo $fileOGV['url']; ?>" type="video/ogv"> Your browser does not support the video tag.
+		</video>
+	</div>
 	<div class="pa-c-hero__content">
+		
 		<h1>Breakthrough entertainment<br/>for a new generation</h1>
 		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
+
+		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
+			<a href="#the-latest" class="js-smooth-scroll">
+				<span class="pa-u-hide">Scroll down</span>
+				<i class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:3rem"></i>
+			</a>
+			<a href="#">
+				<span class="pa-u-hide">Unmute video</span>
+				<i class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:3rem"></i>
+			</a>
+		</div>
+		
 	</div>
 </div>
 
-<h2 class="pa-l-ma-0 pa-l-py-1 pa-u-text-center">The Latest</h2>
+<h2 id="the-latest" class="pa-l-ma-0 pa-l-py-1 pa-u-text-center">The Latest</h2>
 
 <div class="pa-l-flexbox pa-l-flex-wrap">
 	

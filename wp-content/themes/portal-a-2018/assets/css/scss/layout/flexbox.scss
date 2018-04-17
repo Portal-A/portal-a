@@ -6,7 +6,8 @@ $flexbox-classes: (
     'flex-grow' : ( flex-grow: 1 ),
     'flex-no-shrink' : ( flex-shrink: 0 ),
     'align-center' : ( align-items: center ),
-    'justify-center' : ( justify-content: center )
+    'justify-center' : ( justify-content: center ),
+    'justify-space-between' : ( justify-content: space-between )
 
 );
 

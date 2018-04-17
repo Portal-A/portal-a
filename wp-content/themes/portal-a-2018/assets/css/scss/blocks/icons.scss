@@ -1,5 +1,9 @@
 $icomoon-font-path: "../fonts/portal-a-ui/fonts" !default;
 
+$icon-arrow-down: \e904;
+$icon-arrow-left: \e905;
+$icon-arrow-up: \e906;
+$icon-arrow-right: \e907;
 $icon-muted: \e900;
 $icon-sound: \e901;
 $icon-left-quote: \e902;
@@ -13,9 +17,9 @@ $icon-facebook: \f230;
 @font-face {
   font-family: 'portal-a-ui';
   src:
-    url('#{$icomoon-font-path}/portal-a-ui.ttf?ye1m7r') format('truetype'),
-    url('#{$icomoon-font-path}/portal-a-ui.woff?ye1m7r') format('woff'),
-    url('#{$icomoon-font-path}/portal-a-ui.svg?ye1m7r#portal-a-ui') format('svg');
+    url('#{$icomoon-font-path}/portal-a-ui.ttf?lj6lj0') format('truetype'),
+    url('#{$icomoon-font-path}/portal-a-ui.woff?lj6lj0') format('woff'),
+    url('#{$icomoon-font-path}/portal-a-ui.svg?lj6lj0#portal-a-ui') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,6 +43,26 @@ $icon-facebook: \f230;
   @return unquote("\"") + $str + unquote("\"");
 }
 
+.icon-arrow-down {
+  &:before {
+    content: unicode($icon-arrow-down); 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: unicode($icon-arrow-left); 
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: unicode($icon-arrow-up); 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: unicode($icon-arrow-right); 
+  }
+}
 .icon-muted {
   &:before {
     content: unicode($icon-muted); 
