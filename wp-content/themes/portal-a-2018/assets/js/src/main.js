@@ -138,7 +138,7 @@ var retina = window.devicePixelRatio > 1 ? true : false;
 $(document).ready(function(){
 
   // Header logo swap for animated gif
-  $('.icon-logo').hover(
+  $('.js-logo').hover(
     function() {
       var src = $(this).attr("src");
       $(this).attr("src", src.replace(/\.png$/i, ".gif"));

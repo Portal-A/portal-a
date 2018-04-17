@@ -1,7 +1,13 @@
 .pa-c-masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
-    top: 0;
+    top: 1.5rem;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
+    
     z-index: 1000;
+    padding: 0 rem(72);
 }

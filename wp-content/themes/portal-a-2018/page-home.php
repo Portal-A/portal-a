@@ -20,7 +20,8 @@ $bgVideo = get_field('background_video');
 		<source src="<?php echo $fileOGV['url']; ?>" type="video/ogv"> Your browser does not support the video tag.
 	</video>
 	<div class="pa-c-hero__content">
-		<?php echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
+		<h1>Breakthrough entertainment<br/>for a new generation</h1>
+		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
 	</div>
 </div>
 
@@ -32,7 +33,7 @@ $bgVideo = get_field('background_video');
 		<img src="//unsplash.it/800/500" alt="" width="800" height="500" class="pa-u-hide-md"/>
 	</div>
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<blockquote class="pa-h3 pa-u-scale-hover pa-u-transition" style="text-transform:none">
+		<blockquote class="pa-h3 pa-u-scale-hover pa-u-transition-fast" style="text-transform:none">
 			&ldquo;<br/>
 			Portal A, more than any other creative shop, has cracked the code of online video.<br/>
 			<br/>
@@ -45,7 +46,7 @@ $bgVideo = get_field('background_video');
 		<img src="//unsplash.it/800/550" alt="" width="800" height="550" class="pa-u-hide-md"/>
 	</div>
 	<div class="pa-l-flex pa-l-flexbox pa-l-align-center pa-l-justify-center pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block pa-u-text-center">
+		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-fast pa-u-opaque">
 			<img src="//placehold.it/75x65/ffffff/dddddd" alt="hand icon" width="75" height="65" /><br/>
 			<br/>
 			<p class="pa-h3">NOW HIRING!</p>
@@ -55,7 +56,7 @@ $bgVideo = get_field('background_video');
 		<img src="//unsplash.it/800/600" alt="" width="800" height="600" class="pa-u-hide-md"/>
 	</div>
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block">
+		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-fast pa-u-opaque">
 			<blockquote>
 				<span class="pa-h3" style="text-transform:none">
 					&ldquo;<br/>

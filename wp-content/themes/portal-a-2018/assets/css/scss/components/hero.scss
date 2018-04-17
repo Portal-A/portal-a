@@ -1,6 +1,8 @@
 .pa-c-hero {
     position: relative;
     height: 56.25vw;
+    display: flex;
+    align-items: center;
 
     & > *:not(.pa-c-hero__media) {
         position: relative;
@@ -19,4 +21,13 @@
     .is-video & {
         background-color: black;
     }
+}
+
+.pa-c-hero__content {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 rem(72);
+    color: white;
 }

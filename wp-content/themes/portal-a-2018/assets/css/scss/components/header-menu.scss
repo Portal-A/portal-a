@@ -1,0 +1,33 @@
+.pa-c-header-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: rem(1100);
+
+    a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 1;
+        display: block;
+        transition: all 250ms ease-out;
+        &:hover,
+        &:focus {
+            color: $color-primary;
+            opacity: 1;
+        }
+    }
+}
+
+.menu-item {
+ 
+    .pa-c-header-menu & {
+
+
+
+    }
+
+}

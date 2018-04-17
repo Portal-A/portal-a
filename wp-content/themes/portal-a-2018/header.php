@@ -44,7 +44,7 @@
 	<body <?php body_class(); ?>>
 
 		<header class="pa-c-masthead">
-			<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
+			<a href="<?= get_bloginfo('url') ?>" class="pa-b-logo"><img class="js-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
 			
 			<?php wp_nav_menu( array( 
 				'theme_location' => 'header',

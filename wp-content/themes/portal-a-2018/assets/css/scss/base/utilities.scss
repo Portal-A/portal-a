@@ -5,11 +5,12 @@ $utilities: (
     
     'text-center' : ( text-align: center ),
     
-    'bg-primary' :  ( background-color: $primary ),
-    'color-primary' :  ( color: $primary ),
+    'bg-primary' :  ( background-color: $color-primary ),
+    'color-primary' :  ( color: $color-primary ),
     'color-white' :  ( color: white ),
     
     'transition' : ( transition: all 250ms ease-out ),
+    'transition-fast' : ( transition: all 150ms ease-out ),
     'scale-hover:hover' : ( transform: scale(1.05) ),
 
     'opaque' : ( opacity: 1 ),
