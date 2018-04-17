@@ -3,43 +3,43 @@
  */
 
 $(document).ready(function() {
-  if ($('.home').length > 0) {
+  // if ($('.home').length > 0) {
 
-    var videobackground;
-    var fileName = $('#bgVideo').data('bgvideo');
-    var file = fileName.substr(fileName.lastIndexOf('/') + 1);
-    var fileNoExt = file.substr(0, file.lastIndexOf('.'));
-    var root = fileName.replace(file, '');
+  //   var videobackground;
+  //   var fileName = $('#bgVideo').data('bgvideo');
+  //   var file = fileName.substr(fileName.lastIndexOf('/') + 1);
+  //   var fileNoExt = file.substr(0, file.lastIndexOf('.'));
+  //   var root = fileName.replace(file, '');
 
-    videobackground = new $.backgroundVideo($(".video-holder #bgVideo"), {
-      align: "centerXY",
-      path: root,
-      width: 1280,
-      height: 720,
-      filename: fileNoExt,
-      types: ["mp4", "ogv", "webm"],
-      preload: true,
-      autoplay: true,
-      muted: true
-    });
+  //   videobackground = new $.backgroundVideo($(".video-holder #bgVideo"), {
+  //     align: "centerXY",
+  //     path: root,
+  //     width: 1280,
+  //     height: 720,
+  //     filename: fileNoExt,
+  //     types: ["mp4", "ogv", "webm"],
+  //     preload: true,
+  //     autoplay: true,
+  //     muted: true
+  //   });
 
-    if (Modernizr.touch){
-      // Show the image please
-      $('.video-holder').addClass('image');
-      $('#bgVideo').remove();
-    }
+  //   if (Modernizr.touch){
+  //     // Show the image please
+  //     $('.video-holder').addClass('image');
+  //     $('#bgVideo').remove();
+  //   }
 
-    $('#bgVideo video').bind('play', function (e) {
-      setTimeout(function() {
-        $('#bgVideo').removeClass('loading');
-      }, 500 );
-    });
+  //   $('#bgVideo video').bind('play', function (e) {
+  //     setTimeout(function() {
+  //       $('#bgVideo').removeClass('loading');
+  //     }, 500 );
+  //   });
 
-  }
+  // }
 
   // Prevent having to double click on nav on mobile devices
   // From http://stackoverflow.com/questions/3038898/ipad-iphone-hover-problem-causes-the-user-to-double-click-a-link
-  $('.mainhead a').on('click touchend', function(e) {
+  $('.pa-c-masthead a').on('click touchend', function(e) {
     var el = $(this);
     var link = el.attr('href');
     window.location = link;
@@ -151,26 +151,26 @@ $(document).ready(function(){
   });
 
   // video modal
-  if (Modernizr.touch) {
-    var videoURL = $('.reel-button').data('video');
-    $('.reel-button').attr('href', videoURL);
-  } else {
-    $('.reel-button').magnificPopup({
-      type:'inline',
-      callbacks: {
-        open: function() {
-          $('#video_background').get(0).pause();
-          $('#reel video').get(0).play();
-          $('.video').addClass('mute');
-        },
-        close: function() {
-          $('#video_background').get(0).play();
-          $('#reel video').get(0).pause();
-          $('.video').removeClass('mute');
-        }
-      }
-    });
-  }
+  // if (Modernizr.touch) {
+  //   var videoURL = $('.reel-button').data('video');
+  //   $('.reel-button').attr('href', videoURL);
+  // } else {
+  //   $('.reel-button').magnificPopup({
+  //     type:'inline',
+  //     callbacks: {
+  //       open: function() {
+  //         $('#video_background').get(0).pause();
+  //         $('#reel video').get(0).play();
+  //         $('.video').addClass('mute');
+  //       },
+  //       close: function() {
+  //         $('#video_background').get(0).play();
+  //         $('#reel video').get(0).pause();
+  //         $('.video').removeClass('mute');
+  //       }
+  //     }
+  //   });
+  // }
 
 	// Delay Loading of Images
 	$('img').each(function () {

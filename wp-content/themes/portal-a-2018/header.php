@@ -45,23 +45,8 @@
 
 		<div class="wrap">
 
-		<header class="mainhead clear">
-			<div class="tame">
-			<div class="left">
-				<ul>
-					<?php wp_list_pages('include=10,12,4276&title_li=&sort_column=menu_order&sort_order=DESC') ?>
-				</ul>
-			</div>
-			<div class="middle">
+			<header class="pa-c-masthead">
 				<a href="<?= get_bloginfo('url') ?>"><img class="icon-logo" src="<?php echo get_template_directory_uri() . '/assets/img/icon-logo.png' ?>" alt="Portal A"></a>
-			</div>
-			<div class="right">
-				<ul>
-					<?php wp_list_pages('include=8&title_li=') ?>
-					<?php wp_list_pages('include=5159,6&title_li=&sort_column=menu_order&sort_order=ASC') ?>
-				</ul>
-			</div>
-			</div>
-		</header>
+			</header>
 
-		<div class="content tame">
+			<div class="content">
