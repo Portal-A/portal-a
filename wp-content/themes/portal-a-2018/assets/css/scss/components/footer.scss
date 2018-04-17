@@ -1,8 +1,10 @@
 /* $footer
 --------------------------------------------- */
 .mainfoot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #fff;
-    line-height: 82px;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 700;
@@ -10,16 +12,26 @@
 }
 .mainfoot a {
     opacity: 1;
+    &:hover {
+        color: $color-primary
+    }
 }
 .mainfoot .social {
+    display: flex;
+    align-items: center;
     float: right;
 }
 .social a {
-    display: block;
-    margin: 0 5px;
-    float: left;
-    position: relative;
-    z-index: 4;
+    color: #CFCFCF;
+    line-height: 0;
+
+    &:hover {
+        color: $color-primary
+    }
+
+    .pa-b-icon {
+        font-size: 1.5rem;
+    }
 
     &.blog-link {
         color: #9B9B9B;
@@ -27,56 +39,4 @@
             color: $color-primary
         }
     }
-}
-
-.social a.facebook {
-    background: transparent url('../img/icons.png') no-repeat -44px -820px;
-    text-indent: -9999px;
-    width: 30px;
-    height: 82px;
-}
-.social a.facebook:hover {
-    background-position: -44px -1420px;
-}
-
-.social a.linkedin {
-    background: transparent url('../img/linkedin@2x.png') no-repeat 0 -4px;
-    background-size: 100%;
-    text-indent: -9999px;
-    width: 30px;
-    height: 82px;
-}
-.social a.linkedin:hover {
-    background-position: 0 -64px;
-}
-
-.social a.instagram {
-    background: transparent url('../img/instagram@2x.png') no-repeat 0 -4px;
-    background-size: 100% auto;
-    text-indent: -9999px;
-    width: 30px;
-    height: 82px;
-}
-.social a.instagram:hover {
-    background-position: 0 -64px;
-}
-
-.social a.twitter {
-    background: transparent url('../img/icons.png') no-repeat -44px -1020px;
-    text-indent: -9999px;
-    width: 30px;
-    height: 82px;
-}
-.social a.twitter:hover {
-    background-position: -44px -1620px;
-}
-
-.social a.youtube {
-    background: transparent url('../img/icons.png') no-repeat -35px -1220px;
-    text-indent: -9999px;
-    width: 60px;
-    height: 82px;
-}
-.social a.youtube:hover {
-    background-position: -35px -1820px;
 }
