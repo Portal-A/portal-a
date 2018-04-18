@@ -20,9 +20,6 @@
 		<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/img/favicon.ico?v1.1"/>
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('title'); ?> Feed" href="<?= get_bloginfo('rss2_url') ?>" />
 
-		<script type="text/javascript" src="//use.typekit.net/rln3vwl.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
 		<!--[if lt IE 9]>
 		<script src="<?php echo PA_ASSETS . 'js/html5.js' ?>"></script>
 		<![endif]-->
