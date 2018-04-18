@@ -2,7 +2,7 @@
  * Typography
  */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,700,900');
 
 html {
     font-size: 100%;
@@ -33,20 +33,21 @@ h6,.pa-h6 {
 h1,.pa-h1 {
     font-size: rem(38);
     line-height: 1.26;
+    font-weight: 900;
 }
 h2,.pa-h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: rem(34);
     line-height: 1.2;
     
 }
 h3,.pa-h3 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: rem(25);
     line-height: 1.32;
 }
 h4,.pa-h4 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: rem(18);
     line-height: 1.444;
 }

@@ -23,17 +23,17 @@ $bgVideo = get_field('background_video');
 	</div>
 	<div class="pa-c-hero__content">
 		
-		<h1>Breakthrough entertainment<br/>for a new generation</h1>
+		<h1>Breakthrough<br/>entertainment<br/>for a new generation</h1>
 		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
 
 		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
-			<a href="#the-latest" class="js-smooth-scroll">
+			<a href="#the-latest" class="js-smooth-scroll pa-u-scale-10-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Scroll down</span>
-				<i class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:3rem"></i>
+				<i class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></i>
 			</a>
-			<a href="#">
+			<a href="#" class="pa-u-scale-10-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Unmute video</span>
-				<i class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:3rem"></i>
+				<i class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:2.25rem"></i>
 			</a>
 		</div>
 		
@@ -61,7 +61,7 @@ $bgVideo = get_field('background_video');
 		<img src="//unsplash.it/800/550" alt="" width="800" height="550" class="pa-u-hide-md"/>
 	</div>
 	<div class="pa-l-flex pa-l-flexbox pa-l-align-center pa-l-justify-center pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-fast pa-u-opaque">
+		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-fast">
 			<i class="pa-b-icon icon-hand-wave" aria-hidden="true" style="font-size:4rem"></i><br/>
 			<br/>
 			<p class="pa-h3">NOW HIRING!</p>
@@ -71,7 +71,7 @@ $bgVideo = get_field('background_video');
 		<img src="//unsplash.it/800/600" alt="" width="800" height="600" class="pa-u-hide-md"/>
 	</div>
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-fast pa-u-opaque">
+		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-fast">
 			<blockquote>
 				<span class="pa-h3" style="text-transform:none">
 					<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
