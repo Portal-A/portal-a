@@ -14,7 +14,7 @@ $bgVideo = get_field('background_video');
 ?>
 
 <div class="pa-c-hero is-video">
-	<div class="pa-c-hero__media">
+	<div class="pa-c-hero__media pa-c-cover-media">
 		<video muted autoplay loop>
 			<source src="<?php echo $fileWEBM['url']; ?>" type="video/webm">
 			<source src="<?php echo $fileMP4['url']; ?>" type="video/mp4">
@@ -53,7 +53,7 @@ $bgVideo = get_field('background_video');
 
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
 		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-slow">
-			<blockquote class="pa-h3" style="text-transform:none">
+			<blockquote class="pa-h3 pa-u-center" style="text-transform:none;max-width:260px">
 				<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
 				Portal A, more than any other creative shop, has cracked the code of online video.<br/>
 				<br/>
@@ -88,7 +88,7 @@ $bgVideo = get_field('background_video');
 
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
 		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-slow">
-			<blockquote>
+			<blockquote class="pa-u-center" style="max-width:440px">
 				<span class="pa-h3" style="text-transform:none">
 					<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
 					We’re thrilled to welcome six bright and talented new members to the Portal A family, and congratulate our all-stars on their recent promotions.<br/>
