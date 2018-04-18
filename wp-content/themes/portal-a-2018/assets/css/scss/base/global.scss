@@ -13,14 +13,11 @@ img {
 }
 a {
     outline: none;
-}
-a:link,
-a:visited {
     text-decoration: none;
     color: inherit;
-    transition: opacity .25s ease-out;
+    // transition: opacity .25s ease-out;
 }
-a:hover {
+a:hover, a:focus {
     opacity: $faded;
 }
 
