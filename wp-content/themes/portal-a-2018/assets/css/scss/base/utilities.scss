@@ -10,9 +10,9 @@ $utilities: (
     'color-white' :  ( color: white ),
     
     'transition' : ( transition: all 250ms ease-out ),
+    'transition-slow' : ( transition: all 400ms $easeInOutCubic ),
     'transition-fast' : ( transition: all 100ms ease-out ),
-    'scale-hover:hover' : ( transform: scale(1.05) ),
-    'scale-10-hover:hover' : ( transform: scale(1.1) ),
+    'scale-hover:hover' : ( transform: scale(1.1) ),
 
     'opaque' : ( opacity: 1 ),
     'faded' : ( opacity: $faded )

@@ -27,11 +27,11 @@ $bgVideo = get_field('background_video');
 		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
 
 		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
-			<a href="#the-latest" class="js-smooth-scroll pa-u-scale-10-hover pa-u-transition-fast">
+			<a href="#the-latest" class="js-smooth-scroll pa-u-scale-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Scroll down</span>
 				<i class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></i>
 			</a>
-			<a href="#" class="pa-u-scale-10-hover pa-u-transition-fast">
+			<a href="#" class="pa-u-scale-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Unmute video</span>
 				<i class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:2.25rem"></i>
 			</a>
@@ -44,41 +44,57 @@ $bgVideo = get_field('background_video');
 
 <div class="pa-l-flexbox pa-l-flex-wrap">
 	
-	<div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg" style="background-image:url(//unsplash.it/800/500);background-size:cover;background-position:center">
-		<img src="//unsplash.it/800/500" alt="" width="800" height="500" class="pa-u-hide-md"/>
-	</div>
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media pa-does-scale pa-does-fade" >
+		<img src="//unsplash.it/800/500" alt="" width="800" height="500"/>
+		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
+		</div>
+	</a>
+
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<blockquote class="pa-h3 pa-u-scale-hover pa-u-transition-fast" style="text-transform:none">
-			<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
-			Portal A, more than any other creative shop, has cracked the code of online video.<br/>
-			<br/>
-			<cite>
-				<img src="//placehold.it/70x20/ffffff/dddddd" alt="BBC" width="70" height="20" />
-			</cite>
-		</blockquote>
+		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-slow">
+			<blockquote class="pa-h3" style="text-transform:none">
+				<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
+				Portal A, more than any other creative shop, has cracked the code of online video.<br/>
+				<br/>
+				<cite>
+					<img src="//placehold.it/70x20/ffffff/dddddd" alt="BBC" width="70" height="20" />
+				</cite>
+			</blockquote>
+		</a>
 	</div>
-	<div class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg" style="background-image:url(//unsplash.it/800/550);background-size:cover;background-position:center">
-		<img src="//unsplash.it/800/550" alt="" width="800" height="550" class="pa-u-hide-md"/>
-	</div>
+
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-c-cover-media pa-does-scale pa-does-fade">
+		<img src="//unsplash.it/800/550" alt="" width="800" height="550"/>
+		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
+		</div>
+	</a>
+
 	<div class="pa-l-flex pa-l-flexbox pa-l-align-center pa-l-justify-center pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-fast">
+		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-slow">
 			<i class="pa-b-icon icon-hand-wave" aria-hidden="true" style="font-size:4rem"></i><br/>
 			<br/>
 			<p class="pa-h3">NOW HIRING!</p>
 		</a>
 	</div>
-	<div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg" style="background-image:url(//unsplash.it/800/600);background-size:cover;background-position:center">
-		<img src="//unsplash.it/800/600" alt="" width="800" height="600" class="pa-u-hide-md"/>
-	</div>
+
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media pa-does-scale pa-does-fade">
+		<img src="//unsplash.it/800/600" alt="" width="800" height="600"/>
+		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
+		</div>
+	</a>
+
 	<div class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
-		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-fast">
+		<a href="#" class="pa-u-display-block pa-u-scale-hover pa-u-transition-slow">
 			<blockquote>
 				<span class="pa-h3" style="text-transform:none">
 					<i class="pa-b-icon icon-left-quote" aria-hidden="true" style="font-size:1.25rem"></i><br/>
 					We’re thrilled to welcome six bright and talented new members to the Portal A family, and congratulate our all-stars on their recent promotions.<br/>
 				</span>
 				<br/>
-				<cite class="pa-u-faded"><em>Read about it on our blog...</em></cite>
+				<cite class="pa-u-faded">Read about it on our blog</cite>
 			</blockquote>
 		</a>
 	</div>

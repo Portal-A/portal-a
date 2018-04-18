@@ -1,7 +1,7 @@
 </main>
 <!-- .content -->
 
-<footer class="mainfoot pa-l-pa-1">
+<footer class="mainfoot">
 	
 	<p class="pa-l-mt-0" style="letter-spacing: 0.0526em">
 		Portal A Limited <?php echo date('Y') ?> //

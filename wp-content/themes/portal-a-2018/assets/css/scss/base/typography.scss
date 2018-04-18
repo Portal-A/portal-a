@@ -15,8 +15,7 @@ body {
     color: #2E3A3F;
     font-weight: 300;
     letter-spacing: 0.05em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h1,.pa-h1,
@@ -28,6 +27,8 @@ h6,.pa-h6 {
     font-family: $font-primary;
     text-transform: uppercase;
     font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,.pa-h1 {

@@ -1,0 +1,49 @@
+.#{$namespace}-c-cover-media {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: black;
+
+    img, video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        max-height: none;
+        max-width: none;
+        min-height: 100%;
+        min-width: 100%;
+        transform: translate(-50%, -50%);
+        transition: $transition-slow;
+    }
+
+    &.#{$namespace}-does-scale:hover {
+        img {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+
+    &.#{$namespace}-does-fade:hover {
+        img {
+            opacity: $faded-light;
+        }
+    }
+
+}
+
+.#{$namespace}-c-cover-media__content {
+    transform: translate3d(0,100px,0);
+    opacity: 0;
+    transition: $transition-slow; 
+
+    &.#{$namespace}-use-light-ui{
+        color: white;
+    }
+
+    .#{$namespace}-c-cover-media:hover & {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
