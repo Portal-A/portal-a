@@ -12,27 +12,27 @@
 	</p>
 
 	<span class="social">
-		<a href="<?php echo get_post_meta(2, 'youtube_url', TRUE) ?>" target="_blank" class="pa-l-ml-1">
+		<a href="<?php echo get_post_meta(2, 'youtube_url', TRUE) ?>" target="_blank" class="">
 			<span class="pa-u-hide">YouTube</span>
 			<i class="pa-b-icon icon-youtube" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_post_meta(2, 'instagram_url', TRUE) ?>" target="_blank" class="pa-l-ml-1">
+		<a href="<?php echo get_post_meta(2, 'instagram_url', TRUE) ?>" target="_blank" class="">
 			<span class="pa-u-hide">Instagram</span>
 			<i class="pa-b-icon icon-instagram" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_post_meta(2, 'facebook_url', TRUE) ?>" target="_blank" class="pa-l-ml-1">
+		<a href="<?php echo get_post_meta(2, 'facebook_url', TRUE) ?>" target="_blank" class="">
 			<span class="pa-u-hide">Facebook</span>
 			<i class="pa-b-icon icon-facebook" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_post_meta(2, 'twitter_url', TRUE) ?>" target="_blank" class="pa-l-ml-1">
+		<a href="<?php echo get_post_meta(2, 'twitter_url', TRUE) ?>" target="_blank" class="">
 			<span class="pa-u-hide">Twitter</span>
 			<i class="pa-b-icon icon-twitter" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_post_meta(2, 'linkedin_url', TRUE) ?>" target="_blank" class="pa-l-ml-1">
+		<a href="<?php echo get_post_meta(2, 'linkedin_url', TRUE) ?>" target="_blank" class="">
 			<span class="pa-u-hide">LinkedIn</span>
 			<i class="pa-b-icon icon-linkedin" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_permalink(87) ?>" class="blog-link pa-l-ml-1">Portal A Blog</a>
+		<a href="<?php echo get_permalink(87) ?>" class="blog-link">Portal A Blog</a>
 	</span>
 
 </footer>
