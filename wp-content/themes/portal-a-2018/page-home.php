@@ -23,7 +23,7 @@ $bgVideo = get_field('background_video');
 	</div>
 	<div class="pa-c-hero__content">
 		
-		<h1>Breakthrough<br/>entertainment<br/>for a new generation</h1>
+		<h1>Breakthrough entertainment<br/>for a new generation</h1>
 		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
 
 		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
