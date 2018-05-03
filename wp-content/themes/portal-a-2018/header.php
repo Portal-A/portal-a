@@ -10,31 +10,26 @@
 <html <?php language_attributes(); ?>>
 
 	<head>
-
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-		<meta charset="<?php bloginfo('charset'); ?>" />
-		<meta name="viewport" content="width=1032"/>
-		<meta name="blog-title" content="<?php bloginfo('title'); ?>" />
-
-		<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/img/favicon.ico?v1.1"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<?php wp_head(); ?>
+		
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('title'); ?> Feed" href="<?= get_bloginfo('rss2_url') ?>" />
-
+		
 		<!--[if lt IE 9]>
 		<script src="<?php echo PA_ASSETS . 'js/html5.js' ?>"></script>
 		<![endif]-->
-		<?php fuzzco_head(); ?>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-37255526-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
+		<?php if ( ! defined( 'WP_DEBUG' ) || WP_DEBUG === FALSE ) : ?>
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-37255526-1', 'auto');
+			ga('send', 'pageview');
+			</script>
+		<?php endif; ?>
 
 	</head>
 

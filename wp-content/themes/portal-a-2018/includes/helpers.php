@@ -276,17 +276,6 @@ function fuzzco_description()
 
 endif;
 
-if ( ! function_exists( 'fuzzco_head' ) ) :
-
-function fuzzco_head()
-{
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-	wp_head();
-}
-
-endif;
-
 if ( ! function_exists( 'fuzzco_check_current' ) ) :
 
 function fuzzco_check_current($current_id, $check_id)

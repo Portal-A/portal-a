@@ -12,15 +12,24 @@ function setup() {
     add_action( 'wp_enqueue_scripts', $n('styles') );
     add_action( 'init', $n( 'add_menus' ) );
     
-    remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'feed_links_extra', 3);
-    remove_action('wp_head', 'feed_links', 2);
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'rsd_link' );
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	remove_action( 'wp_head', 'index_rel_link' );
+	remove_action( 'wp_head', 'wp_generator' );
 }
 
 function theme_setup() {
     add_theme_support('post-thumbnails');
     add_theme_support('automatic-feed-links');
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
 }
 
 
