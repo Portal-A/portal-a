@@ -3,6 +3,7 @@
  */
 
 $namespace: 'pa';
+$n: $namespace;
 
 $breakpoints: (
     'sm' : 600px,
@@ -12,6 +13,7 @@ $breakpoints: (
 );
 $columns: 12;
 $spacer: 1.5rem; 
+$container-padding: rem(46);
 
 $color-primary: #42b1e1;
 $faded: 0.7;

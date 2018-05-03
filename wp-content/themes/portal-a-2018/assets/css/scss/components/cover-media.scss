@@ -1,11 +1,23 @@
-.#{$namespace}-c-cover-media {
+.#{$n}-c-cover-media {
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     background-color: black;
 
-    img, video {
+    &.does-scale:hover {
+        img {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+
+    &.does-fade:hover {
+        img {
+            opacity: $faded-light;
+        }
+    }
+
+    & > img, & > video {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -19,31 +31,27 @@
         transition: $transition-slow;
     }
 
-    &.#{$namespace}-does-scale:hover {
-        img {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-    }
-
-    &.#{$namespace}-does-fade:hover {
-        img {
-            opacity: $faded-light;
-        }
-    }
-
 }
 
-.#{$namespace}-c-cover-media__content {
-    transform: translate3d(0,100px,0);
-    opacity: 0;
-    transition: $transition-slow; 
+.#{$n}-c-cover-media__content {
+    position: relative;
+    padding: $container-padding;
 
-    &.#{$namespace}-use-light-ui{
+    &.align-end {
+        align-self: flex-end;
+    }
+    
+    &.use-light-ui{
         color: white;
     }
-
-    .#{$namespace}-c-cover-media:hover & {
-        transform: translate3d(0,0,0);
-        opacity: 1;
+    
+    &.is-animated {
+        transform: translate3d(0,100px,0);
+        opacity: 0;
+        transition: $transition-slow; 
+        .#{$n}-c-cover-media:hover & {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
     }
 }

@@ -10,11 +10,10 @@ TEMPLATE NAME: Home
 $fileMP4 = get_field('mp4_video_file');
 $fileOGV = get_field('ogv_video_file');
 $fileWEBM = get_field('webm_video_file');
-$bgVideo = get_field('background_video');
 ?>
 
 <div class="pa-c-hero is-video">
-	<div class="pa-c-hero__media pa-c-cover-media">
+	<div class="pa-c-hero__media pa-c-cover-media is-fullscreen">
 		<video muted autoplay loop>
 			<source src="<?php echo $fileWEBM['url']; ?>" type="video/webm">
 			<source src="<?php echo $fileMP4['url']; ?>" type="video/mp4">
@@ -23,8 +22,9 @@ $bgVideo = get_field('background_video');
 	</div>
 	<div class="pa-c-hero__content">
 		
-		<h1>Breakthrough entertainment<br/>for a new generation</h1>
-		<?php //echo apply_filters('the_content', get_post_meta( 2, 'headline', TRUE ) ); ?>
+		<div class="pa-c-hero__title">
+			<h1>Breakthrough entertainment<br/>for a new generation</h1>
+		</div>
 
 		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
 			<a href="#the-latest" class="js-smooth-scroll pa-u-scale-hover pa-u-transition-fast">
@@ -44,9 +44,9 @@ $bgVideo = get_field('background_video');
 
 <div class="pa-l-flexbox pa-l-flex-wrap">
 	
-	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media pa-does-scale pa-does-fade" >
-		<img src="//unsplash.it/800/500" alt="" width="800" height="500"/>
-		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media does-scale does-fade" >
+		<img src="//picsum.photos/800/500/" alt="" width="800" height="500"/>
+		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>
@@ -64,9 +64,9 @@ $bgVideo = get_field('background_video');
 		</a>
 	</div>
 
-	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-c-cover-media pa-does-scale pa-does-fade">
-		<img src="//unsplash.it/800/550" alt="" width="800" height="550"/>
-		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-c-cover-media does-scale does-fade">
+		<img src="//picsum.photos/800/550/" alt="" width="800" height="550"/>
+		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>
@@ -79,9 +79,9 @@ $bgVideo = get_field('background_video');
 		</a>
 	</div>
 
-	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media pa-does-scale pa-does-fade">
-		<img src="//unsplash.it/800/600" alt="" width="800" height="600"/>
-		<div class="pa-c-cover-media__content pa-use-light-ui pa-u-text-center pa-l-pa-1" style="width:100%">
+	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media does-scale does-fade">
+		<img src="//picsum.photos/800/600/" alt="" width="800" height="600"/>
+		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>

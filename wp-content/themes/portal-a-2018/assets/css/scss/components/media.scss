@@ -1,7 +1,7 @@
 
 /* Responsive Media
  * -----------------------------------------------------------*/
-.#{$namespace}-c-media {
+.#{$n}-c-media {
 	position: relative;
 	height: 0;
 	overflow: hidden;
@@ -17,23 +17,23 @@
 
 }
 
-.#{$namespace}-c-media--1x2 {
-	@extend .#{$namespace}-c-media;
+.#{$n}-c-media--1x2 {
+	@extend .#{$n}-c-media;
 	padding-top: 50%;
 }
 
-.#{$namespace}-c-media--16x9 {
-	@extend .#{$namespace}-c-media;
+.#{$n}-c-media--16x9 {
+	@extend .#{$n}-c-media;
 	padding-top: 56.25%;
 }
 
-.#{$namespace}-c-media--4x3 {
-	@extend .#{$namespace}-c-media;
+.#{$n}-c-media--4x3 {
+	@extend .#{$n}-c-media;
 	padding-top: 75%;
 }
 
-.#{$namespace}-c-media--1x1 {
-	@extend .#{$namespace}-c-media;
+.#{$n}-c-media--1x1 {
+	@extend .#{$n}-c-media;
 	padding-top: 100%;
 }
 

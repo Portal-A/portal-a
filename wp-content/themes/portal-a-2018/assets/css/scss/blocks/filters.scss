@@ -1,0 +1,12 @@
+.#{$n}-b-filter {
+    display: inline-block;
+    font-size: rem(25);
+    letter-spacing: 0.028em;
+    margin: 0 rem(50);
+    &:hover, &.is-active {
+        font-weight: 700;
+    }
+    &.is-active {
+        cursor: default;
+    }
+}

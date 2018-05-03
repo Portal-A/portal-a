@@ -1,4 +1,4 @@
-.#{$namespace}-l-flex[class*="#{$namespace}-l-span-"] {
+.#{$n}-l-flex[class*="#{$n}-l-span-"] {
     flex-basis: 100%;
     flex-grow: 0;
     flex-shrink: 0;
@@ -7,10 +7,10 @@
 
 @for $i from 1 through $columns {
 
-    // .#{$namespace}-l-span-#{$i} {
+    // .#{$n}-l-span-#{$i} {
     //     width: #{$i/$columns}%;
     // }
-    .#{$namespace}-l-flex.#{$namespace}-l-span-#{$i} {
+    .#{$n}-l-flex.#{$n}-l-span-#{$i} {
         flex-basis: $i / $columns * 100%;
     }
 
@@ -22,10 +22,10 @@
 
         @for $i from 1 through $columns {
             
-            // .#{$namespace}-l-span-#{$i} {
+            // .#{$n}-l-span-#{$i} {
             //     width: #{$i/$columns}%;
             // }
-            .#{$namespace}-l-flex.#{$namespace}-l-span-#{$i}-#{$bp} {
+            .#{$n}-l-flex.#{$n}-l-span-#{$i}-#{$bp} {
                 flex-basis: $i / $columns * 100%;
             }
         

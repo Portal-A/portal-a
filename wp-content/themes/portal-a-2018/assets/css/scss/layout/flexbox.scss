@@ -13,7 +13,7 @@ $flexbox-classes: (
 
 @each $class, $props in $flexbox-classes {
 
-    .#{$namespace}-l-#{$class} {
+    .#{$n}-l-#{$class} {
         @each $prop, $val in $props {
             #{$prop}: $val; 
         }

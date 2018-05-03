@@ -5,33 +5,65 @@ TEMPLATE NAME: Work
 ?>
 
 <?php get_header(); ?>
-	<?php if (have_posts()) while (have_posts()) : the_post(); ?>
+
+<div class="pa-c-hero">
 	
-		<?php if ($post->post_content != ''): ?>
-			<h2 class="work-heading"><?php the_content(); ?></h2>
-		<?php endif; ?>
-	
-	<?php									
-		$args = array(
-			'posts_per_page' => -1,
-			'post_type' => 'work',
-			'orderby' => 'menu_order',
-			'order' => 'ASC',
-			'post_status' => 'publish'
-		);
-		$items = get_posts($args);
-		$work_index = 1;
-	?>
-	
-		<div class="works clear">
+	<div class="pa-c-hero__media pa-c-cover-media">
+		<img src="//picsum.photos/1440/800/" width="1440" height="800" />
+	</div>
+
+	<div class="pa-c-hero__content">
+		<div class="pa-c-hero__title">
+			<img src="//placehold.it/64x26/ffffff/dddddd" />
+			<h1>Simone Giertz really wanted to be on HBO Westworld. Well, dreams come true.</h1>
+		</div>
+	</div>
+
+</div>
+
+<nav class="pa-l-ma-0 pa-l-py-1 pa-u-text-center">
+	<a href="#branded" class="pa-b-filter js-filter is-active">Branded</a>
+	<a href="#originals" class="pa-b-filter js-filter">Originals</a>
+</nav>
+
+<section id="branded" class="js-filter-target">
+
+	<?php $i = 0; do { ?>
+
+		<article><a href="#">
 		
-			<?php foreach ($items as $item) : ?>
-				<?php include('block-work-link.php'); ?>
-			<?php $work_index++; endforeach; ?>
+			<div class="pa-c-cover-media" style="min-height:400px">
+				<img src="//picsum.photos/1440/450/?image=<?php echo $i * 10 + 100 ?>" width="1440" height="450" />
+				<div class="pa-c-cover-media__content use-light-ui align-end">
+					<p><img src="//placehold.it/64x26/ffffff/dddddd" /></p>
+					<h1 class="pa-h1">Branded Project Title</h1>
+				</div>
+			</div>
+		
+		</a></article>
+
+	<?php $i++; } while ( $i < 6 )?>
+
+</section>
+
+<section id="originals" class="js-filter-target" style="display:none">
+
+<?php $i = 0; do { ?>
+
+	<article><a href="#">
 	
-			<div class="additional-posts last"></div>
-	
+		<div class="pa-c-cover-media" style="min-height:400px">
+			<img src="//picsum.photos/1440/450/?image=<?php echo $i * 2 + 50 ?>" width="1440" height="450" />
+			<div class="pa-c-cover-media__content use-light-ui align-end">
+				<p><img src="//placehold.it/64x26/ffffff/dddddd" /></p>
+				<h1 class="pa-h1">Original Project Title</h1>
+			</div>
 		</div>
 	
-	<?php endwhile; ?>
+	</a></article>
+
+<?php $i++; } while ( $i < 6 )?>
+
+</section>
+
 <?php get_footer(); ?>
