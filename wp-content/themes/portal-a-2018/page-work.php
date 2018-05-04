@@ -2,24 +2,88 @@
 /*
 TEMPLATE NAME: Work
 */
-?>
 
-<?php get_header(); ?>
+get_header();
 
-<div class="pa-c-hero">
-	
-	<div class="pa-c-hero__media pa-c-cover-media">
-		<img src="//picsum.photos/1440/800/" width="1440" height="800" />
-	</div>
+$hero = new WP_Query( array(
+	'post_type' => 'work',
+	'posts_per_page' => 1,
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'work-featured',
+			'field' => 'slug',
+			'terms' => array( 'work-page-hero' )
+		)
+	)
+) );
 
-	<div class="pa-c-hero__content">
-		<div class="pa-c-hero__title">
-			<img src="//placehold.it/64x26/ffffff/dddddd" />
-			<h1>Simone Giertz really wanted to be on HBO Westworld. Well, dreams come true.</h1>
+$branded = new WP_Query( array(
+	'post_type' => 'work',
+	'posts_per_page' => 500,
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'work-featured',
+			'field' => 'slug',
+			'terms' => array( 'work-page' )
+		),
+		array(
+			'taxonomy' => 'work_type',
+			'field' => 'slug',
+			'terms' => array( 'branded' )
+		),
+	)
+) ); 
+
+$originals = new WP_Query( array(
+	'post_type' => 'work',
+	'posts_per_page' => 500,
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'work-featured',
+			'field' => 'slug',
+			'terms' => array( 'work-page' )
+		),
+		array(
+			'taxonomy' => 'work_type',
+			'field' => 'slug',
+			'terms' => array( 'original' )
+		),
+	)
+) ); ?>
+
+
+<!-- page title for SEO, screen readers -->
+<h1 style="display:none"><?php the_title(); ?></h1>
+<!-- // -->
+
+
+<?php while ( $hero->have_posts() ) : $hero->the_post(); ?>
+
+	<div <?php post_class("pa-c-hero") ?> >
+		
+		<div class="pa-c-hero__media pa-c-cover-media">
+			<?php the_post_thumbnail( 'hero' ); ?>
 		</div>
-	</div>
 
-</div>
+		<div class="pa-c-hero__content">
+			<a href="<?php the_permalink() ?>" class="pa-u-scale-hover pa-u-transition-slow pa-u-display-block" title="<?php the_title(); ?>">
+				<div class="pa-c-hero__title">
+					<p>
+						<?php 
+						if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image', true ) ) {
+							echo wp_get_attachment_image( $client_image_id, 'full', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) );
+						} else {
+							echo get_post_meta( get_the_ID(), 'client', true );
+						} ?>
+					</p>
+					<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post_excerpt : get_the_title(); ?></h2>
+				</div>
+			</a>
+		</div>
+
+	</div>
+<?php endwhile; ?>
+
 
 <nav class="pa-l-ma-0 pa-l-py-1 pa-u-text-center">
 	<a href="#branded" class="pa-b-filter js-filter is-active">Branded</a>
@@ -28,41 +92,59 @@ TEMPLATE NAME: Work
 
 <section id="branded" class="js-filter-target">
 
-	<?php $i = 0; do { ?>
+	<?php while ( $branded->have_posts() ) : $branded->the_post(); ?>
 
-		<article><a href="#">
+		<article <?php post_class() ?> >
 		
-			<div class="pa-c-cover-media" style="min-height:400px">
-				<img src="//picsum.photos/1440/450/?image=<?php echo $i * 10 + 100 ?>" width="1440" height="450" />
-				<div class="pa-c-cover-media__content use-light-ui align-end">
-					<p><img src="//placehold.it/64x26/ffffff/dddddd" /></p>
-					<h1 class="pa-h1">Branded Project Title</h1>
+			<div class="pa-c-cover-media with-scrim" style="min-height:400px">
+				<?php the_post_thumbnail( 'hero' ) ?>
+				<div class="pa-c-cover-media__content use-light-ui align-end" style="max-width:750px">
+					<a href="<?php the_permalink() ?>" class="pa-u-scale-hover pa-u-transition-slow pa-u-display-block" title="<?php the_title(); ?>">
+						<p>
+							<?php 
+							if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image', true ) ) {
+								echo wp_get_attachment_image( $client_image_id, 'full', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) );
+							} else {
+								echo get_post_meta( get_the_ID(), 'client', true );
+							} ?>
+						</p>
+						<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post_excerpt : get_the_title(); ?></h2>
+					</a>
 				</div>
 			</div>
-		
-		</a></article>
+	
+		</article>
 
-	<?php $i++; } while ( $i < 6 )?>
+	<?php endwhile; ?>
 
 </section>
 
 <section id="originals" class="js-filter-target" style="display:none">
 
-<?php $i = 0; do { ?>
+	<?php while ( $originals->have_posts() ) : $originals->the_post(); ?>
 
-	<article><a href="#">
-	
-		<div class="pa-c-cover-media" style="min-height:400px">
-			<img src="//picsum.photos/1440/450/?image=<?php echo $i * 2 + 50 ?>" width="1440" height="450" />
-			<div class="pa-c-cover-media__content use-light-ui align-end">
-				<p><img src="//placehold.it/64x26/ffffff/dddddd" /></p>
-				<h1 class="pa-h1">Original Project Title</h1>
+		<article <?php post_class() ?> >
+		
+			<div class="pa-c-cover-media with-scrim" style="min-height:400px">
+				<?php the_post_thumbnail( 'hero' ) ?>
+				<div class="pa-c-cover-media__content use-light-ui align-end" style="max-width:750px">
+					<a href="<?php the_permalink() ?>" class="pa-u-scale-hover pa-u-transition-slow pa-u-display-block" title="<?php the_title(); ?>">
+						<p>
+							<?php 
+							if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image', true ) ) {
+								echo wp_get_attachment_image( $client_image_id, 'full', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) );
+							} else {
+								echo get_post_meta( get_the_ID(), 'client', true );
+							} ?>
+						</p>
+						<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post_excerpt : get_the_title(); ?></h2>
+					</a>
+				</div>
 			</div>
-		</div>
 	
-	</a></article>
+		</article>
 
-<?php $i++; } while ( $i < 6 )?>
+	<?php endwhile; wp_reset_query(); ?>
 
 </section>
 

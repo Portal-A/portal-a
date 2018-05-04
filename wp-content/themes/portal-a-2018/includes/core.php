@@ -30,6 +30,7 @@ function theme_setup() {
 		'gallery',
 		'caption',
 	) );
+	add_image_size( 'hero', 1440, 810, true );
 }
 
 

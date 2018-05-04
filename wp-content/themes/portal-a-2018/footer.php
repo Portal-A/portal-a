@@ -44,6 +44,43 @@
 </script>
 
 <?php wp_footer(); ?>
+
+<?php if ( defined( 'WP_DEBUG' ) && WP_DEBUG === TRUE ) : ?>
+
+	<script type="text/javascript">
+
+		/**
+		 * Replaces local image urls with ones from live site.
+		 */
+
+		var images = document.querySelectorAll('img.wp-post-image');
+		
+		images.forEach(function(img){
+
+			var siteUrl = "<?php echo site_url() ?>",
+				siteUrlRegexp = new RegExp( siteUrl, "g" ),
+				src = img.getAttribute("src"),
+				srcset = img.getAttribute("srcset");
+
+			if ( src.indexOf(siteUrl) > -1 ) {
+				console.log(src);
+				
+				src = src.replace( siteUrlRegexp, "https://www.portal-a.com");
+				img.setAttribute('src', src);
+
+				if ( srcset ) {
+					srcset = srcset.replace( siteUrlRegexp, "https://www.portal-a.com");
+					img.setAttribute('srcset', srcset);
+				}
+				
+			}
+
+		});
+
+	</script>
+
+<?php endif; ?>
+
 </body>
 
 </html>

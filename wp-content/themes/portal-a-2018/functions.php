@@ -10,6 +10,9 @@ define( 'PA_PATH',         dirname( __FILE__ ) . '/' );
 define( 'PA_INC',          PA_PATH . 'includes/' );
 define( 'PA_ASSETS',       PA_TEMPLATE_URL . '/assets/' );
 
+// Include Libraries
+require_once( PA_INC . 'extended-cpts/extended-cpts.php' );
+
 // Include required files
 require_once( PA_INC . 'core.php' );
 require_once( PA_INC . 'post-types.php' );

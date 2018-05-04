@@ -8,6 +8,17 @@
     height: 50vw;
     max-height: 75vh;
 
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0.42) 32%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.27) 88%, rgba(0, 0, 0, 0.55));
+    }
+
     &.is-fullscreen {
         height: 100vh;
         max-height: none;

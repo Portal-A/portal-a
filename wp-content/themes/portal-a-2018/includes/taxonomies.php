@@ -3,53 +3,30 @@
  * Taxonomies
  */
 
-add_action( 'init', 'cptui_register_my_taxes' );
+add_action( 'init', 'pa_register_taxos' );
 
-function cptui_register_my_taxes() {
+function pa_register_taxos() {
 
-	$labels = array(
-		"name" => __( 'Press Types', '' ),
-		"singular_name" => __( 'Press Type', '' ),
-		);
-
-	$args = array(
-		"label" => __( 'Press Types', '' ),
-		"labels" => $labels,
-		"public" => true,
-		"hierarchical" => 1,
-		"label" => "Press Types",
-		"show_ui" => true,
-		"query_var" => true,
-		"rewrite" => array( 'slug' => 'press-types', 'with_front' => false ),
+	register_extended_taxonomy( "press-types", "press", array(
 		"show_admin_column" => true,
-		"show_in_rest" => false,
-		"rest_base" => "",
-		"show_in_quick_edit" => false,
-	);
-	register_taxonomy( "press-types", array( "press" ), $args );
+	), array(
+		"plural" => "Press Types",
+		"singular" => "Press Types",
+		"slug" => "press-types",
+	) );
 
-
-
-	$labels = array(
-		"name" => __( 'Work Featured', '' ),
-		"singular_name" => __( 'Work Featured', '' ),
-		);
-
-	$args = array(
-		"label" => __( 'Work Featured', '' ),
-		"labels" => $labels,
-		"public" => true,
-		"hierarchical" => 1,
-		"label" => "Work Featured",
-		"show_ui" => true,
-		"query_var" => true,
-		"rewrite" => array( 'slug' => 'work-featured', 'with_front' => false ),
+	register_extended_taxonomy( "work-featured", "work", array(
 		"show_admin_column" => true,
-		"show_in_rest" => false,
-		"rest_base" => "",
-		"show_in_quick_edit" => false,
-	);
-	register_taxonomy( "work-featured", array( "work" ), $args );
+	), array(
+		"plural" => "Work Featured",
+		"singular" => "Work Featured",
+		"slug" => "work-featured",
+	) );	
+
+	register_extended_taxonomy( 'work_type', 'work', array(
+		"show_admin_column" => true,
+	) );
+
 
 // End cptui_register_my_taxes()
 }

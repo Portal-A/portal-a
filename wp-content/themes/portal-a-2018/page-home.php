@@ -46,7 +46,7 @@ $fileWEBM = get_field('webm_video_file');
 	
 	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media does-scale does-fade" >
 		<img src="//picsum.photos/800/500/" alt="" width="800" height="500"/>
-		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
+		<div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>
@@ -66,7 +66,7 @@ $fileWEBM = get_field('webm_video_file');
 
 	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-5-lg pa-c-cover-media does-scale does-fade">
 		<img src="//picsum.photos/800/550/" alt="" width="800" height="550"/>
-		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
+		<div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>
@@ -81,7 +81,7 @@ $fileWEBM = get_field('webm_video_file');
 
 	<a href="#" class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-c-cover-media does-scale does-fade">
 		<img src="//picsum.photos/800/600/" alt="" width="800" height="600"/>
-		<div class="pa-c-cover-media__content is-animated use-light-ui pa-u-text-center" style="width:100%">
+		<div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
 			<p class="pa-h4 pa-l-mt-0">Lorem ipsum dolor</p>
 		</div>
 	</a>
