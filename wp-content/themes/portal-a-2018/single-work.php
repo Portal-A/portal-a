@@ -1,161 +1,82 @@
-<?php get_header(); ?>
-<?php if (have_posts()) while (have_posts()) : the_post(); $original_post = $post->ID; ?>
-
-<div class="top clear">
-	<div class="left">
-		<h2 class="work-title">"<?= $post->post_title ?>"</h2>
-		<?= wpautop($post->post_content) ?>
-		<div class="work-meta">
-		<h3>Created for</h3>
-		<h4><?= get_post_meta($post->ID, 'client', TRUE) ?></h4>
-		</div>
-	</div>
-	<div class="right">
-		<div class="video">
-			<?php
-			$image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
-			$image_info = get_post($post->ID);
-			?>
-			
-			<?php if (get_post_meta($post->ID, 'video_embed_code', TRUE) != '') : ?>
-			
-			<div class="video-embed">
-				<?= get_post_meta($post->ID, 'video_embed_code', TRUE) ?>
-			</div>	
-			
-			<?php elseif($image != false) : ?>
-			
-			<img src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
-			
-			<?php endif; ?>
-		</div>
-	</div>
-</div>
-
-<div class="work-controls work-controls-top clear">
-	<?php $prev_post = get_adjacent_post(FALSE, '', TRUE); ?>
-	<?php if ($prev_post) : ?>
-	<a href="<?= get_permalink($prev_post->ID) ?>" class="previous-post">Previous Project</a>
-	<?php endif; ?>
-	<?php $next_post = get_adjacent_post(FALSE, '', FALSE); ?>
-	<?php if ($next_post) : ?>
-	<a href="<?= get_permalink($next_post->ID) ?>" class="next-post">Next Project</a>
-	<?php endif; ?>
-</div>
-
 <?php
+/*
+Single Work
+*/
 
-$presses = MRP_get_related_posts($post->ID, true, true, 'press');
-$middles_index = 1;
-
+get_header();
 ?>
 
-<?php if ($presses) : ?>
+	<?php while( have_posts() ) : the_post(); ?>
 
-<div class="middle clear presses">
-	<?php if (trim(get_post_meta($original_post, 'work_press_title', TRUE)) != ''): ?>
-		<h2><?= get_post_meta($original_post, 'work_press_title', TRUE); ?></h2>
-	<?php else: ?>
-		<h2>Press for "<?= $post->post_title ?>"</h2>
-	<?php endif; ?>
-	
-	<?php foreach($presses as $press) : ?>
-	<a href="<?= get_post_meta($press->ID, 'url', TRUE) ?>" target="_blank">
-	<div class="press <?= $middles_index % 2 == 0 ? 'even' : '' ?> <?= $middles_index % 4 == 0 ? 'last' : '' ?>">
-		<?php if (get_post_meta($press->ID, 'url', TRUE) != '') : ?>
-		<h5><span class="quotemark"></span><?= substr($press->post_content, 0, 150) ?>"</h5>
-		<h6>Read More...</h6>
-		<?php else : ?>
-		<h5><?= substr($press->post_content, 0, 150) ?>"</h5>
-		<?php endif; ?>
+	<article <?php post_class('pa-c-work pa-l-pb-5') ?>>
+
+		<div class="pa-c-hero">
 		
-		<?php
-		$image_middle = wp_get_attachment_image_src(get_post_meta($press->ID, 'publication_logo', TRUE), 'full-size');
-		$image_info_middle = get_post($press->ID);
-		?>
-		
-		<?php if ($image_middle) : ?>
-		<div class="logo">
-			<img src="<?= $image_middle[0] ?>" alt="<?= $image_info_middle->post_title ?>" title="<?= $image_info_middle->post_excerpt ?>" />
+			<div class="pa-c-hero__media pa-c-cover-media">
+				<?php the_post_thumbnail( 'hero' ); ?>
+			</div>
+
 		</div>
-		<?php else: ?>
-		<div class="logo">
-			<h4><?= $press->post_title ?></h4>
+
+		<div class="pa-c-work__client">
+			<?php 
+			if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image', true ) ) {
+				echo wp_get_attachment_image( $client_image_id, 'full' );
+			} else {
+				echo get_post_meta( get_the_ID(), 'client', true );
+			} ?>
 		</div>
-		<?php endif; ?>
+
+		<h1 class="pa-u-text-center pa-l-mt-0"><?php the_title(); ?></h1>
+
+		<div class="pa-c-block--wysiwyg">
+			<h2>We partnered with Simone Giertz to create a horrifying and hilarious robot. We partnered with Simone Giertz to create a horrifying and hilarious.</h2>
+		</div>
 		
-	</div>
-	</a>
-	<?php $middles_index++; endforeach; ?>
-</div>
+		<div class="pa-c-block--stats">
+			<div class="pa-c-block__stat">
+				<div class="pa-c-block__stat-figure pa-h2">130k</div>
+				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
+			</div>
+			<div class="pa-c-block__stat">
+				<div class="pa-c-block__stat-figure pa-h2">130k</div>
+				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
+			</div>
+			<div class="pa-c-block__stat">
+				<div class="pa-c-block__stat-figure pa-h2">130k</div>
+				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
+			</div>
+		</div>
 
-<?php endif; ?>
+		<div class="pa-c-block--embed">
+			<div class="pa-c-block__video pa-c-media--16x9">
+				<?php echo get_field( "video_embed_code" ); ?>
+			</div>
+		</div>
 
-<?php
+		<div class="pa-c-block--wysiwyg">
+			<div class="pa-c-block__title pa-h3">
+				The Process
+			</div>
+			<p>Simone’s Westworld robot created a huge disturbance in the digital community. In the first day of launch, the campaign hit 400k views across all the content. Both Simone and HBO Westworld social channels publicized the video with multitudes of social posts and assets.</p>
+			<p>Simone’s Westworld robot created a huge disturbance in the digital community. In the first day of launch, the campaign hit 400k views across all the content. </p>
+		</div>
 
-$video_index = 1;
-$videos = get_post_meta($post->ID, 'additional_video_embed_code', FALSE);
+		<div class="pa-c-block--images grid-2">
+			<div class="pa-c-block__images-item"><img src="//picsum.photos/1200/600" /></div>
+			<div class="pa-c-block__images-item"><img src="//picsum.photos/1200/600" /></div>
+		</div>
 
-?>
-<?php if (count($videos) > 0) : ?>
+		<div class="pa-c-block--blockquote">
+			<blockquote>
+				A hilariously horrible Westworld knockoff robot created by Simone Giertz...
+			</blockquote>
+			<cite>AdWeek</cite>
+		</div>
 
-<div class="middle clear videos">
 
-	<?php if (get_post_meta($original_post, 'videos_title', TRUE) != '') : ?>
-	<h2><?= get_post_meta($original_post, 'videos_title', TRUE) ?></h2>
-	<?php else : ?>
-	<h2>More Videos</h2>
-	<?php endif; ?>
+	</article>
 
-	<div class="clear">
-	<?php foreach($videos as $video) : ?>
-	<div class="video-embed additional-video-embed <?= $video_index % 2 == 0 ? 'last' : ''; ?>">
-		<?= $video ?>
-	</div>	
-	<?php $video_index++; endforeach; ?>
-	</div>
+	<?php endwhile; ?>
 
-</div>
-<?php endif; ?>
-
-<?php
-
-$photo_index = 1;
-$photos = get_post_meta($post->ID, 'additional_photo', FALSE);
-
-?>
-<?php if (count($photos) > 0) : ?>
-
-<div class="middle clear photos">
-
-	<?php if (get_post_meta($original_post, 'images_title', TRUE) != '') : ?>
-	<h2><?= get_post_meta($original_post, 'images_title', TRUE) ?></h2>
-	<?php else : ?>
-	<h2>More Photos</h2>
-	<?php endif; ?>
-
-	<div class="clear">
-	<?php foreach($photos as $photo) : ?>
-	<?php
-	$image = wp_get_attachment_image_src($photo, 'full-size');
-	if (isset($photo->ID))
-	{
-		$image_info = get_post($photo->ID);
-	}
-	?>
-	<div class="additional-photo <?= $photo_index % 2 == 0 ? 'last' : ''; ?>">
-		<img src="<?= $image[0] ?>" alt="<?= $image_info->post_title ?>" title="<?= $image_info->post_excerpt ?>" />
-	</div>	
-	<?php $photo_index++; endforeach; ?>
-	</div>
-
-</div>
-<?php endif; ?>
-
-<!-- 
-<div class="work-controls work-controls-bottom clear">
-</div>
--->
-
-<?php endwhile; ?>
 <?php get_footer(); ?>
