@@ -91,5 +91,11 @@
     blockquote {
         max-width: rem(800);
         margin: 0 auto;
+
+        cite {
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
