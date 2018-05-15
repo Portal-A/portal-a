@@ -29,8 +29,8 @@ get_header();
 
 		<h1 class="pa-u-text-center pa-l-mt-0"><?php the_title(); ?></h1>
 
-		<div class="pa-c-block--wysiwyg">
-			<h2>We partnered with Simone Giertz to create a horrifying and hilarious robot. We partnered with Simone Giertz to create a horrifying and hilarious.</h2>
+		<div class="pa-c-block--statement">
+			We partnered with Simone Giertz to create a horrifying and hilarious robot. We partnered with Simone Giertz to create a horrifying and hilarious.
 		</div>
 		
 		<div class="pa-c-block--stats">
@@ -49,8 +49,10 @@ get_header();
 		</div>
 
 		<div class="pa-c-block--embed">
-			<div class="pa-c-block__video pa-c-media--16x9">
-				<?php echo get_field( "video_embed_code" ); ?>
+			<div class="pa-c-block--embed-item">
+				<div class="pa-c-block__video pa-c-media--16x9">
+					<?php echo get_field( "video_embed_code" ); ?>
+				</div>
 			</div>
 		</div>
 
@@ -70,9 +72,26 @@ get_header();
 		<div class="pa-c-block--blockquote">
 			<blockquote>
 				A hilariously horrible Westworld knockoff robot created by Simone Giertz...
+				<cite>AdWeek</cite>
 			</blockquote>
-			<cite>AdWeek</cite>
 		</div>
+
+		<div class="pa-c-block--embed grid-2">
+			<div class="pa-c-block--embed-item">
+				<div class="pa-c-block__video pa-c-media--16x9">
+					<?php echo get_field( "video_embed_code" ); ?>
+				</div>
+			</div>
+			<div class="pa-c-block--embed-item">
+				<div class="pa-c-block__video pa-c-media--16x9">
+					<?php echo get_field( "video_embed_code" ); ?>
+				</div>
+			</div>
+		</div>
+
+		<p class="pa-u-text-center pa-l-mt-5">
+			<a href="<?php echo site_url('work/'); ?>" class="pa-b-button">View All Work</a>
+		</p>
 
 
 	</article>

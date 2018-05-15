@@ -75,6 +75,29 @@ strong {
     font-weight: 700;
 }
 
+blockquote {
+    font-weight: 700;
+    font-size: rem(35);
+    letter-spacing: 0.042em;
+    line-height: 1.285;
+    text-align: center;
+    &:before {
+        content: "\201C";
+        font-size: 56px;
+        display: block;
+        font-family: "AmericanTypewriter", serif;
+    }
+
+    cite {
+        display: block;
+        margin-top: 5rem;
+        font-size: rem(30);
+        line-height: 1;
+        font-weight: 300;
+        letter-spacing: 0;
+    }
+}
+
 ::selection {
     background: #42B1E1;
     color: #fff;

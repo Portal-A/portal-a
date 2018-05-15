@@ -1,0 +1,18 @@
+.pa-b-button {
+    -webkit-appearance: none;
+    border: 0;
+    border-radius: 2px;
+    background-color: $color-primary;
+    color: white;
+    font-size: rem(22);
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 0.01818;
+    text-align: center;
+    padding: 0.91em 1.64em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:hover {
+        background-color: darken($color-primary, 10%);
+    }
+}
