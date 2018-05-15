@@ -29,7 +29,9 @@ get_header();
 
 		<h1 class="pa-u-text-center pa-l-mt-0"><?php the_title(); ?></h1>
 
-		<div class="pa-c-block--statement">
+		<?php get_template_part( 'components/blocks' ); ?>
+
+		<!-- <div class="pa-c-block--statement">
 			We partnered with Simone Giertz to create a horrifying and hilarious robot. We partnered with Simone Giertz to create a horrifying and hilarious.
 		</div>
 		
@@ -48,10 +50,10 @@ get_header();
 			</div>
 		</div>
 
-		<div class="pa-c-block--embed">
-			<div class="pa-c-block--embed-item">
+		<div class="pa-c-block--embeds">
+			<div class="pa-c-block--embeds-item">
 				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php echo get_field( "video_embed_code" ); ?>
+					<?php //echo get_field( "video_embed_code" ); ?>
 				</div>
 			</div>
 		</div>
@@ -76,18 +78,18 @@ get_header();
 			</blockquote>
 		</div>
 
-		<div class="pa-c-block--embed grid-2">
-			<div class="pa-c-block--embed-item">
+		<div class="pa-c-block--embeds grid-2">
+			<div class="pa-c-block--embeds-item">
 				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php echo get_field( "video_embed_code" ); ?>
+					<?php //echo get_field( "video_embed_code" ); ?>
 				</div>
 			</div>
-			<div class="pa-c-block--embed-item">
+			<div class="pa-c-block--embeds-item">
 				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php echo get_field( "video_embed_code" ); ?>
+					<?php //echo get_field( "video_embed_code" ); ?>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<p class="pa-u-text-center pa-l-mt-5">
 			<a href="<?php echo site_url('work/'); ?>" class="pa-b-button">View All Work</a>

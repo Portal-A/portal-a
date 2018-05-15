@@ -1,5 +1,5 @@
 .pa-c-block--blockquote,
-.pa-c-block--embed,
+.pa-c-block--embeds,
 .pa-c-block--images,
 .pa-c-block--stats,
 .pa-c-block--wysiwyg {
@@ -47,7 +47,7 @@
     line-height: 1.5;
 }
 
-.pa-c-block--embed {
+.pa-c-block--embeds {
     max-width: 1180px;
     margin: 0 auto;
     display: flex;
@@ -55,7 +55,7 @@
     justify-content: space-between;
 }
 
-.pa-c-block--embed-item {
+.pa-c-block--embeds-item {
     flex: 100% 0 0;
     margin-bottom: 10px;
     .grid-2 & {
