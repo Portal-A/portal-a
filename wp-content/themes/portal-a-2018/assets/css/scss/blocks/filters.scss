@@ -1,7 +1,6 @@
 .#{$n}-b-filter {
-    display: inline-block;
-    font-size: rem(25);
-    letter-spacing: 0.028em;
+    @extend .pa-h4;
+    display: inline-block; 
     margin: 0 rem(50);
     &:hover, &.is-active {
         font-weight: 700;

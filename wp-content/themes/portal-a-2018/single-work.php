@@ -31,70 +31,9 @@ get_header();
 
 		<?php get_template_part( 'components/blocks' ); ?>
 
-		<!-- <div class="pa-c-block--statement">
-			We partnered with Simone Giertz to create a horrifying and hilarious robot. We partnered with Simone Giertz to create a horrifying and hilarious.
-		</div>
-		
-		<div class="pa-c-block--stats">
-			<div class="pa-c-block__stat">
-				<div class="pa-c-block__stat-figure pa-h2">130k</div>
-				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
-			</div>
-			<div class="pa-c-block__stat">
-				<div class="pa-c-block__stat-figure pa-h2">130k</div>
-				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
-			</div>
-			<div class="pa-c-block__stat">
-				<div class="pa-c-block__stat-figure pa-h2">130k</div>
-				<div class="pa-c-block__stat-text">Hero video views in the first week</div>
-			</div>
-		</div>
-
-		<div class="pa-c-block--embeds">
-			<div class="pa-c-block--embeds-item">
-				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php //echo get_field( "video_embed_code" ); ?>
-				</div>
-			</div>
-		</div>
-
-		<div class="pa-c-block--wysiwyg">
-			<div class="pa-c-block__title pa-h3">
-				The Process
-			</div>
-			<p>Simone’s Westworld robot created a huge disturbance in the digital community. In the first day of launch, the campaign hit 400k views across all the content. Both Simone and HBO Westworld social channels publicized the video with multitudes of social posts and assets.</p>
-			<p>Simone’s Westworld robot created a huge disturbance in the digital community. In the first day of launch, the campaign hit 400k views across all the content. </p>
-		</div>
-
-		<div class="pa-c-block--images grid-2">
-			<div class="pa-c-block__images-item"><img src="//picsum.photos/1200/600" /></div>
-			<div class="pa-c-block__images-item"><img src="//picsum.photos/1200/600" /></div>
-		</div>
-
-		<div class="pa-c-block--blockquote">
-			<blockquote>
-				A hilariously horrible Westworld knockoff robot created by Simone Giertz...
-				<cite>AdWeek</cite>
-			</blockquote>
-		</div>
-
-		<div class="pa-c-block--embeds grid-2">
-			<div class="pa-c-block--embeds-item">
-				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php //echo get_field( "video_embed_code" ); ?>
-				</div>
-			</div>
-			<div class="pa-c-block--embeds-item">
-				<div class="pa-c-block__video pa-c-media--16x9">
-					<?php //echo get_field( "video_embed_code" ); ?>
-				</div>
-			</div>
-		</div> -->
-
 		<p class="pa-u-text-center pa-l-mt-5">
 			<a href="<?php echo site_url('work/'); ?>" class="pa-b-button">View All Work</a>
 		</p>
-
 
 	</article>
 
