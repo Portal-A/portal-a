@@ -125,15 +125,23 @@ function pa_block_stats( $data ) {
 /**
  * wysiwyg
  * ------------------------------------------------------- */
-function pa_block_wysiwyg( $data ) {
+function pa_block_wysiwyg( $data, $options = array() ) {
+
+    $defaults = array(
+        'style' => ''
+    );
+
+    $options = array_merge( $defaults, $options );
 
     ob_start(); 
     ?>
 
-        <div class="pa-c-block--wysiwyg">
-			<div class="pa-c-block__title pa-h3">
-				<?php echo $data['title'] ?>
-			</div>
+        <div class="pa-c-block--wysiwyg" style="<?php echo $options['style'] ?>">
+            <?php if ( array_key_exists('title', $data) && $data['title'] !== '' ) : ?>
+                <div class="pa-c-block__title pa-h3">
+                    <?php echo $data['title'] ?>
+                </div>
+            <?php endif; ?>
 			<?php echo $data['wysiwyg'] ?>
 		</div>
 

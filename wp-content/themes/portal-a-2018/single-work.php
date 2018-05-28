@@ -16,18 +16,19 @@ get_header();
 				<?php the_post_thumbnail( 'hero' ); ?>
 			</div>
 
+			<div class="pa-c-hero__tab">
+				<?php 
+				if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image_dark', true ) ) {
+					echo wp_get_attachment_image( $client_image_id, 'full' );
+				} else {
+					echo get_post_meta( get_the_ID(), 'client', true );
+				} ?>
+			</div>
+			
 		</div>
 
-		<div class="pa-c-work__client">
-			<?php 
-			if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image_dark', true ) ) {
-				echo wp_get_attachment_image( $client_image_id, 'full' );
-			} else {
-				echo get_post_meta( get_the_ID(), 'client', true );
-			} ?>
-		</div>
 
-		<h1 class="pa-u-text-center pa-l-mt-0"><?php the_title(); ?></h1>
+		<h1 class="pa-u-text-center"><?php the_title(); ?></h1>
 
 		<?php get_template_part( 'components/blocks' ); ?>
 

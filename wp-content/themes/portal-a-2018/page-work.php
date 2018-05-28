@@ -85,7 +85,7 @@ $originals = new WP_Query( array(
 <?php endwhile; ?>
 
 
-<nav class="pa-l-ma-0 pa-l-py-1 pa-u-text-center">
+<nav class="pa-l-ma-0 pa-l-py-1 pa-u-text-center" aria-label="Work Type Navigation">
 	<a href="#branded" class="pa-b-filter js-filter is-active">Branded</a>
 	<a href="#originals" class="pa-b-filter js-filter">Originals</a>
 </nav>

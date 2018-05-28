@@ -27,11 +27,11 @@ $fileWEBM = get_field('webm_video_file');
 		<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
 			<a href="#the-latest" class="js-smooth-scroll pa-u-scale-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Scroll down</span>
-				<i class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></i>
+				<span class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></span>
 			</a>
 			<a href="#" class="pa-u-scale-hover pa-u-transition-fast">
 				<span class="pa-u-hide">Unmute video</span>
-				<i class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:2.25rem"></i>
+				<span class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:2.25rem"></span>
 			</a>
 		</div>
 		
@@ -69,7 +69,7 @@ $fileWEBM = get_field('webm_video_file');
 
 	<div class="pa-l-flex pa-l-flexbox pa-l-align-center pa-l-justify-center pa-l-span-6-md pa-l-span-3-lg pa-l-pa-2 pa-u-bg-primary pa-u-color-white">
 		<a href="#" class="pa-u-display-block pa-u-text-center pa-u-scale-hover pa-u-transition-slow">
-			<i class="pa-b-icon icon-hand-wave" aria-hidden="true" style="font-size:4rem"></i>
+			<span class="pa-b-icon icon-hand-wave" aria-hidden="true" style="font-size:4rem"></span>
 			<br/>
 			<p class="pa-h4 pa-u-weight-bold">NOW HIRING!</p>
 		</a>
