@@ -35,7 +35,7 @@ function theme_setup() {
 
 
 function scripts() {
-    wp_enqueue_script('theme_scripts', PA_ASSETS . 'js/scripts.js', 'jquery', '', true);
+    wp_enqueue_script('theme_scripts', PA_ASSETS . 'js/scripts.js', '', '', true);
     wp_deregister_script('comment-reply');
 }
 

@@ -1,21 +1,20 @@
+
 /**
  * Smooth Scrolling
  */
 
-(function(window, $){
+(function(window){
 
-    $('.js-smooth-scroll').each(function(){
+    document.querySelectorAll('.js-smooth-scroll').forEach(function(el){
 
-        $el = $(this);
-        
-        $el.click(function(e){
+        el.addEventListener('click', function(e){
             e.preventDefault();
             
-            var target = $el.attr('href') || $el.data('target');
+            var target = el.getAttribute('href') || el.getAttribute('data-target');
 
-            $('html,body').animate({scrollTop: $(target).offset().top + 'px'});
+            PORTALA.scrollTo( document.querySelector(target).offsetTop );
         });
 
     });
 
-})(this, jQuery);
+})(this);

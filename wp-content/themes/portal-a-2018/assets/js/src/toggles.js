@@ -1,31 +1,33 @@
+
 /**
  * Toggles
  */
 
-(function(window, $){
+(function(window){
 
-    $('.js-filter').each(function(){
+    document.querySelectorAll('.js-filter').forEach(function(el){
 
-        var $el = $(this),
-            $sibs = $el.siblings('.js-filter'),
-            activeClass = $el.data('active-class') || 'is-active';
+        var sibs = PORTALA.siblings( el, '.js-filter' ),
+            activeClass = el.getAttribute('data-active-class') || 'is-active';
         
-        $el.click(function(e){
+            el.addEventListener('click', function(e){
             e.preventDefault();
             
-            var target = $el.attr('href') || $el.data('target'),
-                $target = $(target);
+            var target = el.getAttribute('href') || el.getAttribute('data-target'),
+                targetEl = document.querySelector(target);
 
-            $el.addClass(activeClass);
-            $sibs.removeClass(activeClass);
+            el.classList.add(activeClass);
+            sibs.forEach(function(sib){
+                sib.classList.remove(activeClass);
+            });
 
-            $target
-                .show()
-                .siblings('.js-filter-target')
-                    .hide();
+            targetEl.style.display = 'block';
+            PORTALA.siblings(targetEl, '.js-filter-target').forEach(function(sib){
+                sib.style.display = 'none';
+            });
 
         });
 
     });
 
-})(this, jQuery);
+})(this);

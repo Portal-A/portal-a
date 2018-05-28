@@ -37,12 +37,6 @@
 
 </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script>
-	window.jQuery || document.write(
-		'<script src="<?php echo PA_ASSETS . "js/jquery-1.8.0.min.js"; ?>"><\/script>')
-</script>
-
 <?php wp_footer(); ?>
 
 <?php if ( defined( 'WP_DEBUG' ) && WP_DEBUG === TRUE ) : ?>

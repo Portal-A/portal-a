@@ -1,15 +1,22 @@
-.pa-b-logo {
+.pa-c-logo {
     display: block;
     width: 90px;
     height: 90px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    &:hover, &:focus {
+        .pa-c-logo__static { display: none; }
+        .pa-c-logo__active { display: block; }
+    }
 
     .pa-c-masthead & {
         flex-shrink: 0;
         margin-right: $container-padding;
     }
+    
+    .pa-c-logo__static { display: block; }
+    .pa-c-logo__active { display: none; }
     
     img {
         position: absolute;
