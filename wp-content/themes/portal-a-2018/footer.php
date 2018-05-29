@@ -47,7 +47,7 @@
 		 * Replaces local image urls with ones from live site.
 		 */
 
-		var images = document.querySelectorAll('img.wp-post-image');
+		var images = document.querySelectorAll('.pa-c-profile img');
 		
 		images.forEach(function(img){
 
@@ -56,9 +56,7 @@
 				src = img.getAttribute("src"),
 				srcset = img.getAttribute("srcset");
 
-			if ( src.indexOf(siteUrl) > -1 ) {
-				console.log(src);
-				
+			if ( src.indexOf(siteUrl) > -1 ) {				
 				src = src.replace( siteUrlRegexp, "https://www.portal-a.com");
 				img.setAttribute('src', src);
 

@@ -7,7 +7,8 @@ $flexbox-classes: (
     'flex-no-shrink' : ( flex-shrink: 0 ),
     'align-center' : ( align-items: center ),
     'justify-center' : ( justify-content: center ),
-    'justify-space-between' : ( justify-content: space-between )
+    'justify-space-between' : ( justify-content: space-between ),
+    'with-gutters' : ( margin-left: -$gutter/2, margin-right: -$gutter/2 )
 
 );
 

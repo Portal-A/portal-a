@@ -99,17 +99,18 @@ function cptui_register_my_cpts() {
 		"public" => true,
 		"show_ui" => true,
 		"show_in_rest" => false,
+		"publicly_queryable" => false,
 		"rest_base" => "",
 		"has_archive" => false,
 		"show_in_menu" => true,
-		"exclude_from_search" => false,
+		"exclude_from_search" => true,
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"rewrite" => true,
 		"query_var" => true,
 				
-		"supports" => array( "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes" ),				
+		"supports" => array( "title", "editor", "excerpt", "custom-fields", "thumbnail", "page-attributes" ),				
 	);
 	register_post_type( "team", $args );
 

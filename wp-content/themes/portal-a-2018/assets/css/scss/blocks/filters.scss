@@ -2,8 +2,9 @@
     @extend .pa-h4;
     display: inline-block; 
     margin: 0 rem(50);
+    transition: $transition-fast;
     &:hover, &.is-active {
-        font-weight: 700;
+        color: $color-primary;
     }
     &.is-active {
         cursor: default;

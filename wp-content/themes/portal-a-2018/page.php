@@ -1,7 +1,7 @@
 <?php
-/*
-Single Work
-*/
+/**
+ * Page
+ */
 
 get_header();
 ?>
