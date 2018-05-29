@@ -6,7 +6,7 @@
 /**
  * blockquote
  * ------------------------------------------------------- */
-function pa_block_blockquote( $data ) {
+function pa_block_blockquote( $data, $options = array(), $return = false ) {
 
     ob_start(); 
     ?>
@@ -24,13 +24,18 @@ function pa_block_blockquote( $data ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }
 
 /**
  * embeds
  * ------------------------------------------------------- */
-function pa_block_embeds( $data ) {
+function pa_block_embeds( $data, $options = array(), $return = false ) {
 
     ob_start(); 
     ?>
@@ -51,13 +56,18 @@ function pa_block_embeds( $data ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }
 
 /**
  * images
  * ------------------------------------------------------- */
-function pa_block_images( $data ) {
+function pa_block_images( $data, $options = array(), $return = false ) {
 
     ob_start(); 
     ?>
@@ -76,13 +86,18 @@ function pa_block_images( $data ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }
 
 /**
  * statement
  * ------------------------------------------------------- */
-function pa_block_statement( $data ) {
+function pa_block_statement( $data, $options = array(), $return = false ) {
 
     ob_start(); 
     ?>
@@ -93,13 +108,18 @@ function pa_block_statement( $data ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }
 
 /**
  * stats
  * ------------------------------------------------------- */
-function pa_block_stats( $data ) {
+function pa_block_stats( $data, $options = array(), $return = false ) {
 
     ob_start(); 
     ?>
@@ -119,13 +139,18 @@ function pa_block_stats( $data ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }
 
 /**
  * wysiwyg
  * ------------------------------------------------------- */
-function pa_block_wysiwyg( $data, $options = array() ) {
+function pa_block_wysiwyg( $data, $options = array(), $return = false ) {
 
     $defaults = array(
         'style' => ''
@@ -147,5 +172,10 @@ function pa_block_wysiwyg( $data, $options = array() ) {
 
     <?php
     $html = ob_get_clean();
-    echo $html;
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
 }

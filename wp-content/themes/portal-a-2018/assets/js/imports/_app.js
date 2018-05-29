@@ -5,97 +5,157 @@
 
 (function(window){
 
-    var PORTALA = function() {
+    var APP = function() {
     
         this.scrollCallbacks = [];
 
+        this.init();
+
     };
 
-    PORTALA.prototype.onScroll = function(fn){
+    APP.prototype.init = function() {
+
+        var that = this;
+
+        if ( this.isRedirect() ) {
+
+            this.handleRedirect();
+
+        }
+
+        if ( window.history && document.querySelector('[data-load-content]') ) {
+
+            window.onpopstate = function(event) {
+                if ( event.state ) {
+                    var redirect = event.state.type + '-' + event.state.id;
+                    that.handleRedirect( '?pa_redirect_to=' + redirect );
+                }
+            };
+
+        }
+    };
+
+    APP.prototype.onScroll = function(fn){
         if (typeof fn == "function") {
             this.scrollCallbacks.push(fn);
         }
     };
 
-    PORTALA.prototype.scrollTo = function( to, duration, callback ){
-
-        var that = this,
-            start = position(),
-            change = to - start,
-            currentTime = 0,
-            increment = 20,
-            requestFrame =  window.requestAnimationFrame ||
-                            window.webkitRequestAnimationFrame ||
-                            window.mozRequestAnimationFrame ||
-                            window.msRequestAnimationFrame ||
-                            window.oRequestAnimationFrame ||
-                            // IE Fallback, you can even fallback to onscroll
-                            function (callback) {
-                                window.setTimeout(callback, 1000 / 60);
-                            };
-    
-        duration = (typeof (duration) === 'undefined') ? 500 : duration;
-
-        animateScroll();
-
-        // because it's so fucking difficult to detect the scrolling element, just move them all
-        function move(amount) {
-            document.documentElement.scrollTop = amount;
-            document.body.parentNode.scrollTop = amount;
-            document.body.scrollTop = amount;
-        }
-
-        function position() {
-            return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
-        }
-
-        function animateScroll() {
-            // increment the time
-            currentTime += increment;
-            // find the value with the quadratic in-out easing function
-            var val = Math.easeInOutQuad(currentTime, start, change, duration);
-            // move the document.body
-            move(val);
-            // do the animation unless its over
-            if (currentTime < duration) {
-                requestFrame(animateScroll);
-            } 
-            else {
-                if (callback && typeof (callback) === 'function') {
-                    // the animation is done so lets callback
-                    callback();
-                }
-            }
-        };
-        
+    APP.prototype.isRedirect = function() {
+        return location.search.indexOf('pa_redirect_to') > -1;
     };
 
-    PORTALA.prototype.siblings = function(el, selector) {
+    APP.prototype.parseQuery = function(queryStr) {
+        var query = queryStr.substr(1).split('&'),
+            queryObj = {};
 
-        return Array.prototype.filter.call(el.parentNode.children, function(child){
-            if ( child !== el ) {
-                if ( selector ) {
-                    // if selector is a class
-                    if ( selector[0] === '.' ) {
-                        return child.classList.contains(selector.substr(1));
-                    } 
-                    // if selector is an ID
-                    else if ( selector[0] === '#' ) {
-                        return child.getAttribute('id') === selector.substr(1);
-                    }
-                    else {
-                        return child;
-                    }
-                } else {
-                    return child;
-                }
-            } else {
-                return false;
-            }
+        query.forEach(function(keyval){
+            var key = keyval.split('=')[0],
+                val = keyval.split('=')[1];
+            
+            queryObj[key] = val;
         });
 
+        return queryObj;
     };
 
-    window.PORTALA = new PORTALA();
+    APP.prototype.handleRedirect = function( query ) {
+        
+        query = query ? query : location.search;
+        query = this.parseQuery(query);
+        
+        if ( ! query.pa_redirect_to ) 
+            return;
+
+        var targetEl = document.getElementById( query.pa_redirect_to );
+
+        if ( ! targetEl ) 
+            return;
+
+        this.activateViewToggle( document.querySelector('.js-view-toggle[href="#' + targetEl.getAttribute('id') + '"]') );
+        this.activateView(targetEl);
+    };
+
+    APP.prototype.activateView = function( viewEl ) {
+
+        var template = viewEl.querySelector('script[type="html/mustache-template"]'),
+            loadContent = parseInt( viewEl.getAttribute('data-load-content') ),
+            dataViewTop = viewEl.getAttribute('data-view-top'),
+            viewTop;
+
+        // Show view and hide others
+
+        viewEl.style.display = 'block';
+        UTIL.siblings(viewEl, '.js-view-target').forEach(function(sib){
+            sib.style.display = 'none';
+        });
+
+        // Scroll to appropriate part of the page
+
+        viewTop = viewEl.offsetTop;
+
+        if ( dataViewTop ) {
+            var viewTopEl = document.querySelector(dataViewTop);
+            viewTop = viewTopEl ? viewTopEl.offsetTop : viewTop;
+        }
+        
+        UTIL.scrollTo( viewTop );
+
+        // Check for template
+
+        if ( ! template )
+            return;
+        
+        template = template.innerText;
+
+        // fetch content
+
+        if ( loadContent ) {
+
+            viewEl.classList.add('is-loading');
+
+            fetch( PA.api + 'pages/' + loadContent )
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    targetLoaded = true;
+                    viewEl.classList.remove('is-loading');
+                    UTIL.scrollTo( viewTop );
+                    handleResponse(data);
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+
+        }
+
+        function handleResponse(data) {
+    
+            var html = Mustache.render( template, data );
+            viewEl.innerHTML = html;
+
+            if ( window.history ) {
+                history.pushState( data, '', data.link );
+            }
+    
+        }
+
+    };
+
+    APP.prototype.activateViewToggle = function( toggleEl, activeClass ) {
+
+        activeClass = activeClass ? activeClass : 'is-active';
+
+        if ( ! toggleEl )
+            return;
+
+        toggleEl.classList.add(activeClass);
+        UTIL.siblings( toggleEl, '.js-view-toggle' ).forEach(function(sib){
+            sib.classList.remove(activeClass);
+        });
+    };
+
+    window.APP = new APP();
 
 }(this));

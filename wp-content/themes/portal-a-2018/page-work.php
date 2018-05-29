@@ -85,12 +85,12 @@ $originals = new WP_Query( array(
 <?php endwhile; ?>
 
 
-<nav class="pa-l-ma-0 pa-l-py-1 pa-u-text-center" aria-label="Work Type Navigation">
-	<a href="#branded" class="pa-b-filter js-filter is-active">Branded</a>
-	<a href="#originals" class="pa-b-filter js-filter">Originals</a>
+<nav id="view-nav" class="pa-l-ma-0 pa-l-py-1 pa-u-text-center" aria-label="Work Type Navigation">
+	<a href="#branded" class="pa-b-filter js-view-toggle is-active">Branded</a>
+	<a href="#originals" class="pa-b-filter js-view-toggle">Originals</a>
 </nav>
 
-<section id="branded" class="js-filter-target">
+<section id="branded" data-view-top="#view-nav" class="js-view-target">
 
 	<?php while ( $branded->have_posts() ) : $branded->the_post(); ?>
 
@@ -119,7 +119,7 @@ $originals = new WP_Query( array(
 
 </section>
 
-<section id="originals" class="js-filter-target" style="display:none">
+<section id="originals" data-view-top="#view-nav" class="js-view-target" style="display:none">
 
 	<?php while ( $originals->have_posts() ) : $originals->the_post(); ?>
 

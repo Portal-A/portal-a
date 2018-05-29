@@ -12,7 +12,9 @@
             
             var target = el.getAttribute('href') || el.getAttribute('data-target');
 
-            PORTALA.scrollTo( document.querySelector(target).offsetTop );
+            if ( target ) {
+                UTIL.scrollTo( document.querySelector(target).offsetTop );
+            }
         });
 
     });

@@ -19,6 +19,8 @@ require_once( PA_INC . 'post-types.php' );
 require_once( PA_INC . 'taxonomies.php' );
 require_once( PA_INC . 'helpers.php' );
 require_once( PA_INC . 'component-functions.php' );
+require_once( PA_INC . 'api.php' );
 
 // Initialize functions
 PA\Core\setup();
+PA\API\setup();
