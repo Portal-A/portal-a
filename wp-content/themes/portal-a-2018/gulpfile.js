@@ -39,10 +39,10 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src(['assets/js/src/*.js'])
+  return gulp.src(['assets/js/components/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
-		.pipe(addsrc.prepend('assets/js/includes/*.js'))
+		.pipe(addsrc.prepend('assets/js/imports/*.js'))
 		.pipe(sourcemaps.init())
 		.pipe(concat('scripts.js'))
 		.pipe(concat.header(banner, { pkg : pkg }))

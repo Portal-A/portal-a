@@ -53,12 +53,15 @@
 
             if ( that.loadContent && ! that.targetLoaded ) {
 
+                that.targetEl.classList.add('is-loading');
+
                 fetch( PA.api + 'pages/' + that.loadContent )
                     .then(function(response){
                         return response.json();
                     })
                     .then(function(data){
                         that.handleResponse(data);
+                        that.targetEl.classList.remove('is-loading');
                     })
                     .catch(function(error){
                         console.log(error);

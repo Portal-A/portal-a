@@ -3,7 +3,7 @@
 
 	<head>
 		
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<?php wp_head(); ?>
 		
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('title'); ?> Feed" href="<?= get_bloginfo('rss2_url') ?>" />
@@ -26,6 +26,9 @@
 			<noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=359345&fmt=gif" /> </noscript>
 
 		<?php endif; ?>
+
+		<!-- Fetch Polyfill -->
+		<script>window.fetch || document.write('<script src="<?php echo PA_ASSETS . 'js/polyfills/fetch.polyfill.js' ?>"><\/script>')</script>
 
 	</head>
 
