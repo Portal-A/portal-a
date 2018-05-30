@@ -1,6 +1,6 @@
 
 /**
- * Initialize
+ * Primary APP constructor.
  */
 
 (function(window){
@@ -13,38 +13,62 @@
 
     };
 
+    /**
+     * Initialize
+     */
     APP.prototype.init = function() {
 
         var that = this;
 
-        if ( this.isRedirect() ) {
-
-            this.handleRedirect();
-
+        // check if a specific view is being queried
+        if ( this.hasViewQuery() ) {
+            // if so, load it up
+            this.handleViewQuery();
         }
 
         if ( window.history && document.querySelector('[data-load-content]') ) {
 
+            // handle use of back/forward browser buttons
             window.onpopstate = function(event) {
+
+                // has state, load up the appropriate view
                 if ( event.state ) {
                     var redirect = event.state.type + '-' + event.state.id;
-                    that.handleRedirect( '?pa_redirect_to=' + redirect );
+                    that.handleViewQuery( '?active_view=' + redirect );
+                } 
+
+                // no state, scroll top of current page
+                else {
+                    UTIL.scrollTo(0);
                 }
             };
 
         }
     };
 
+    /**
+     * Adds a function to be run when the browser scrolls
+     * 
+     * @param {function} fn any valid function
+     */
     APP.prototype.onScroll = function(fn){
         if (typeof fn == "function") {
             this.scrollCallbacks.push(fn);
         }
     };
 
-    APP.prototype.isRedirect = function() {
-        return location.search.indexOf('pa_redirect_to') > -1;
+    /**
+     * Check for a view query
+     */
+    APP.prototype.hasViewQuery = function() {
+        return location.search.indexOf('active_view') > -1;
     };
 
+    /**
+     * Parse query string key/value pairs into an object
+     * 
+     * @param {string} queryStr a valid URL query string
+     */
     APP.prototype.parseQuery = function(queryStr) {
         var query = queryStr.substr(1).split('&'),
             queryObj = {};
@@ -59,15 +83,20 @@
         return queryObj;
     };
 
-    APP.prototype.handleRedirect = function( query ) {
+    /**
+     * Activate a view toggle and view based on a query string
+     * 
+     * @param {string} query a valid URL query string containing an 'active_view' key
+     */
+    APP.prototype.handleViewQuery = function( query ) {
         
         query = query ? query : location.search;
         query = this.parseQuery(query);
         
-        if ( ! query.pa_redirect_to ) 
+        if ( ! query.active_view ) 
             return;
 
-        var targetEl = document.getElementById( query.pa_redirect_to );
+        var targetEl = document.getElementById( query.active_view );
 
         if ( ! targetEl ) 
             return;
@@ -76,6 +105,11 @@
         this.activateView(targetEl);
     };
 
+    /**
+     * Activate a view
+     * 
+     * @param {DOM element} viewEl 
+     */
     APP.prototype.activateView = function( viewEl ) {
 
         var template = viewEl.querySelector('script[type="html/mustache-template"]'),
@@ -143,6 +177,12 @@
 
     };
 
+    /**
+     * Activate a view toggle
+     * 
+     * @param {DOM element} toggleEl 
+     * @param {string} activeClass 
+     */
     APP.prototype.activateViewToggle = function( toggleEl, activeClass ) {
 
         activeClass = activeClass ? activeClass : 'is-active';
@@ -156,6 +196,7 @@
         });
     };
 
+    // Globalize the APP object
     window.APP = new APP();
 
 }(this));
