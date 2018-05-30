@@ -67,7 +67,7 @@ get_header();
 
             <?php while ( $children->have_posts() ) : $children->the_post(); ?>
 
-                <article id="<?php echo "{$post->post_type}-{$post->ID}" ?>" class="js-view-target" data-view-top="#view-nav" data-load-content="<?php echo $post->ID; ?>" style="display:none" >
+                <article id="<?php echo "{$post->post_type}-{$post->ID}" ?>" class="js-view-target pa-l-mb-4" data-view-top="#view-nav" data-load-content="<?php echo $post->ID; ?>" style="display:none" >
 
                     <?php get_template_part( 'components/template', $post->post_name ); ?>
 

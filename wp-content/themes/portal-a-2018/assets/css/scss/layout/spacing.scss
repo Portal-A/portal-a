@@ -10,6 +10,11 @@
 .#{$n}-l-my-half { margin-top: $spacer/2 !important; margin-bottom: $spacer/2 !important; }
 .#{$n}-l-py-half { padding-top: $spacer/2 !important; padding-bottom: $spacer/2 !important; }
 
+.#{$n}-l-mt-gutter { margin-top: $gutter !important; }
+.#{$n}-l-mb-gutter { margin-bottom: $gutter !important; }
+.#{$n}-l-my-gutter { margin-top: $gutter !important; margin-bottom: $gutter !important; }
+.#{$n}-l-py-gutter { padding-top: $gutter !important; padding-bottom: $gutter !important; }
+
 @for $i from 0 through 6 {
     $val: $spacer * $i;
     .#{$n}-l-ma-#{$i} { margin: $val !important; }

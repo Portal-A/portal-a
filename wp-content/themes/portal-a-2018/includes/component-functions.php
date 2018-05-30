@@ -208,6 +208,80 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
 }
 
 /**
+ * tiles
+ * ------------------------------------------------------- */
+function pa_block_tiles( $data, $options = array(), $return = false ) {
+
+    if ( empty( $data['tiles'] ) )
+        return;
+
+    $defaults = array(
+        'style' => ''
+    );
+
+    $options = array_merge( $defaults, $options );
+
+    ob_start(); 
+    ?>
+
+        <div class="pa-c-block--tiles" style="<?php echo $options['style'] ?>">
+
+            <div class="pa-l-container">
+            
+                <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
+
+                    <?php foreach ( $data['tiles'] as $tile ) :
+                        
+                        $span = $tile['width'] === 'third' ? 'pa-l-span-4-md' : 'pa-l-span-12';
+                        $url = $tile['url'];
+                        $tag = $url ? 'a' : 'div';
+                        $href = $url ? "href=\"$url\"" : ""; ?>
+
+                        <?php if ( $tile['type'] === 'image' ) :
+                        
+                            $padding = $tile['width'] === 'third' ? 'padding-top: 100%' : 'padding-top: 33.333%' ?>
+
+                            <?php echo "<$tag $href class=\"pa-l-flex $span pa-l-mb-gutter\">" ?>
+                                <div class="pa-c-cover-media" style="<?php echo $padding ?>">
+                                    <?php echo wp_get_attachment_image( $tile['image'], 'large' ); ?>
+                                </div>
+                            <?php echo "</$tag>" ?>
+
+                        <?php else : ?>
+
+                            <?php echo "<$tag $href class=\"pa-l-flex $span pa-l-flexbox pa-l-flex-wrap pa-l-justify-space-between pa-u-text-center pa-l-pa-1 pa-l-mb-gutter pa-u-bg-primary pa-u-color-white\">" ?>
+                                <div class="pa-u-center pa-l-mt-nudge" style="width:100%">
+                                    <span class="pa-b-icon icon-left-quote" aria-hidden="true"></span>
+                                    <p class="pa-u-weight-bold pa-l-px-1">
+                                        <?php echo $tile['text'] ?>
+                                    </p>
+                                </div>
+                                <div class="pa-h3 pa-u-center pa-l-align-self-end" style="font-weight:300">
+                                    <?php echo $tile['source'] ?>
+                                </div>
+                            <?php echo "</$tag>" ?>
+
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+		</div>
+
+    <?php
+    $html = ob_get_clean();
+    
+    if ( $return ) :
+        return $html;
+    else :
+        echo $html;
+    endif;
+}
+
+/**
  * wysiwyg
  * ------------------------------------------------------- */
 function pa_block_wysiwyg( $data, $options = array(), $return = false ) {

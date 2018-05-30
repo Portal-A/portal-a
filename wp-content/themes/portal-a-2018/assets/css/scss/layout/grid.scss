@@ -1,3 +1,11 @@
+.#{$n}-l-container {
+    max-width: calc( #{$container-width} + #{$container-padding} + #{$container-padding} );
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+}
+
 .#{$n}-l-flex[class*="#{$n}-l-span-"] {
     flex-basis: 100%;
     flex-grow: 0;
