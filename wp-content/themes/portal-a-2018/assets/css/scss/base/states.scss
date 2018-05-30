@@ -1,5 +1,5 @@
 .animate-out {
-    transition: $transition-normal;
+    transition: all 600ms $easeInOutCubic;
     opacity: 0 !important;
     transform: translate3d(0,100px,0) !important;
     // @keyframes animateOut {
@@ -16,7 +16,7 @@
 }
 
 .animate-in {
-    transition: $transition-normal;
+    transition: all 600ms $easeInOutCubic;
     opacity: 1 !important;
     transform: translate3d(0,0,0) !important;
     // @keyframes animateIn {

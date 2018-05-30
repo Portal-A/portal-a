@@ -116,6 +116,8 @@
             viewElSiblings = UTIL.siblings(viewEl, '.js-view-target'),
             loadContent = parseInt( viewEl.getAttribute('data-load-content') ),
             dataViewTop = viewEl.getAttribute('data-view-top'),
+            transitionTime = 600,
+            timeout,
             viewTop;
 
         // animate out the current view
@@ -126,6 +128,12 @@
 
         // if template exists, fetch content and load it
         if ( template ) {
+
+            // set a timeout which is used later to make sure
+            // the previous view had time to transition out.
+            timeout = setTimeout(function(){
+                timeout = 0;
+            }, transitionTime);
         
             // set template content
             template = template.innerText;
@@ -138,7 +146,7 @@
                 .then(function(data){
                     targetLoaded = true;
                     viewEl.setAttribute('data-url', data.link);
-                    __handleResponse(data);
+                    _handleResponse(data);
                 })
                 .catch(function(error){
                     console.log(error);
@@ -148,27 +156,50 @@
 
         // if template has already been loaded, just switch the view
         else {
+
+            // switch view after previous view has transitioned out
             setTimeout(function(){
-                __switchView({
+                
+                _switchView({
                     link: viewEl.getAttribute('data-url')
                 });
-            }, 500);
+
+            }, transitionTime);
+
         }
 
 
         // ajax response handler
-        function __handleResponse(data) {
+        function _handleResponse(data) {
 
+            // render template and populate HTML
             var html = Mustache.render( template, data );
-
             viewEl.innerHTML = html;
 
-            __switchView(data);
+            // run _switchView once the timeout is cleared
+            __checkTimeout( _switchView );
+
+            // checks the 'timeout' variable
+            function __checkTimeout(fn) {
+                
+                // run function if timeout is 0
+                if ( timeout === 0 ) {
+                    fn(data);
+                } 
+                
+                // if not 0, loop back and check again in 100ms
+                else {
+                    setTimeout(function(){
+                        __checkTimeout( fn );
+                    }, 100);
+                }
+
+            }
 
         }
 
         // Show view and hide others
-        function __switchView(data) {
+        function _switchView(data) {
 
             // update URL
             if ( window.history ) {
