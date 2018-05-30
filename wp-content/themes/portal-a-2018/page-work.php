@@ -86,8 +86,8 @@ $originals = new WP_Query( array(
 
 
 <nav id="view-nav" class="pa-l-ma-0 pa-l-py-1 pa-u-text-center" aria-label="Work Type Navigation">
-	<a href="#branded" class="pa-b-filter js-view-toggle is-active">Branded</a>
-	<a href="#originals" class="pa-b-filter js-view-toggle">Originals</a>
+	<a href="#branded" class="pa-b-view-toggle js-view-toggle is-active">Branded</a>
+	<a href="#originals" class="pa-b-view-toggle js-view-toggle">Originals</a>
 </nav>
 
 <section id="branded" data-view-top="#view-nav" class="js-view-target">

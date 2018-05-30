@@ -101,8 +101,10 @@
         if ( ! targetEl ) 
             return;
 
-        this.activateViewToggle( document.querySelector('.js-view-toggle[href="#' + targetEl.getAttribute('id') + '"]') );
-        this.activateView(targetEl);
+        var toggleEl = document.querySelector('.js-view-toggle[href="#' + targetEl.getAttribute('id') + '"]');
+
+        this.activateViewToggle( toggleEl );
+        this.activateView( targetEl , toggleEl );
     };
 
     /**
@@ -110,7 +112,7 @@
      * 
      * @param {DOM element} viewEl 
      */
-    APP.prototype.activateView = function( viewEl ) {
+    APP.prototype.activateView = function( viewEl, viewToggleEl ) {
 
         var template = viewEl.querySelector('script[type="html/mustache-template"]'),
             viewElSiblings = UTIL.siblings(viewEl, '.js-view-target'),
@@ -128,6 +130,9 @@
 
         // if template exists, fetch content and load it
         if ( template ) {
+
+            // set loading state on toggle
+            viewToggleEl.classList.add('is-loading');
 
             // set a timeout which is used later to make sure
             // the previous view had time to transition out.
@@ -200,6 +205,8 @@
 
         // Show view and hide others
         function _switchView(data) {
+
+            viewToggleEl.classList.remove('is-loading');
 
             // update URL
             if ( window.history ) {

@@ -30,7 +30,7 @@
             e.preventDefault();
 
             APP.activateViewToggle( that.el, that.activeClass );
-            APP.activateView( that.targetEl );
+            APP.activateView( that.targetEl, that.el );
 
         });
     };
