@@ -54,7 +54,9 @@ get_header();
             'post_type' => 'page',
             'post_parent' => $post->ID,
             'posts_per_page' => 100,
-            'ignore_sticky_posts' => true
+            'ignore_sticky_posts' => true,
+            'orderby' => 'menu_order title',
+            'order' => 'ASC'
         )); 
         
         if ( $children->have_posts() ) : ?>
