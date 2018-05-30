@@ -1,6 +1,9 @@
 .#{$n}-c-hero {
     position: relative;
-    text-align: center;
+    
+    &.is-centered {
+        text-align: center;
+    }
 }
 
 .#{$n}-c-hero__media {

@@ -10,7 +10,7 @@ get_header();
 
 	<article <?php post_class('pa-c-work pa-l-pb-5') ?>>
 
-		<div class="pa-c-hero">
+		<div class="pa-c-hero is-centered">
 		
 			<div class="pa-c-hero__media pa-c-cover-media">
 				<?php the_post_thumbnail( 'hero' ); ?>
