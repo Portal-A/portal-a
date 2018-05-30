@@ -20,7 +20,9 @@ $utilities: (
     'scale-hover:hover' : ( transform: scale(1.05) ),
 
     'opaque' : ( opacity: 1 ),
-    'faded' : ( opacity: $faded )
+    'faded' : ( opacity: $faded ),
+
+    'clean-list' : ( margin-left: 0, padding-left: 0, list-style: none )
 
 );
 
