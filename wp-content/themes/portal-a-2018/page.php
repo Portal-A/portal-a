@@ -30,11 +30,15 @@ get_header();
 			
 		</div>
 
-		<?php pa_block_wysiwyg( array( 
-			'wysiwyg' => apply_filters( 'the_content', get_the_content() ),
-		), array(
-			'style' => 'max-width:700px'
-		) ) ?>
+		<div class="pa-l-container">
+		
+			<?php pa_block_wysiwyg( array( 
+				'wysiwyg' => apply_filters( 'the_content', get_the_content() ),
+			), array(
+				'style' => 'max-width:700px'
+			) ) ?>
+			
+		</div>
 
 		<?php get_template_part( 'components/blocks' ) ?>
 
