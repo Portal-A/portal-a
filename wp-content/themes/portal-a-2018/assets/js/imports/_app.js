@@ -117,62 +117,75 @@
             dataViewTop = viewEl.getAttribute('data-view-top'),
             viewTop;
 
-        // Show view and hide others
 
-        viewEl.style.display = 'block';
-        UTIL.siblings(viewEl, '.js-view-target').forEach(function(sib){
-            sib.style.display = 'none';
-        });
-
-        // Scroll to appropriate part of the page
-
-        viewTop = viewEl.offsetTop;
-
-        if ( dataViewTop ) {
-            var viewTopEl = document.querySelector(dataViewTop);
-            viewTop = viewTopEl ? viewTopEl.offsetTop : viewTop;
-        }
+        // if template exists, fetch content and load it
+        if ( template ) {
         
-        UTIL.scrollTo( viewTop );
+            template = template.innerText;
 
-        // Check for template
+            // first check for data-load-content value
+            if ( loadContent ) {
 
-        if ( ! template )
-            return;
-        
-        template = template.innerText;
+                viewEl.classList.add('is-loading');
 
-        // fetch content
+                fetch( PA.api + 'pages/' + loadContent )
+                    .then(function(response){
+                        return response.json();
+                    })
+                    .then(function(data){
+                        targetLoaded = true;
+                        viewEl.classList.remove('is-loading');
+                        viewEl.setAttribute('data-url', data.link);
+                        __handleResponse(data);
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    });
 
-        if ( loadContent ) {
-
-            viewEl.classList.add('is-loading');
-
-            fetch( PA.api + 'pages/' + loadContent )
-                .then(function(response){
-                    return response.json();
-                })
-                .then(function(data){
-                    targetLoaded = true;
-                    viewEl.classList.remove('is-loading');
-                    UTIL.scrollTo( viewTop );
-                    handleResponse(data);
-                })
-                .catch(function(error){
-                    console.log(error);
-                });
+            }
 
         }
 
-        function handleResponse(data) {
-    
+        // if template has already been loaded, just switch the view
+        else {
+            __switchView({
+                link: viewEl.getAttribute('data-url')
+            });
+        }
+
+
+        // ajax response handler
+        function __handleResponse(data) {
+
             var html = Mustache.render( template, data );
+
             viewEl.innerHTML = html;
+
+            __switchView(data);
+
+        }
+
+        // Show view and hide others
+        function __switchView(data) {
 
             if ( window.history ) {
                 history.pushState( data, '', data.link );
             }
-    
+            
+            viewEl.style.display = 'block';
+
+            UTIL.siblings(viewEl, '.js-view-target').forEach(function(sib){
+                sib.style.display = 'none';
+            });
+
+            viewTop = viewEl.offsetTop;
+            
+            if ( dataViewTop ) {
+                var viewTopEl = document.querySelector(dataViewTop);
+                viewTop = viewTopEl ? viewTopEl.offsetTop : viewTop;
+            }
+            
+            UTIL.scrollTo( viewTop );
         }
 
     };
