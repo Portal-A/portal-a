@@ -223,7 +223,7 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
 
         <div class="pa-c-block--team-members">
 
-            <div class="pa-l-flexbox pa-l-flex-wrap">
+            <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
             
                 <?php 
                 $columns = 12 / intval( $data['grid'] );

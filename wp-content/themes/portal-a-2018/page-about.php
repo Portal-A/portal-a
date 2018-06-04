@@ -81,8 +81,6 @@ get_header();
 
             <?php endwhile; wp_reset_query(); ?>
 
-            <hr class="pa-l-mb-4"/>
-
         <?php endif; ?>
 
 	</article>

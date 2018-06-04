@@ -5,12 +5,8 @@
     align-items: center;
     justify-content: space-between;
     background: #fff;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 400;
-    color: #626f74;
+    color: #CFCFCF;
     padding: 1.2rem 2rem;
-    letter-spacing: 0.054em;
 }
 .mainfoot a {
     opacity: 1;
@@ -26,19 +22,21 @@
 .social a {
     color: #CFCFCF;
     line-height: 0;
-    margin-left: 2em;
+    margin-right: 1em;
 
+    &:last-child {
+        margin-right: 0;
+    }
     &:hover {
         color: $color-primary
     }
 
     .pa-b-icon {
-        font-size: 1.7rem;
+        font-size: rem(22);
     }
 
     &.blog-link {
-        color: #9B9B9B;
-        font-size: rem(15);
+        color: #CFCFCF;
         &:hover {
             color: $color-primary
         }
