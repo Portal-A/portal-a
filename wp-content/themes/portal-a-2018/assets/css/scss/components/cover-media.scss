@@ -47,7 +47,8 @@
 }
 
 .#{$n}-c-cover-media__content {
-    position: relative;
+    position: absolute;
+    top: 50%;
     z-index: 1;
     padding: $container-padding;
 
@@ -67,9 +68,9 @@
         }
     }
     &.from-bottom {
-        transform: translate3d(0,100px,0);
+        transform: translate3d(0,calc(-50% + 100px),0);
         .#{$n}-c-cover-media:hover & {
-            transform: translate3d(0,0,0);
+            transform: translate3d(0,-50%,0);
         }
     }
 }
