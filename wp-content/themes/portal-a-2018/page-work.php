@@ -76,7 +76,7 @@ $originals = new WP_Query( array(
 							echo get_post_meta( get_the_ID(), 'client', true );
 						} ?>
 					</p>
-					<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post_excerpt : get_the_title(); ?></h2>
+					<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h2>
 				</div>
 			</a>
 		</div>
