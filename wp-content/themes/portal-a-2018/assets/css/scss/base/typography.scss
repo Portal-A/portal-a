@@ -16,10 +16,10 @@ html {
 body {
     color: #000000;
     font-family: $font-primary; 
-    font-size: rem(22); 
+    font-size: rem(18);
     font-weight: 300;
-    letter-spacing: 0.01818em;
-    line-height: 1.6;
+    letter-spacing: 0.0222em;
+    line-height: 1.555;
 }
 
 h1,.pa-h1,
@@ -33,10 +33,10 @@ h6,.pa-h6 {
 }
 
 h1,.pa-h1 {
-    font-size: rem(45);
+    font-size: rem(40);
     font-weight: 700;
-    letter-spacing: 0.0333em;
-    line-height: 1.333;
+    letter-spacing: 0.01em;
+    line-height: 1.375;
     text-transform: none;
 }
 h2,.pa-h2 {
@@ -47,24 +47,24 @@ h2,.pa-h2 {
     text-transform: none;
 }
 h3,.pa-h3 {
-    font-size: rem(16);
+    font-size: rem(14);
     font-weight: 700;
-    letter-spacing: 0.125em;
-    line-height: 1.25;
+    letter-spacing: 0.143em;
+    line-height: 1.43;
     text-transform: uppercase;
 }
 h4,.pa-h4 {
-    font-size: rem(22);
-    font-weight: 300;
-    letter-spacing: 0.01818em;
-    line-height: 1.6;
-    text-transform: none;
-}
-h5,.pa-h5 {
     font-size: rem(18);
     font-weight: 300;
     letter-spacing: 0.0222em;
     line-height: 1.555;
+    text-transform: none;
+}
+h5,.pa-h5 {
+    font-size: rem(14);
+    font-weight: 300;
+    letter-spacing: 0.0222em;
+    line-height: 1.571;
     text-transform: none;
 }
 
@@ -85,6 +85,13 @@ em {
 }
 strong {
     font-weight: 700;
+}
+
+.pa-work-title {
+    font-family: $font-primary;
+    font-size: rem(30);
+    letter-spacing: 0.0133em;
+    line-height: 1.333;
 }
 
 .pa-pullquote {

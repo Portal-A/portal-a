@@ -47,7 +47,7 @@
 		 * Replaces local image urls with ones from live site.
 		 */
 
-		var images = document.querySelectorAll('.pa-c-profile img');
+		var images = document.querySelectorAll('img.attachment-hero');
 		
 		images.forEach(function(img){
 
