@@ -1,8 +1,9 @@
 .#{$n}-c-hero {
     position: relative;
-    
-    &.is-centered {
-        text-align: center;
+    text-align: center;
+
+    &.is-left-aligned {
+        text-align: left;
     }
 }
 

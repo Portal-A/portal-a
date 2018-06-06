@@ -15,7 +15,7 @@ get_header(); ?>
 	$fileBackground = get_field('background_video');
 	?>
 
-	<div class="pa-c-hero is-video">
+	<div class="pa-c-hero is-left-aligned is-video">
 		<div class="pa-c-hero__media has-scrim pa-c-cover-media is-fullscreen">
 			<video id="background-video" muted autoplay loop preload="preload">
 				<source src="<?php echo $fileBackground; ?>" type="video/mp4">
