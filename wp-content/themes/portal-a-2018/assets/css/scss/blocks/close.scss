@@ -1,0 +1,38 @@
+.pa-b-close {
+    @extend .pa-b-clean-button;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    transition: $transition-fast;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: white;
+        left: 0;
+        top: calc(50% - 1px);
+        
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: white;
+        top: 0;
+        left: calc(50% - 1px);
+        
+    }
+
+    .pa-c-lightbox & {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        right: 0;
+    }
+}

@@ -7,13 +7,27 @@
 
     var UTIL = {};
 
+    UTIL.requestFrame = function(callback){
+        var requestFrame =  window.requestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.msRequestAnimationFrame ||
+                            window.oRequestAnimationFrame ||
+                            // IE Fallback, you can even fallback to onscroll
+                            function (callback) {
+                                window.setTimeout(callback, 1000 / 60);
+                            };
+
+        requestFrame(callback);
+    };
+
     UTIL.scrollTo = function( to, duration, callback ){
 
         var that = this,
             start = position(),
             change = to - start,
             currentTime = 0,
-            increment = 20,
+            increment = 20;//,
             requestFrame =  window.requestAnimationFrame ||
                             window.webkitRequestAnimationFrame ||
                             window.mozRequestAnimationFrame ||
@@ -48,7 +62,7 @@
             move(val);
             // do the animation unless its over
             if (currentTime < duration) {
-                requestFrame(animateScroll);
+                UTIL.requestFrame(animateScroll);
             } 
             else {
                 if (callback && typeof (callback) === 'function') {
@@ -84,6 +98,58 @@
             }
         });
 
+    };
+
+    UTIL.onDocumentReady = function(fn) {
+        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    };
+
+    UTIL.fadeIn = function( el, duration, callback) {
+        el.style.opacity = 0;
+
+        duration = duration ? duration : 400;
+
+        var last = new Date().getTime();
+        var tick = function() {
+            el.style.opacity = +el.style.opacity + (new Date() - last) / duration;
+            last = new Date().getTime();
+      
+            if ( +el.style.opacity < 1 ) {
+                UTIL.requestFrame(tick);
+            } else {
+                if ( callback ) {
+                    callback();
+                }
+            }
+        };
+      
+        tick();
+    };
+    
+    UTIL.fadeOut = function( el, duration, callback) {
+        el.style.opacity = 0;
+
+        duration = duration ? duration : 400;
+
+        var last = new Date().getTime();
+        var tick = function() {
+            el.style.opacity = +el.style.opacity - (new Date() - last) / duration;
+            last = new Date().getTime();
+      
+            if ( +el.style.opacity > 0 ) {
+                UTIL.requestFrame(tick);
+            } else {
+                if ( callback ) {
+                    callback();
+                }
+            }
+        };
+      
+        tick();
     };
 
     window.UTIL = UTIL;

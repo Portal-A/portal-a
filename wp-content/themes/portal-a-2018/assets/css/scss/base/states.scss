@@ -1,3 +1,7 @@
+body.is-lightboxed {
+    overflow: hidden;
+}
+
 .animate-out {
     transition: all 600ms $easeInOutCubic;
     opacity: 0 !important;

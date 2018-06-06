@@ -1,7 +1,8 @@
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
-object {
+object,
+video {
 	max-width: 100%;
 }
 

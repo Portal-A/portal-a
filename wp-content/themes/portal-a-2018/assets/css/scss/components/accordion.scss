@@ -4,18 +4,7 @@
 }
 
 .pa-c-accordion__toggle {
-    -webkit-appearance: none;
-    background: none;
-    border-radius: 0;
-    border: 0;
-    box-shadow: none;
-    cursor: pointer;
-    font-size: inherit;
-    font: inherit;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    text-align: inherit;
+    @extend .pa-b-clean-button;
     width: 100%;
 
     &:hover > *:first-child {

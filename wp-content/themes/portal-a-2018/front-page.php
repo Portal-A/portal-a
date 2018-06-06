@@ -12,14 +12,14 @@ get_header(); ?>
 	$fileMP4 = get_field('mp4_video_file');
 	$fileOGV = get_field('ogv_video_file');
 	$fileWEBM = get_field('webm_video_file');
+	$fileBackground = get_field('background_video');
 	?>
 
 	<div class="pa-c-hero is-video">
 		<div class="pa-c-hero__media pa-c-cover-media is-fullscreen">
-			<video muted autoplay loop>
-				<source src="<?php echo $fileWEBM['url']; ?>" type="video/webm">
-				<source src="<?php echo $fileMP4['url']; ?>" type="video/mp4">
-				<source src="<?php echo $fileOGV['url']; ?>" type="video/ogv"> Your browser does not support the video tag.
+			<video id="background-video" muted autoplay loop preload="preload">
+				<source src="<?php echo $fileBackground; ?>" type="video/mp4">
+				Your browser does not support the video tag.
 			</video>
 		</div>
 		<div class="pa-c-hero__content">
@@ -31,10 +31,13 @@ get_header(); ?>
 					<span class="pa-u-hide">Scroll down</span>
 					<span class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></span>
 				</a>
-				<a href="#" class="pa-u-scale-hover pa-u-transition-fast">
-					<span class="pa-u-hide">Unmute video</span>
+				<button href="#reel" 
+						class="pa-b-clean-button pa-u-scale-hover pa-u-transition-fast js-lightbox-toggle" 
+						data-template="#full-reel"
+						data-template-data='{ "source": "<?php echo $fileBackground ?>" }'>
+					<span class="pa-u-hide">Open video lightbox</span>
 					<span class="pa-b-icon icon-sound" aria-hidden="true" style="font-size:2.25rem"></span>
-				</a>
+				</button>
 			</div>
 			
 		</div>
@@ -45,5 +48,12 @@ get_header(); ?>
 	</div>
 
 <?php endwhile; ?>
+
+<script id="full-reel" type="html/mustache-template">
+	<video autoplay controls preload="preload">
+		<source src="{{source}}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</script>
 
 <?php get_footer(); ?>
