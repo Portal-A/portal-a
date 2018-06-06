@@ -12,7 +12,7 @@
     height: 50vw;
     max-height: 75vh;
 
-    &:after {
+    &.has-scrim:after {
         content: "";
         display: block;
         position: absolute;

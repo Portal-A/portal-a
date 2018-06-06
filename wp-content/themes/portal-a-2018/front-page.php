@@ -16,7 +16,7 @@ get_header(); ?>
 	?>
 
 	<div class="pa-c-hero is-video">
-		<div class="pa-c-hero__media pa-c-cover-media is-fullscreen">
+		<div class="pa-c-hero__media has-scrim pa-c-cover-media is-fullscreen">
 			<video id="background-video" muted autoplay loop preload="preload">
 				<source src="<?php echo $fileBackground; ?>" type="video/mp4">
 				Your browser does not support the video tag.
