@@ -23,4 +23,5 @@ require_once( PA_INC . 'api.php' );
 
 // Initialize functions
 PA\Core\setup();
+PA\PostTypes\setup();
 PA\API\setup();

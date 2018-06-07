@@ -7,14 +7,6 @@ add_action( 'init', 'pa_register_taxos' );
 
 function pa_register_taxos() {
 
-	register_extended_taxonomy( "press-types", "press", array(
-		"show_admin_column" => true,
-	), array(
-		"plural" => "Press Types",
-		"singular" => "Press Types",
-		"slug" => "press-types",
-	) );
-
 	register_extended_taxonomy( "work-featured", "work", array(
 		"show_admin_column" => true,
 	), array(
