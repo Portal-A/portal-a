@@ -1,6 +1,6 @@
 <?php
 /*
-Single Work
+Template Name: About
 */
 
 get_header();
@@ -40,7 +40,7 @@ get_header();
 			
 		</div>
 
-        <?php get_template_part( 'components/blocks' ) ?>
+        <?php get_template_part( 'partials/blocks' ) ?>
         
         <p class="pa-u-text-center pa-h3 pa-l-mt-4">
             <a href="#view-nav" class="pa-u-display-inline-block js-smooth-scroll">
@@ -75,7 +75,7 @@ get_header();
 
                 <article id="<?php echo "{$post->post_type}-{$post->ID}" ?>" class="js-view-target pa-l-mb-4" data-view-top="#view-nav" data-load-content="<?php echo $post->ID; ?>" style="display:none" >
 
-                    <?php get_template_part( 'components/template', $post->post_name ); ?>
+                    <?php get_template_part( 'partials/template', $post->post_name ); ?>
 
                 </article>
 

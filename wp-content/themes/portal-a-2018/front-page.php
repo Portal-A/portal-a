@@ -44,7 +44,7 @@ get_header(); ?>
 	</div>
 
 	<div id="blocks">
-		<?php get_template_part( 'components/blocks' ) ?>
+		<?php get_template_part( 'partials/blocks' ) ?>
 	</div>
 
 <?php endwhile; ?>

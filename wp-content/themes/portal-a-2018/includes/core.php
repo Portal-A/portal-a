@@ -34,7 +34,10 @@ function theme_setup() {
 	
 	add_image_size( 'hero', 1440, 810, true );
 
-	add_post_type_support('page', array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes' ));
+	add_post_type_support( 'page', array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes' ));
+	remove_post_type_support( 'page', 'comments' );
+	remove_post_type_support( 'page', 'revisions' );
+	remove_post_type_support( 'page', 'author' );
 }
 
 

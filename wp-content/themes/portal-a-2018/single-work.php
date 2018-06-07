@@ -30,7 +30,7 @@ get_header();
 
 		<h1 class="pa-u-text-center"><?php the_title(); ?></h1>
 
-		<?php get_template_part( 'components/blocks' ); ?>
+		<?php get_template_part( 'partials/blocks' ); ?>
 
 		<p class="pa-u-text-center pa-l-mt-5">
 			<a href="<?php echo site_url('work/'); ?>" class="pa-b-button">View All Work</a>

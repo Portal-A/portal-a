@@ -8,7 +8,7 @@ get_header();
 
 	<?php while( have_posts() ) : the_post(); ?>
 
-	<article <?php post_class('pa-c-work pa-l-pb-5') ?>>
+	<article <?php post_class('pa-l-pb-5') ?>>
 
 		<div class="pa-c-hero">
 		
@@ -40,7 +40,7 @@ get_header();
 			
 		</div>
 
-		<?php get_template_part( 'components/blocks' ) ?>
+		<?php get_template_part( 'partials/blocks' ) ?>
 
 	</article>
 

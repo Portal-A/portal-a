@@ -18,8 +18,13 @@ require_once( PA_INC . 'core.php' );
 require_once( PA_INC . 'post-types.php' );
 require_once( PA_INC . 'taxonomies.php' );
 require_once( PA_INC . 'helpers.php' );
-require_once( PA_INC . 'component-functions.php' );
 require_once( PA_INC . 'api.php' );
+
+// Include components
+foreach ( glob( PA_INC . 'components/*.php' ) as $filename )
+{
+    require_once( $filename );
+}
 
 // Initialize functions
 PA\Core\setup();

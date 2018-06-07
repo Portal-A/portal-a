@@ -14,12 +14,16 @@ function setup() {
 function cptui_register_my_cpts() {
 
 	register_extended_post_type( 'award', array(
-		'menu_icon' => 'dashicons-awards'
+		'menu_icon' => 'dashicons-awards',
+		"supports" => array( "title", "thumbnail" ),
+		"enter_title_here" => 'Enter Award Name',
+		'publicly_queryable' => false
 	) );
-	
+		
 	register_extended_post_type( 'press', array(
 		'menu_icon' => 'dashicons-megaphone',
-		"supports" => array( "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes" ),				
+		"supports" => array( "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes" ),
+		'publicly_queryable' => false
 	), array(
 		"plural" => __( 'Press', '' ),
 		"singular" => __( 'Press', '' ),

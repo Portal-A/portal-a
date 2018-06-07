@@ -36,7 +36,7 @@ get_header();
 			'style' => 'max-width:700px'
 		) ) ?>
 
-		<?php get_template_part( 'components/blocks' ) ?>
+		<?php get_template_part( 'partials/blocks' ) ?>
 
 	</article>
 
