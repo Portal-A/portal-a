@@ -40,33 +40,39 @@ get_header();
 
 		<?php get_template_part( 'partials/blocks' ) ?>
 
-		<p class="pa-u-text-center pa-l-mt-5"><button class="pa-b-button js-reveal" data-target="all-recognition">View All</button></p>
+		<div class="pa-l-container">
 
-		<div id="all-recognition" data-load-content="<?php echo rest_url( 'recognition' ) ?>">
-			
-			<script type="html/mustache-template">
-			
-				<h3 class="pa-l-mt-5 pa-u-faded" style="font-size:14px">Awards</h3>
-				<ul class="pa-l-mt-2 pa-u-clean-list">
-					{{#awards}}
-					<li class="pa-l-mb-2">
-						<span class="pa-h6 pa-l-mt-0 title" style="font-size:14px">{{ title }}</span>
-						<span class="image pa-u-faded">{{ image }}</span>
-					</li>
-					{{/awards}}
-				</ul>
+			<p class="pa-u-text-center pa-l-mt-5"><button class="pa-b-button js-reveal" data-target="all-recognition">View All</button></p>
+
+			<div id="all-recognition" style="opacity:0" data-load-content="<?php echo rest_url( 'pa-api/v1/recognition' ) ?>">
 				
-				<h3 class="pa-l-mt-5 pa-u-faded" style="font-size:14px">Press</h3>
-				<ul class="pa-l-mt-2 pa-u-clean-list">
-					{{#awards}}
-					<li class="pa-l-mb-2">
-						<span class="pa-h6 pa-l-mt-0 title" style="font-size:14px">{{ title }}</span>
-						<span class="image pa-u-faded">{{ image }}</span>
-					</li>
-					{{/awards}}
-				</ul>
+				<script type="html/mustache-template">
+				
+					<h3 class="pa-l-mt-5 pa-u-faded" style="font-size:14px">Awards</h3>
+					<ul class="pa-l-mt-2 pa-u-clean-list">
+						{{#awards}}
+						<li class="pa-l-flexbox pa-l-align-center pa-l-justify-space-between pa-l-mb-2">
+							<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
+							<span class="image pa-l-flexbox pa-l-align-center pa-l-justify-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
+						</li>
+						{{/awards}}
+					</ul>
+					
+					<h3 class="pa-l-mt-5 pa-u-faded" style="font-size:14px">Press</h3>
+					<ul class="pa-l-mt-2 pa-u-clean-list">
+						{{#press}}
+						<li class="pa-l-mb-2">
+							<a href="{{url}}" class="pa-u-color-hover-primary pa-l-flexbox pa-l-align-center pa-l-justify-space-between" target="_blank">
+								<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
+								<span class="image pa-l-flexbox pa-l-align-center pa-l-justify-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
+							</a>
+						</li>
+						{{/press}}
+					</ul>
 
-			</script>
+				</script>
+
+			</div>
 
 		</div>
 

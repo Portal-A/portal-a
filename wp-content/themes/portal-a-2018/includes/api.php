@@ -6,11 +6,85 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-    add_action( 'rest_api_init', $n('register_blocks') );
+    add_action( 'rest_api_init', $n('register_pa_rest_routes') );
+    add_action( 'rest_api_init', $n('register_pa_rest_fields') );
 
 }
 
-function register_blocks() {
+function register_pa_rest_routes() {
+
+    register_rest_route( 'pa-api/v1', '/recognition', array(
+        'methods' => 'GET',
+        'callback' => __NAMESPACE__ . '\\get_recognition_items',
+    ) );
+    
+}
+
+function get_recognition_items( $request ) {
+
+    $awards = new \WP_Query(array(
+        'post_type' => array( 'award' ),
+        'posts_per_page' => 500,
+        'ignore_sticky_posts' => true,
+        'no_found_rows' => true,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'award-types',
+                'field' => 'slug',
+                'terms' => array( 'archived' )
+            )
+        )
+    ));
+
+    $press = new \WP_Query(array(
+        'post_type' => array( 'press' ),
+        'posts_per_page' => 500,
+        'ignore_sticky_posts' => true,
+        'no_found_rows' => true,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'press-types',
+                'field' => 'slug',
+                'terms' => array( 'archived' )
+            )
+        )
+    ));
+
+    $response = array( 'awards' => array(), 'press' => array() );
+
+    if ( $awards->have_posts() ) {
+
+        foreach( $awards->posts as $p ) {
+     
+            $response['awards'][] = array(
+                'title' => get_post_meta( $p->ID, 'award_details', true ),
+                'image' => get_the_post_thumbnail( $p->ID, 'medium', array( 'style' => 'max-height:100%; width: auto' ) ),
+            );
+     
+        }
+
+    }
+    
+    if ( $press->have_posts() ) {
+
+        foreach( $press->posts as $p ) {
+
+            $response['press'][] = array(
+                'title' => $p->post_content,
+                'image' => get_the_post_thumbnail( $p->ID, 'medium', array( 'style' => 'max-height:100%; width: auto' ) ),
+                'url' => get_post_meta( $p->ID, 'url', true ),
+            );
+
+        }
+
+    }
+    
+    return new \WP_REST_Response( $response, 200 );
+
+}
+
+function register_pa_rest_fields() {
+
     register_rest_field( 'page',
         'blocks',
         array(
@@ -19,6 +93,7 @@ function register_blocks() {
             'schema'          => null,
         )
     );
+
 }
 
 /**

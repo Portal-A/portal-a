@@ -31,11 +31,12 @@ function pa_block_press( $data, $options = array(), $return = false ) {
                 $url = get_post_meta( $press, 'url', true );
                 $tag = $url ? 'a' : 'div';
                 $href = $url ? "href=\"$url\"" : "";
+                $hover = $url ? 'pa-u-color-hover-primary' : '';
                 $logo_id = get_post_thumbnail_id( $press ); ?>
                 
                 <div class="<?php echo $span ?> pa-l-mt-5">
                 
-                    <?php echo "<$tag $href class=\"pa-u-display-block pa-u-text-center\" target=\"_blank\">" ?>
+                    <?php echo "<$tag $href class=\"$hover pa-u-display-block pa-u-text-center\" target=\"_blank\">" ?>
                     <blockquote class="has-light-quote pa-u-center" style="max-width:16.25rem">
                         <?php echo $press_post->post_content; ?>
                         <cite><?php echo wp_get_attachment_image( $logo_id, 'medium' ) ?></cite>

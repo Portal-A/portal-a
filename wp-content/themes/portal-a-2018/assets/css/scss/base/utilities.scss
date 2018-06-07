@@ -13,6 +13,8 @@ $utilities: (
     
     'bg-primary' :  ( background-color: $color-primary ),
     'color-primary' :  ( color: $color-primary ),
+    'color-hover-primary' :  ( transition: $transition-fast ),
+    'color-hover-primary:hover' :  ( color: $color-primary ),
     'color-white' :  ( color: white ),
     
     'transition' : ( transition: all 250ms ease-out ),
