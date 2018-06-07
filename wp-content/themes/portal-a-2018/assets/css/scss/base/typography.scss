@@ -103,23 +103,35 @@ strong {
 }
 
 blockquote {
-    @extend .pa-pullquote;
+    font-family: inherit;
+    font-size: inherit;
     text-align: center;
     
     &:before {
         content: "\201C";
-        font-size: 56px;
+        font-size: rem(65);
+        line-height: 0.7;
         display: block;
         font-family: "AmericanTypewriter", serif;
+    }
+    &.has-light-quote:before {
+        opacity: 0.3;
     }
 
     cite {
         display: block;
-        margin-top: 3rem;
+        margin-top: 1rem;
         font-size: rem(30);
         line-height: 1;
         font-weight: 300;
         letter-spacing: 0;
+
+        img {
+            max-width:rem(90);
+            max-height:100%;
+            width:auto;
+            height:auto;
+        }
     }
 }
 

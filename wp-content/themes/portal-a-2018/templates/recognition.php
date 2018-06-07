@@ -40,7 +40,7 @@ get_header();
 
 		<?php get_template_part( 'partials/blocks' ) ?>
 
-		<p class="pa-u-text-center"><button class="pa-b-button js-reveal" data-target="all-recognition">View All</button></p>
+		<p class="pa-u-text-center pa-l-mt-5"><button class="pa-b-button js-reveal" data-target="all-recognition">View All</button></p>
 
 		<div id="all-recognition" data-load-content="<?php echo rest_url( 'recognition' ) ?>">
 			
