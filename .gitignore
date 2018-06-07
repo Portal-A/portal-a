@@ -8,6 +8,7 @@ Thumbs.db
 .sass-cache
 *.css.map
 node_modules
+.vscode
 
 # portal-a specific
 /wp-content/themes/portala-2015
