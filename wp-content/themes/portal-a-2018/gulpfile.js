@@ -43,6 +43,7 @@ gulp.task('scripts', function() {
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
 		.pipe(addsrc.prepend('assets/js/imports/*.js'))
+		.pipe(addsrc.prepend('assets/js/polyfills/*.js'))
 		.pipe(sourcemaps.init())
 		.pipe(concat('scripts.js'))
 		.pipe(concat.header(banner, { pkg : pkg }))
@@ -68,6 +69,6 @@ gulp.task('watch', function() {
     gulp.watch('assets/css/scss/**/*.scss', ['styles']);
 
     // Watch .js files
-    gulp.watch(['assets/js/imports/*.js', 'assets/js/components/*.js'], ['scripts']);
+    gulp.watch(['assets/js/polyfills/*.js', 'assets/js/imports/*.js', 'assets/js/components/*.js'], ['scripts']);
 
 });
