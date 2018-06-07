@@ -47,7 +47,7 @@
 
 .#{$n}-c-cover-media__content {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     z-index: 1;
     padding: $container-padding;
 

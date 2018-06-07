@@ -59,7 +59,7 @@ $originals = new WP_Query( array(
 
 <?php while ( $hero->have_posts() ) : $hero->the_post(); ?>
 
-	<div <?php post_class("pa-c-hero") ?> >
+	<div <?php post_class("pa-c-hero is-left-aligned") ?> >
 		
 		<div class="pa-c-hero__media pa-c-cover-media">
 			<?php the_post_thumbnail( 'hero' ); ?>
@@ -76,7 +76,7 @@ $originals = new WP_Query( array(
 							echo get_post_meta( get_the_ID(), 'client', true );
 						} ?>
 					</p>
-					<h2 class="pa-h1"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h2>
+					<h2 class="pa-work-title"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h2>
 				</div>
 			</a>
 		</div>
@@ -137,7 +137,7 @@ $originals = new WP_Query( array(
 								echo get_post_meta( get_the_ID(), 'client', true );
 							} ?>
 						</p>
-						<h2 class="pa-h1 pa-l-mt-nudge"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h2>
+						<h2 class="pa-work-title pa-l-mt-nudge"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h2>
 					</a>
 				</div>
 			</div>
