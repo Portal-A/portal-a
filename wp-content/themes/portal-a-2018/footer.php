@@ -47,7 +47,9 @@
 		 * Replaces local image urls with ones from live site.
 		 */
 
-		var images = document.querySelectorAll('img.attachment-hero');
+		var images = document.querySelectorAll('img.attachment-hero, img.wp-post-image');
+
+		console.log(images);
 		
 		images.forEach(function(img){
 

@@ -34,8 +34,6 @@ get_header();
 		
 			<?php pa_block_wysiwyg( array( 
 				'wysiwyg' => apply_filters( 'the_content', get_the_content() ),
-			), array(
-				'style' => 'max-width:700px'
 			) ) ?>
 			
 		</div>

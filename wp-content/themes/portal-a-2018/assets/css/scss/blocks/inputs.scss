@@ -1,0 +1,14 @@
+.pa-b-input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 1px solid #979797;
+    font-size: rem(12);
+    color: black;
+    line-height: 1;
+    padding: rem(10);
+    box-shadow: none;
+
+    &::placeholder {
+        color: rgba(black, 0.25);
+    }
+}

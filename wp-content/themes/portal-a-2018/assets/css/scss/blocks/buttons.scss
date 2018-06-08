@@ -8,7 +8,7 @@
     font-family: inherit;
     font-size: rem(22);
     font-weight: bold;
-    line-height: 1.6;
+    line-height: 0;
     letter-spacing: 0.01818;
     text-align: center;
     padding: 0.91em 1.64em;
@@ -28,6 +28,22 @@
         background: none;
     }
 
+}
+
+.pa-b-submit {
+    @extend .pa-b-button;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-primary;
+    color: white;
+    border: 0;
+    padding: rem(10);
+    border-radius: 0;
+    &:hover, &:focus {
+        background-color: darken($color-primary, 15%);
+    }
 }
 
 .pa-b-clean-button {
