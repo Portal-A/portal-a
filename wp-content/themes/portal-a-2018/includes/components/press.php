@@ -21,7 +21,7 @@ function pa_block_press( $data, $options = array(), $return = false ) {
     
     ?>
 
-        <div class="pa-c-block--press pa-l-container pa-l-pb-5">
+        <div class="pa-c-block--press pa-l-container">
             
             <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
 
@@ -34,10 +34,10 @@ function pa_block_press( $data, $options = array(), $return = false ) {
                 $hover = $url ? 'pa-u-color-hover-primary' : '';
                 $logo_id = get_post_thumbnail_id( $press ); ?>
                 
-                <div class="<?php echo $span ?> pa-l-mt-5">
+                <div class="<?php echo $span ?> pa-l-my-2">
                 
                     <?php echo "<$tag $href class=\"$hover pa-u-display-block pa-u-text-center\" target=\"_blank\">" ?>
-                    <blockquote class="has-light-quote pa-u-center" style="max-width:16.25rem">
+                    <blockquote class="has-quote pa-u-center" style="max-width:16.25rem">
                         <?php echo $press_post->post_content; ?>
                         <cite><?php echo wp_get_attachment_image( $logo_id, 'medium' ) ?></cite>
                     </blockquote>

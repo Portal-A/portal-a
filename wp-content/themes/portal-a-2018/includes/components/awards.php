@@ -21,7 +21,7 @@ function pa_block_awards( $data, $options = array(), $return = false ) {
 
     ?>
 
-        <div class="pa-c-block--awards pa-l-container pa-l-py-5">
+        <div class="pa-c-block--awards pa-l-container">
             
             <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
 
@@ -29,7 +29,7 @@ function pa_block_awards( $data, $options = array(), $return = false ) {
                 
                 $logo_id = get_post_thumbnail_id( $award ); ?>
                 
-                <div class="<?php echo $span ?>">
+                <div class="<?php echo $span ?> pa-l-my-2">
                 
                     <div class="pa-c-revealer pa-u-text-center">
                         <div class="pa-c-revealer__static">

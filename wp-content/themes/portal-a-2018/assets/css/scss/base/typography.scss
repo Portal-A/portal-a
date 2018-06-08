@@ -107,14 +107,12 @@ blockquote {
     font-size: inherit;
     text-align: center;
     
-    &:before {
+    &.has-quote:before {
         content: "\201C";
         font-size: rem(65);
         line-height: 0.7;
         display: block;
         font-family: "AmericanTypewriter", serif;
-    }
-    &.has-light-quote:before {
         opacity: 0.3;
     }
 
