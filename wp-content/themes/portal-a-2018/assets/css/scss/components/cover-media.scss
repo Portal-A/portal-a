@@ -6,13 +6,13 @@
     background-color: black;
 
     &.does-scale:hover {
-        img {
+        & > img {
             transform: translate(-50%, -50%) scale(1.1);
         }
     }
 
     &.does-fade:hover {
-        img {
+        & > img {
             opacity: $faded-light;
         }
     }
