@@ -39,13 +39,7 @@ get_header();
 		</div>
 
         <?php get_template_part( 'partials/blocks' ) ?>
-        
-        <p class="pa-u-text-center pa-h3 pa-l-mt-4">
-            <a href="#view-nav" class="pa-u-display-inline-block js-smooth-scroll">
-                <span class="pa-u-display-block pa-l-pb-1">Learn More</span>
-                <span class="pa-b-icon icon-arrow-down" aria-hidden="true" style="font-size:2.25rem"></span>
-            </a>
-        </p>
+    
 
         <?php
         $children = new WP_Query(array(
