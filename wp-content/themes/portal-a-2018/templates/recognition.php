@@ -40,7 +40,7 @@ get_header();
 
 		<?php get_template_part( 'partials/blocks' ) ?>
 
-		<div class="pa-l-container">
+		<div class="pa-l-container" style="max-width: 890px">
 
 			<p class="pa-u-text-center pa-l-mt-5"><button class="pa-b-button js-reveal" data-target="all-recognition">View All</button></p>
 
@@ -52,8 +52,8 @@ get_header();
 					<ul class="pa-l-mt-2 pa-u-clean-list">
 						{{#awards}}
 						<li class="pa-l-flexbox pa-l-align-center pa-l-justify-space-between pa-l-mb-2">
+							<span class="image pa-l-flexbox pa-l-align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 							<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
-							<span class="image pa-l-flexbox pa-l-align-center pa-l-justify-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 						</li>
 						{{/awards}}
 					</ul>
@@ -63,8 +63,8 @@ get_header();
 						{{#press}}
 						<li class="pa-l-mb-2">
 							<a href="{{url}}" class="pa-u-color-hover-primary pa-l-flexbox pa-l-align-center pa-l-justify-space-between" target="_blank">
+								<span class="image pa-l-flexbox pa-l-align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 								<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
-								<span class="image pa-l-flexbox pa-l-align-center pa-l-justify-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 							</a>
 						</li>
 						{{/press}}
