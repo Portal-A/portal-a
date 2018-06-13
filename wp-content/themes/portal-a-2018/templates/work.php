@@ -92,9 +92,11 @@ $originals = new WP_Query( array(
 
 <section id="branded" data-view-top="#view-nav" class="js-view-target">
 
-	<?php while ( $branded->have_posts() ) : $branded->the_post(); ?>
+	<?php 
+	$count = 0;
+	while ( $branded->have_posts() ) : $branded->the_post(); ?>
 
-		<article <?php post_class() ?> >
+		<article <?php post_class() ?> style="<?php echo $count !== 0 ? 'margin-top:10px' : '' ?>" >
 		
 			<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="pa-c-cover-media does-scale with-scrim" style="min-height:400px">
 				
@@ -115,15 +117,17 @@ $originals = new WP_Query( array(
 	
 		</article>
 
-	<?php endwhile; ?>
+	<?php $count++; endwhile; ?>
 
 </section>
 
 <section id="originals" data-view-top="#view-nav" class="js-view-target" style="display:none">
 
-	<?php while ( $originals->have_posts() ) : $originals->the_post(); ?>
+	<?php 
+	$count = 0;
+	while ( $originals->have_posts() ) : $originals->the_post(); ?>
 
-		<article <?php post_class() ?> >
+		<article <?php post_class() ?> style="<?php echo $count !== 0 ? 'margin-top:10px' : '' ?>" >
 		
 			<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="pa-c-cover-media does-scale with-scrim" style="min-height:400px">
 				<?php the_post_thumbnail( 'hero' ) ?>
@@ -142,7 +146,7 @@ $originals = new WP_Query( array(
 	
 		</article>
 
-	<?php endwhile; wp_reset_query(); ?>
+	<?php $count++; endwhile; wp_reset_query(); ?>
 
 </section>
 
