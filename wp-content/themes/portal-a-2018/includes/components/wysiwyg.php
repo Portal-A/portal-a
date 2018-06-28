@@ -5,7 +5,8 @@
 function pa_block_wysiwyg( $data, $options = array(), $return = false ) {
 
     $defaults = array(
-        'style' => ''
+        'style' => '',
+        'class' => ''
     );
 
     $options = array_merge( $defaults, $options );
@@ -13,7 +14,7 @@ function pa_block_wysiwyg( $data, $options = array(), $return = false ) {
     ob_start(); 
     ?>
 
-        <div class="pa-c-block--wysiwyg" style="<?php echo $options['style'] ?>">
+        <div class="pa-c-block--wysiwyg <?php echo $options['class']; ?>" style="<?php echo $options['style'] ?>">
             <?php if ( array_key_exists('title', $data) && $data['title'] !== '' ) : ?>
                 <div class="pa-c-block__title pa-h3">
                     <?php echo $data['title'] ?>

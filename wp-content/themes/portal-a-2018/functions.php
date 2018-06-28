@@ -18,6 +18,7 @@ require_once( PA_INC . 'core.php' );
 require_once( PA_INC . 'post-types.php' );
 require_once( PA_INC . 'taxonomies.php' );
 require_once( PA_INC . 'helpers.php' );
+require_once( PA_INC . 'shortcodes.php' );
 require_once( PA_INC . 'api.php' );
 
 // Include components
@@ -29,4 +30,5 @@ foreach ( glob( PA_INC . 'components/*.php' ) as $filename )
 // Initialize functions
 PA\Core\setup();
 PA\PostTypes\setup();
+PA\Shortcodes\setup();
 PA\API\setup();

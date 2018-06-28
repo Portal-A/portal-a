@@ -24,6 +24,12 @@
     margin-right: auto;
     text-align: center;
     
+    &.is-left-aligned {
+        margin-left: rem(30);
+        margin-right: rem(30);
+        text-align: left;
+    }
+    
     h1, h2 {
         max-width: rem(700);
         margin-left: auto;
