@@ -11,6 +11,7 @@ function setup() {
     add_action( 'wp_enqueue_scripts', $n('scripts') );
     add_action( 'wp_enqueue_scripts', $n('styles') );
     add_action( 'init', $n( 'add_menus' ) );
+    add_action( 'pre_get_posts', $n( 'custom_queries' ) );
     
     remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'rsd_link' );
@@ -69,4 +70,15 @@ function add_menus() {
     register_nav_menus( array(
         'header' => 'Header'
     ) );
+}
+
+
+function custom_queries($query) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+
+		if ( $query->is_home() || is_archive() ) {
+			$query->set( 'posts_per_page', 9 );
+		}
+
+	}
 }
