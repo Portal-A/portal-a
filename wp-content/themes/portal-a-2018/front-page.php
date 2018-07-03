@@ -15,16 +15,16 @@ get_header(); ?>
 	$fileBackground = get_field('background_video');
 	?>
 
-	<div class="pa-c-hero is-left-aligned is-video">
-		<div class="pa-c-hero__media has-scrim pa-c-cover-media is-fullscreen">
+	<div class="pa-c-home-video">
+		<div class="pa-c-home-video__media has-scrim pa-c-cover-media is-fullscreen">
 			<video id="background-video" muted autoplay loop preload="preload">
 				<source src="<?php echo $fileBackground; ?>" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
 		</div>
-		<div class="pa-c-hero__content">
+		<div class="pa-c-home-video__content">
 			
-			<h1 class="pa-c-hero__title"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h1>
+			<h1 class="pa-c-home-video__title"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h1>
 
 			<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
 				<button href="#reel" 
@@ -40,8 +40,23 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div id="blocks">
-		<?php get_template_part( 'partials/blocks' ) ?>
+	<div style="position:relative">
+
+		<?php if ( is_front_page() ) { ?>
+			<nav class="pa-c-home-nav">
+				<?php wp_nav_menu( array( 
+					'theme_location' => 'header',
+					'container' => '',
+					'menu_class' => 'pa-c-home-nav__menu',
+					'fallback_cb' => false
+				) ); ?>
+			</nav>
+		<?php } ?>
+
+		<div id="blocks">
+			<?php get_template_part( 'partials/blocks' ) ?>
+		</div>
+
 	</div>
 
 <?php endwhile; ?>

@@ -51,7 +51,7 @@ $utilities-xl: (
 
 @each $class, $props in $utilities {
 
-    .#{$n}-u-#{$class} {
+    .pa-u-#{$class} {
         @each $prop, $val in $props {
             #{$prop}: $val !important; 
         }
@@ -63,7 +63,7 @@ $utilities-xl: (
 
     @include media( map-get($breakpoints,'sm') ) {
         
-        .#{$n}-u-#{$class}-sm {
+        .pa-u-#{$class}-sm {
             @each $prop, $val in $props {
                 #{$prop}: $val !important; 
             }
@@ -77,7 +77,7 @@ $utilities-xl: (
 
     @include media( map-get($breakpoints,'md') ) {
         
-        .#{$n}-u-#{$class}-md {
+        .pa-u-#{$class}-md {
             @each $prop, $val in $props {
                 #{$prop}: $val !important; 
             }
@@ -91,7 +91,7 @@ $utilities-xl: (
 
     @include media( map-get($breakpoints,'lg') ) {
         
-        .#{$n}-u-#{$class}-lg {
+        .pa-u-#{$class}-lg {
             @each $prop, $val in $props {
                 #{$prop}: $val !important; 
             }
@@ -105,7 +105,7 @@ $utilities-xl: (
 
     @include media( map-get($breakpoints,'xl') ) {
         
-        .#{$n}-u-#{$class}-xl {
+        .pa-u-#{$class}-xl {
             @each $prop, $val in $props {
                 #{$prop}: $val !important; 
             }

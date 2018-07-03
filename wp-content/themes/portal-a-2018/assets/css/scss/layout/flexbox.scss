@@ -15,7 +15,7 @@ $flexbox-classes: (
 
 @each $class, $props in $flexbox-classes {
 
-    .#{$n}-l-#{$class} {
+    .pa-l-#{$class} {
         @each $prop, $val in $props {
             #{$prop}: $val; 
         }

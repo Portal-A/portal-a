@@ -1,0 +1,48 @@
+.pa-c-home-nav {
+    background: black;
+    padding: 0 1rem 0 $container-padding;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+}
+.pa-c-home-nav__menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: rem(820);
+
+    a {
+        @extend .pa-h6;
+        @extend .pa-l-mt-0;
+        position: relative;
+        color: white;
+        text-shadow: 0 2px 4px rgba(black, 0.5);
+        display: block;
+        transition: $transition-normal;
+        &:hover,
+        &:focus {
+            opacity: 1;
+            color: $color-primary;
+            &:after {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            opacity: 0;
+            height: 1px;
+            transition: $transition-fast;
+            background-color: $color-primary;
+        }
+    }
+}

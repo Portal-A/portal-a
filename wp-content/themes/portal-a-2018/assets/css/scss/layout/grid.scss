@@ -1,4 +1,4 @@
-.#{$n}-l-container {
+.pa-l-container {
     max-width: calc( #{$container-width} + #{$container-padding} + #{$container-padding} );
     margin-left: auto;
     margin-right: auto;
@@ -6,13 +6,13 @@
     padding-right: $container-padding;
 }
 
-.#{$n}-l-flex[class*="#{$n}-l-span-"] {
+.pa-l-flex[class*="pa-l-span-"] {
     flex-basis: 100%;
     flex-grow: 0;
     flex-shrink: 0;
     max-width: 100%;
 
-    .#{$n}-l-with-gutters & {
+    .pa-l-with-gutters & {
         flex-basis: calc(100% - #{$gutter});
         max-width: calc(100% - #{$gutter});
         margin-left: $gutter/2;
@@ -22,13 +22,13 @@
 
 @for $i from 1 through $columns {
 
-    // .#{$n}-l-span-#{$i} {
+    // .pa-l-span-#{$i} {
     //     width: #{$i/$columns}%;
     // }
-    .#{$n}-l-flex.#{$n}-l-span-#{$i} {
+    .pa-l-flex.pa-l-span-#{$i} {
         flex-basis: $i / $columns * 100%;
         
-        .#{$n}-l-with-gutters & {
+        .pa-l-with-gutters & {
             flex-basis: calc(#{$i / $columns * 100%} - #{$gutter});
         }
     }
@@ -41,10 +41,10 @@
 
         @for $i from 1 through $columns {
             
-            .#{$n}-l-flex.#{$n}-l-span-#{$i}-#{$bp} {
+            .pa-l-flex.pa-l-span-#{$i}-#{$bp} {
                 flex-basis: $i / $columns * 100%;
 
-                .#{$n}-l-with-gutters & {
+                .pa-l-with-gutters & {
                     flex-basis: calc(#{$i / $columns * 100%} - #{$gutter});
                 }
             }

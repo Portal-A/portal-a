@@ -46,7 +46,7 @@ $spacings_lg: (
 
 	@each $space, $val in $spacings {
 		
-		.#{$n}-l-#{$side}-#{$space} {
+		.pa-l-#{$side}-#{$space} {
 			@each $prop in $props {
 				#{$prop}: #{$val};
 			}
@@ -57,7 +57,7 @@ $spacings_lg: (
 	@include media( map-get( $breakpoints, 'md' ) ) {
 		@each $space, $val in $spacings_md {
 		
-			.#{$n}-l-#{$side}-#{$space} {
+			.pa-l-#{$side}-#{$space} {
 				@each $prop in $props {
 					#{$prop}: #{$val};
 				}
@@ -69,7 +69,7 @@ $spacings_lg: (
 	@include media( map-get( $breakpoints, 'lg' ) ) {
 		@each $space, $val in $spacings_lg {
 		
-			.#{$n}-l-#{$side}-#{$space} {
+			.pa-l-#{$side}-#{$space} {
 				@each $prop in $props {
 					#{$prop}: #{$val};
 				}

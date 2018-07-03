@@ -40,12 +40,14 @@
 				<img class="pa-c-logo__active" src="<?php echo get_template_directory_uri() . '/assets/img/logo@2x.gif' ?>" alt="Portal A logo active" width="117" height="117" >
 			</a>
 			
-			<?php wp_nav_menu( array( 
-				'theme_location' => 'header',
-				'container' => '',
-				'menu_class' => 'pa-c-header-menu',
-				'fallback_cb' => false
-			) ) ?>
+			<?php if ( ! is_front_page() ) {
+				wp_nav_menu( array( 
+					'theme_location' => 'header',
+					'container' => '',
+					'menu_class' => 'pa-c-header-menu',
+					'fallback_cb' => false
+				) );
+			} ?>
 
 		</header>
 
