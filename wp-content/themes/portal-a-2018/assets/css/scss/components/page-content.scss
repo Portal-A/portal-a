@@ -1,0 +1,6 @@
+.#{$n}-c-page-content {
+    @extend .#{$n}-u-clearfix;
+    background: white;
+    position: relative;
+    z-index: 1;
+}

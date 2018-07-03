@@ -100,6 +100,17 @@
 
     };
 
+    UTIL.wrap = function (toWrap, wrapperAtts) {
+        wrapper = document.createElement('div');
+        if ( wrapperAtts ) {
+            Object.keys(wrapperAtts).forEach(function(attr){
+                wrapper.setAttribute(attr, wrapperAtts[attr]);
+            });
+        }
+        toWrap.parentNode.appendChild(wrapper);
+        return wrapper.appendChild(toWrap);
+    };    
+
     UTIL.onDocumentReady = function(fn) {
         if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
             fn();

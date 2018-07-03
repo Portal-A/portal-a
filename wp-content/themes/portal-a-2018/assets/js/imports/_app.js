@@ -9,6 +9,9 @@
     
         this.scrollCallbacks = [];
 
+        // scroll watch
+        this.initScrollLoop();
+
         this.init();
 
     };
@@ -44,6 +47,7 @@
             };
 
         }
+
     };
 
     /**
@@ -56,6 +60,39 @@
             this.scrollCallbacks.push(fn);
         }
     };
+
+    APP.prototype.initScrollLoop = function () {
+
+		var that = this,
+            scrollTop = -1;
+
+		function loop() {
+
+			// if scrollTop and window's scroll position are equal, return and try again.
+			if (scrollTop == window.pageYOffset) {
+				UTIL.requestFrame(loop);
+				return false;
+			}
+
+			// set scrollTop to window's scroll position.
+			scrollTop = window.pageYOffset;
+
+            // do your magic
+			that.scrollCallbacks.forEach(function (fn) {
+				if (typeof fn == "function") {
+					fn(scrollTop);
+				}
+			});
+
+			// run loop again
+			UTIL.requestFrame(loop);
+
+		}
+
+		// initialize loop()
+		loop();
+
+	};
 
     /**
      * Check for a view query
