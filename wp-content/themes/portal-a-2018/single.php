@@ -10,7 +10,7 @@ get_header();
 
 	<article <?php post_class('pa-c-post pa-l-pb-5') ?>>
 
-		<div class="pa-c-hero is-left-aligned is-fixed">
+		<div class="pa-c-hero is-fixed">
 		
 			<div class="pa-c-hero__media pa-c-cover-media js-parallax">
 				<?php the_post_thumbnail( 'hero', array( 'class' => 'js-parallax-child' ) ); ?>
@@ -21,7 +21,7 @@ get_header();
 		<div class="pa-c-page-content">
 		
 			<div class="pa-l-container">
-				<div class="pa-c-hero-tab">
+				<div class="pa-c-hero-tab pa-u-text-left">
 					<div class="pa-c-hero-tab__inner">
 						<p class="pa-h3 pa-l-mt-0"><?php the_date() ?></p>
 						<h1 class="pa-h2 pa-u-weight-bold">
