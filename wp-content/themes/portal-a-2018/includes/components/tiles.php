@@ -66,7 +66,7 @@ function pa_block_tiles( $data, $options = array(), $return = false ) {
     
                         $options = $tile['image_options'] ? $tile['image_options'] : array();
                         $image_meta = wp_get_attachment_metadata( $tile['image'] );
-                        $ratio = ($image_meta['height'] / $image_meta['width']) * 100;
+                        $ratio = (! empty($image_meta)) ? ($image_meta['height'] / $image_meta['width']) * 100 : 100;
                         $proportional_image = in_array( 'proportional_image', $options );
                         $padding = $proportional_image ? $ratio / ( 12 / $tile['columns'] ) : 0;
                         $effects = $url ? 'does-scale does-fade' : ''; ?>

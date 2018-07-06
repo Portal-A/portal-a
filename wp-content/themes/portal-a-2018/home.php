@@ -60,7 +60,7 @@ $blog_page = get_post($blog_page_id);
                 foreach ( $wp_query->posts as $blog_post ) {
                     $data['tiles'][] = array(
                         'url' => get_permalink( $blog_post ),
-                        'image' => 7852, //get_post_thumbnail_id( $blog_post ),
+                        'image' => get_post_thumbnail_id( $blog_post ), //7852
                         'image_options' => array('proportional_image'),
                         'text' => $blog_post->post_title,
                         'type' => 'image',
