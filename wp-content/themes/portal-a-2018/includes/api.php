@@ -94,6 +94,15 @@ function register_pa_rest_fields() {
         )
     );
 
+    register_rest_field( 'post',
+        'featured_image',
+        array(
+            'get_callback'    => __NAMESPACE__ . '\\get_featured_image',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+
 }
 
 /**
@@ -122,5 +131,21 @@ function get_blocks( $object, $field_name, $request ) {
     endwhile;
 
     return implode( '', $block_content );
+
+}
+
+/**
+ * Get the value of the "blocks" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function get_featured_image( $object, $field_name, $request ) {
+
+    $attachment_id = get_post_thumbnail_id( $object['id'] );
+    return wp_get_attachment_image( $attachment_id, 'large', false, array() );
 
 }

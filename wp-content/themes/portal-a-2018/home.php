@@ -49,25 +49,22 @@ $blog_page = get_post($blog_page_id);
 
             <?php endif; ?>
 
-            <div class="pa-l-mt-5">
+            <div class="pa-l-mt-5 pa-l-flexbox pa-l-with-gutters pa-l-flex-wrap js-post-list">
 
-                <?php
-                $data = array(
-                    'tiles' => array(),
-                    'tile_options' => array('spacing')
-                );
-
-                foreach ( $wp_query->posts as $blog_post ) {
-                    $data['tiles'][] = array(
-                        'url' => get_permalink( $blog_post ),
-                        'image' => get_post_thumbnail_id( $blog_post ), //7852
-                        'image_options' => array('proportional_image'),
-                        'text' => $blog_post->post_title,
-                        'type' => 'image',
-                        'columns' => '4'
-                    );
-                }
-                pa_block_tiles($data); ?>
+                <script class="js-post-template" type="text/mustache-template">
+                
+                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg">
+                        <a href="{{link}}" class="pa-c-cover-media pa-l-mb-gutter does-scale does-fade" style="padding-top:100%">
+                            {{{featured_image}}}
+                            {{#title.rendered}}
+                                <div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
+                                    <p class="pa-h4 pa-l-mt-0">{{{title.rendered}}}</p>
+                                </div>
+                            {{/title.rendered}}
+                        </a>
+                    </div>
+                
+                </script>
 
             </div>
 
@@ -88,9 +85,16 @@ $blog_page = get_post($blog_page_id);
 
             <div class="pa-l-container pa-l-mt-1 pa-l-flexbox" style="font-size:14px">
                 <div style="margin-left:auto">
-                    <?php the_posts_pagination( array(
-                        'mid_size' => 2,
-                    ) ); ?>
+                    <nav class="navigation pagination" role="navigation">
+                        <h2 class="screen-reader-text">Posts navigation</h2>
+                        <!-- <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+                        <a class="page-numbers" href="http://portal-a.local/blog/page/2/">2</a>
+                        <a class="page-numbers" href="http://portal-a.local/blog/page/3/">3</a>
+                        <span class="page-numbers dots">…</span>
+                        <a class="page-numbers" href="http://portal-a.local/blog/page/17/">17</a> -->
+                        <a class="js-prev page-numbers" href="#">Previous</a>
+                        <a class="js-next page-numbers" href="#">Next</a>
+                    </nav>
                 </div>
             </div>
 

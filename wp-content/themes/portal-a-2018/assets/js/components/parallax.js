@@ -12,6 +12,9 @@
         this.child = this.getChild();
         this.scrollMultiplier = 0.3;
 
+        if ( ! this.child )
+            return;
+
         var that = this;
         
         APP.onScroll(function(scrollTop){
@@ -28,8 +31,12 @@
 
     Parallax.prototype.getChild = function() {
 
-        var el = this.el.querySelector('.js-parallax-child'),
-            style = window.getComputedStyle(el,null),
+        var el = this.el.querySelector('.js-parallax-child');
+
+        if ( ! el )
+            return null;
+
+        var style = window.getComputedStyle(el,null),
             transform = style.getPropertyValue("-webkit-transform") ||
                         style.getPropertyValue("-moz-transform") ||
                         style.getPropertyValue("-ms-transform") ||

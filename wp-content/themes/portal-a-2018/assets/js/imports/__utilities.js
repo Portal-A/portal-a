@@ -163,6 +163,16 @@
         tick();
     };
 
+    UTIL.getQuery = function( queryObj ) {
+        var queryStr = [];
+
+        Object.keys(queryObj).forEach(function(key){
+            queryStr.push(key + '=' + queryObj[key]);
+        });
+
+        return queryStr.join('&');
+    };
+
     window.UTIL = UTIL;
 
 })(this);
