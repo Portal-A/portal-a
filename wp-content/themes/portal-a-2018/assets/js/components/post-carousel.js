@@ -5,13 +5,17 @@
 
 (function(window, $){
 
+    if ( !$ ) {
+        return;
+    }
+
     var PostCarousel = function(el) {
 
         this.el = el;
         this.query = {
             page: PA.wp_query.query_vars.paged || 1,
             per_page: PA.wp_query.post_count,
-        }
+        };
         this.max_num_pages = PA.wp_query.max_num_pages;
         this.url = PA.api + 'posts/';
         this.populatedPages = [this.query.page];
@@ -157,4 +161,4 @@
 
     });
 
-})(this, jQuery);
+})( this, window.jQuery ? jQuery : null );
