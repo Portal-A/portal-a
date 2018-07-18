@@ -13,6 +13,11 @@ a {
     outline: none;
     text-decoration: none;
     color: inherit;
+
+    &.is-disabled {
+        opacity: $faded;
+        pointer-events: none;
+    }
 }
 
 

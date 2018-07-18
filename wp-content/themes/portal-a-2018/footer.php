@@ -49,27 +49,27 @@
 
 		var images = document.querySelectorAll('img.attachment-hero, img.wp-post-image');
 
-		console.log(images);
+		// console.log(images);
 		
-		images.forEach(function(img){
+		// images.forEach(function(img){
 
-			var siteUrl = "<?php echo site_url() ?>",
-				siteUrlRegexp = new RegExp( siteUrl, "g" ),
-				src = img.getAttribute("src"),
-				srcset = img.getAttribute("srcset");
+		// 	var siteUrl = "<?php echo site_url() ?>",
+		// 		siteUrlRegexp = new RegExp( siteUrl, "g" ),
+		// 		src = img.getAttribute("src"),
+		// 		srcset = img.getAttribute("srcset");
 
-			if ( src.indexOf(siteUrl) > -1 ) {				
-				src = src.replace( siteUrlRegexp, "https://www.portal-a.com");
-				img.setAttribute('src', src);
+		// 	if ( src.indexOf(siteUrl) > -1 ) {				
+		// 		src = src.replace( siteUrlRegexp, "https://www.portal-a.com");
+		// 		img.setAttribute('src', src);
 
-				if ( srcset ) {
-					srcset = srcset.replace( siteUrlRegexp, "https://www.portal-a.com");
-					img.setAttribute('srcset', srcset);
-				}
+		// 		if ( srcset ) {
+		// 			srcset = srcset.replace( siteUrlRegexp, "https://www.portal-a.com");
+		// 			img.setAttribute('srcset', srcset);
+		// 		}
 				
-			}
+		// 	}
 
-		});
+		// });
 
 	</script>
 
