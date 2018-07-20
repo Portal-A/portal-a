@@ -51,6 +51,7 @@ function scripts() {
 	wp_enqueue_script('theme_scripts', PA_ASSETS . 'js/scripts.js', '', '', true);
 
 	wp_localize_script( 'theme_scripts', 'PA', array(
+		'site_url' => site_url(),
 		'api' => get_rest_url( null, 'wp/v2/' ),
 		'wp_query' => ( is_home() && ! is_front_page() ) ? $wp_query : array()
 	) );

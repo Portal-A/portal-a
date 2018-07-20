@@ -1,10 +1,12 @@
 
 /**
  * Post List
+ * REQUIRES: slick.min.js, jQuery
  */
 
 (function(window, $){
 
+    // if no jQuery, bail out
     if ( !$ ) {
         return;
     }
@@ -43,15 +45,34 @@
 
         var that = this;
 
+        // prev button
         this.prevBtn.addEventListener('click', function(event){
             event.preventDefault();
             that.prevPage();
         });
         
+        // next button
         this.nextBtn.addEventListener('click', function(event){
             event.preventDefault();
             that.nextPage();
         });
+
+        // browser back/forward buttons
+        window.onpopstate = function(event) {
+            
+            var statePage = event.state ? event.state.page : 1,
+                direction = that.query.page > statePage ? 'prev' : 'next';
+            
+            that.query.page = statePage;
+
+            if ( direction === 'next' ) {
+                $(that.el).slick('slickNext');
+            } else {
+                $(that.el).slick('slickPrev');
+            }
+            
+            that.updateControls();
+        };
 
     };
 
@@ -110,8 +131,7 @@
     };
 
     PostCarousel.prototype.nextPage = function() {
-        var that = this,
-            nextPage = this.query.page + 1;
+        var nextPage = this.query.page + 1;
 
         this.query.page = nextPage;
         
@@ -119,21 +139,23 @@
 
         if ( this.populatedPages.indexOf( nextPage ) > -1 ) {
             $(this.el).slick('slickNext');
-            that.updateControls();
+            this.updateControls();
+            this.updateURL();
         } 
         else {
+            var that = this;
             this.getPosts()
                 .then(function(json){
                     that.addSlide(json);
                     $(that.el).slick('slickNext');
                     that.updateControls();
+                    that.updateURL();
                 });
         }
     };
 
     PostCarousel.prototype.prevPage = function() {
-        var that = this,
-            prevPage = this.query.page - 1;
+        var prevPage = this.query.page - 1;
 
         this.query.page = prevPage;
         
@@ -141,16 +163,34 @@
 
         if ( this.populatedPages.indexOf( prevPage ) > -1 ) {
             $(this.el).slick('slickPrev');
-            that.updateControls();
+            this.updateControls();
+            this.updateURL();
         } 
         else {
+            var that = this;
             this.getPosts()
                 .then(function(json){
                     that.addSlide(json, true);
                     $(that.el).slick('slickPrev');
                     that.updateControls();
+                    that.updateURL();
                 });
         }
+    };
+
+    PostCarousel.prototype.updateURL = function() {
+        if ( ! window.history ) {
+            return;
+        }
+
+        var path = location.pathname.split('/page/')[0].replace(/\//g,''),
+            newUrl = this.query.page === 1 ? PA.site_url + '/' + path : PA.site_url + '/' + path + '/page/' + this.query.page;
+
+        history.pushState( 
+            { page: this.query.page }, 
+            'page ' + this.query.page, 
+            newUrl
+        );
     };
 
     UTIL.onDocumentReady(function(){
