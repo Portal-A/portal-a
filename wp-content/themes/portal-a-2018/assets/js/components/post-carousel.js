@@ -13,20 +13,29 @@
 
     var PostCarousel = function(el) {
 
+        var post_count = Math.max( PA.wp_query.post_count, 9 ),
+            found_posts = PA.wp_query.found_posts,
+            pa_query = PA.wp_query.query,
+            pa_query_vars = PA.wp_query.query_vars,
+            pa_queried_object = PA.wp_query.queried_object;
+
         this.el = el;
-        this.query = {
-            page: PA.wp_query.query_vars.paged || 1,
-            per_page: PA.wp_query.post_count,
-        };
-        this.max_num_pages = PA.wp_query.max_num_pages;
-        this.url = PA.api + 'posts/';
-        this.populatedPages = [this.query.page];
+        this.page = pa_query_vars.paged || 1;
+        this.perPage = parseInt( post_count );
+        this.postCount = parseInt( found_posts );
+        this.max_num_pages = Math.ceil( this.postCount / this.perPage );
+        this.postsUrl = PA.api + 'posts/';
+        this.populatedPages = [this.page];
         this.prevBtn = document.querySelector('.js-prev');
         this.nextBtn = document.querySelector('.js-next');
+        this.carousel = null;
         this.carouselSettings = {
             arrows: false,
             infinite: false,
         };
+        this.catDisplay = document.querySelector('.js-cat-display');
+        this.currentCat = pa_query.category_name ? PA.wp_query.queried_object_id : 0;
+        this.basePath = location.pathname.split('page')[0];
 
         var postTemplateEl = el.querySelector('.js-post-template');
         this.postTemplate = postTemplateEl.innerText ? postTemplateEl.innerText : '';
@@ -36,9 +45,11 @@
     };
 
     PostCarousel.prototype.init = function(){ 
-        $(this.el).slick(this.carouselSettings);
+        this.carousel = $(this.el).slick(this.carouselSettings);
         this.updateControls();
         this.initEvents();
+        this.initCategories();
+        window.postcarousel = this;
     };
 
     PostCarousel.prototype.initEvents = function() {
@@ -61,14 +72,14 @@
         window.onpopstate = function(event) {
             
             var statePage = event.state ? event.state.page : 1,
-                direction = that.query.page > statePage ? 'prev' : 'next';
+                direction = that.page > statePage ? 'prev' : 'next';
             
-            that.query.page = statePage;
+            that.page = statePage;
 
             if ( direction === 'next' ) {
-                $(that.el).slick('slickNext');
+                that.carousel.slick('slickNext');
             } else {
-                $(that.el).slick('slickPrev');
+                that.carousel.slick('slickPrev');
             }
             
             that.updateControls();
@@ -76,14 +87,95 @@
 
     };
 
-    PostCarousel.prototype.getPosts = function(){
+    PostCarousel.prototype.initCategories = function() {
+        var that = this;
+
+        document.querySelectorAll('.js-cat-link').forEach(function(link){
+
+            link.addEventListener( 'click', function(event){
+                event.preventDefault();
+
+                var linkText = link.innerText,
+                    linkId = parseInt( link.getAttribute('data-cat-id') );
+
+                // update settings
+                that.currentCat = linkId;
+                that.postCount = parseInt( link.getAttribute('data-count') );
+                that.max_num_pages = that.getMaxPages( that.postCount , that.perPage);
+                that.page = 1;
+                that.basePath = link.getAttribute('href').split(PA.site_url)[1];
+                    
+                // display category name
+                if ( "all" === linkText.toLowerCase() ) {
+                    that.catDisplay.innerText = " ";
+                } else {
+                    that.catDisplay.innerText = "Category: " + link.innerText.trim();
+                }
+
+                // remove active state on links
+                document.querySelectorAll('.js-cat-link').forEach(function(_link){
+                    _link.classList.remove('pa-u-color-primary');
+                    _link.classList.remove('pa-u-underline');
+                });
+
+                // set active state on link
+                link.classList.add('pa-u-color-primary');
+                link.classList.add('pa-u-underline');
+
+                // scroll to top
+                UTIL.scrollTo( $('.pa-c-hero').height() );
+
+                // run function after .scrollTo() has finished
+                setTimeout( function(){
+
+                    // go back to first slide, `true` arg means don't animate
+                    that.carousel.slick('slickGoTo', 0, true);
+    
+                    // remove all slides
+                    for ( var i = 0; i < that.populatedPages.length; i++ ) {
+                        that.carousel.slick('slickRemove', 0);
+                    }
+
+                    // update populatedPages list
+                    that.populatedPages = [that.page];
+
+                    // get category posts
+                    var args = {};
+                    if ( linkId ) {
+                        args.categories = linkId;
+                    }
+                    that.getPosts(args)
+                        .then(function(json){
+                            that.addSlide( json );
+                            that.updateControls();
+                            that.updateURL();
+                        });
+
+                }, 500 );
+
+            });
+
+        });
+
+    };
+
+    PostCarousel.prototype.getPosts = function(args){
         
+        args = (typeof args === 'object') ? args : {};
+
+        var defaults = {
+            page: 1,
+            per_page: this.perPage,
+        };
+        var query = Object.assign({}, defaults, args);
+
         var that = this,
-            queryString = UTIL.getQuery(this.query);
+            queryString = UTIL.getQuery(query);
         
-        return fetch( this.url + '?' + queryString )
+        console.log(this.postsUrl + '?' + queryString);
+        
+        return fetch( this.postsUrl + '?' + queryString )
             .then(function(response){
-                that.populatedPages.push( that.query.page );
                 return response.json();
             })
             .catch(function(error){
@@ -93,13 +185,13 @@
 
     PostCarousel.prototype.updateControls = function() {
         // prev button
-        if ( this.query.page === 1 ) {
+        if ( this.page === 1 ) {
             this.prevBtn.classList.add('is-disabled');
         } else {
             this.prevBtn.classList.remove('is-disabled');
         }
         // next button
-        if ( this.query.page === this.max_num_pages ) {
+        if ( this.page === this.max_num_pages ) {
             this.nextBtn.classList.add('is-disabled');
         } else {
             this.nextBtn.classList.remove('is-disabled');
@@ -126,28 +218,37 @@
 
         postSlide.innerHTML = listHtml.join('');
 
-        $(this.el).slick( 'slickAdd', postSlide.outerHTML, addBefore );
+        this.carousel.slick( 'slickAdd', postSlide.outerHTML, addBefore );
 
     };
 
     PostCarousel.prototype.nextPage = function() {
-        var nextPage = this.query.page + 1;
+        var nextPage = this.page + 1;
 
-        this.query.page = nextPage;
+        this.page = nextPage;
         
         UTIL.scrollTo( $('.pa-c-hero').height() );
 
         if ( this.populatedPages.indexOf( nextPage ) > -1 ) {
-            $(this.el).slick('slickNext');
+            this.carousel.slick('slickNext');
             this.updateControls();
             this.updateURL();
         } 
         else {
             var that = this;
-            this.getPosts()
+                args = {
+                    page: nextPage
+                };
+
+            if ( this.currentCat ) {
+                args.categories = this.currentCat;
+            }
+
+            this.getPosts(args)
                 .then(function(json){
+                    that.populatedPages.push(nextPage);
                     that.addSlide(json);
-                    $(that.el).slick('slickNext');
+                    that.carousel.slick('slickNext');
                     that.updateControls();
                     that.updateURL();
                 });
@@ -155,23 +256,32 @@
     };
 
     PostCarousel.prototype.prevPage = function() {
-        var prevPage = this.query.page - 1;
+        var prevPage = this.page - 1;
 
-        this.query.page = prevPage;
+        this.page = prevPage;
         
         UTIL.scrollTo( $('.pa-c-hero').height() );
 
         if ( this.populatedPages.indexOf( prevPage ) > -1 ) {
-            $(this.el).slick('slickPrev');
+            this.carousel.slick('slickPrev');
             this.updateControls();
             this.updateURL();
         } 
         else {
             var that = this;
-            this.getPosts()
+                args = {
+                    page: prevPage
+                };
+
+            if ( this.currentCat ) {
+                args.categories = this.currentCat;
+            }
+
+            this.getPosts(args)
                 .then(function(json){
+                    that.populatedPages.push(prevPage);
                     that.addSlide(json, true);
-                    $(that.el).slick('slickPrev');
+                    that.carousel.slick('slickPrev');
                     that.updateControls();
                     that.updateURL();
                 });
@@ -183,14 +293,18 @@
             return;
         }
 
-        var path = location.pathname.split('/page/')[0].replace(/\//g,''),
-            newUrl = this.query.page === 1 ? PA.site_url + '/' + path : PA.site_url + '/' + path + '/page/' + this.query.page;
+        var path = this.basePath,
+            newUrl = this.page === 1 ? PA.site_url + path : PA.site_url + path + 'page/' + this.page;
 
         history.pushState( 
-            { page: this.query.page }, 
-            'page ' + this.query.page, 
+            { page: this.page }, 
+            'page ' + this.page, 
             newUrl
         );
+    };
+
+    PostCarousel.prototype.getMaxPages = function( total, perPage ) {
+        return Math.ceil( parseInt(total) / parseInt(perPage) );
     };
 
     UTIL.onDocumentReady(function(){
