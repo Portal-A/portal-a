@@ -127,11 +127,6 @@ $queried_object_id = get_queried_object_id();
         <div style="margin-left:auto">
             <nav class="navigation pagination" role="navigation">
                 <h2 class="screen-reader-text">Posts navigation</h2>
-                <!-- <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-                <a class="page-numbers" href="http://portal-a.local/blog/page/2/">2</a>
-                <a class="page-numbers" href="http://portal-a.local/blog/page/3/">3</a>
-                <span class="page-numbers dots">…</span>
-                <a class="page-numbers" href="http://portal-a.local/blog/page/17/">17</a> -->
                 <a class="js-prev page-numbers" href="#">Previous</a>
                 &nbsp;&nbsp;
                 <span class="js-current-page">
