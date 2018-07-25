@@ -133,7 +133,18 @@ $queried_object_id = get_queried_object_id();
                 <span class="page-numbers dots">…</span>
                 <a class="page-numbers" href="http://portal-a.local/blog/page/17/">17</a> -->
                 <a class="js-prev page-numbers" href="#">Previous</a>
-                &nbsp;|&nbsp;
+                &nbsp;&nbsp;
+                <span class="js-current-page">
+                    <?php 
+                    $page = get_query_var( 'paged' );
+                    $page = $page === 0 ? 1 : $page;
+                    echo $page; ?>
+                </span>
+                /
+                <span class="js-total-pages">
+                    <?php echo $wp_query->max_num_pages ?>
+                </span>
+                &nbsp;&nbsp;
                 <a class="js-next page-numbers" href="#">Next</a>
             </nav>
         </div>

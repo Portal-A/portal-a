@@ -28,6 +28,8 @@
         this.populatedPages = [this.page];
         this.prevBtn = document.querySelector('.js-prev');
         this.nextBtn = document.querySelector('.js-next');
+        this.currentPageEl = document.querySelector('.js-current-page');
+        this.totalPagesEl = document.querySelector('.js-total-pages');
         this.carousel = null;
         this.carouselSettings = {
             arrows: false,
@@ -149,6 +151,7 @@
                             that.addSlide( json );
                             that.updateControls();
                             that.updateURL();
+                            that.updatePaging();
                         });
 
                 }, 500 );
@@ -233,6 +236,7 @@
             this.carousel.slick('slickNext');
             this.updateControls();
             this.updateURL();
+            this.updatePaging();
         } 
         else {
             var that = this;
@@ -251,6 +255,7 @@
                     that.carousel.slick('slickNext');
                     that.updateControls();
                     that.updateURL();
+                    that.updatePaging();
                 });
         }
     };
@@ -266,6 +271,7 @@
             this.carousel.slick('slickPrev');
             this.updateControls();
             this.updateURL();
+            this.updatePaging();
         } 
         else {
             var that = this;
@@ -284,6 +290,7 @@
                     that.carousel.slick('slickPrev');
                     that.updateControls();
                     that.updateURL();
+                    that.updatePaging();
                 });
         }
     };
@@ -305,6 +312,16 @@
 
     PostCarousel.prototype.getMaxPages = function( total, perPage ) {
         return Math.ceil( parseInt(total) / parseInt(perPage) );
+    };
+
+    PostCarousel.prototype.updatePaging = function( current, total ) {
+
+        current = current ? current : this.page;
+        total = total ? total : this.max_num_pages;
+
+        this.currentPageEl.innerText = current;
+        this.totalPagesEl.innerText = total;
+
     };
 
     UTIL.onDocumentReady(function(){
