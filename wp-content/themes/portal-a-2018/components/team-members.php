@@ -17,11 +17,11 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
             
                 <?php 
                 $columns = 12 / intval( $data['grid'] );
-                $lg = "pa-l-span-$columns-lg";
+                $lg = "span-$columns-lg";
                 if ( $columns > 6 ) :
-                    $md = "pa-l-span-12-md";
+                    $md = "span-12-md";
                 else :
-                    $md = "pa-l-span-6-md";
+                    $md = "span-6-md";
                 endif;
                 $grid_class = "$md $lg";
 

@@ -1,10 +1,12 @@
 .pa-c-logo {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    transition: $transition-normal;
+
     &:hover, &:focus {
         .pa-c-logo__static { display: none; }
         .pa-c-logo__active { display: block; }
@@ -13,6 +15,11 @@
     .pa-c-masthead & {
         flex-shrink: 0;
         margin-right: $container-padding;
+    }
+    .pa-c-masthead.is-minimized & {
+        width: 42px;
+        height: 42px;
+        transform: rotate(360deg);
     }
     
     .pa-c-logo__static { display: block; }

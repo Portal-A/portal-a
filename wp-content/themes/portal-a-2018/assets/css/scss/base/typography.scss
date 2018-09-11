@@ -28,6 +28,8 @@ h5,.pa-h5,
 h6,.pa-h6 {
     font-family: $font-primary;
     margin: $spacer 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,.pa-h1 {

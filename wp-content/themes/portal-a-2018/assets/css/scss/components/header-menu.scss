@@ -9,32 +9,40 @@
 
     a {
         @extend .pa-h6;
+        font-size: 12px;
+        margin: 0;
         position: relative;
-        color: white;
-        text-shadow: 0 2px 4px rgba(black, 0.5);
         display: block;
         transition: $transition-normal;
-        &:hover,
-        &:focus {
-            opacity: 1;
-            color: $color-primary;
-            &:after {
-                opacity: 1;
-                width: 100%;
-            }
+        padding: 64px 0px;
+
+        .pa-c-masthead.is-minimized & {
+            padding: 24px 0;
         }
 
         &:after {
             content: "";
             position: absolute;
-            top: calc(100% + 8px);
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             opacity: 0;
-            height: 1px;
+            height: 2px;
             transition: $transition-fast;
             background-color: $color-primary;
         }
     }
+
+    .current-menu-item a,
+    a:hover,
+    a:focus {
+        opacity: 1;
+        color: $color-primary;
+        &:after {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+    
 }

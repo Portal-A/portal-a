@@ -6,13 +6,13 @@ function pa_block_awards( $data, $options = array(), $return = false ) {
 
     switch( $data['grid'] ) :
         case '4':
-            $span = 'pa-l-span-6-md pa-l-span-4-lg';
+            $span = 'span-6-md span-4-lg';
             break;
         case '6':
-            $span = 'pa-l-span-6-md';
+            $span = 'span-6-md';
             break;
         default :
-            $span = 'pa-l-span-12';
+            $span = 'span-12';
     endswitch;
 
     $span = 'pa-l-flex ' . $span;

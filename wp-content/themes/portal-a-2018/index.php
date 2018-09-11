@@ -57,7 +57,7 @@ $queried_object_id = get_queried_object_id();
         <div class="pa-c-post-slide">
             <?php while ( have_posts() ) : the_post(); ?>
             
-            <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg">
+            <div class="pa-l-flex span-6-md span-4-lg">
                 <a href="<?php the_permalink() ?>" class="pa-c-cover-media pa-l-mb-gutter does-scale does-fade" style="padding-top:100%">
                     <?php the_post_thumbnail('large') ?>
                     <div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
@@ -71,7 +71,7 @@ $queried_object_id = get_queried_object_id();
 
         <script class="js-post-template" type="text/mustache-template">
         
-            <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg">
+            <div class="pa-l-flex span-6-md span-4-lg">
                 <a href="{{link}}" class="pa-c-cover-media pa-l-mb-gutter does-scale does-fade" style="padding-top:100%">
                     {{{featured_image}}}
                     {{#title.rendered}}

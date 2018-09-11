@@ -37,7 +37,7 @@
 
 	<body <?php body_class(); ?>>
 
-		<header class="pa-c-masthead">
+		<header class="pa-c-masthead js-masthead">
 			<a href="<?= get_bloginfo('url') ?>" class="pa-c-logo">
 				<img class="pa-c-logo__static" src="<?php echo get_template_directory_uri() . '/assets/img/logo@2x.png' ?>" alt="Portal A logo static" width="117" height="117" >
 				<img class="pa-c-logo__active" src="<?php echo get_template_directory_uri() . '/assets/img/logo@2x.gif' ?>" alt="Portal A logo active" width="117" height="117" >

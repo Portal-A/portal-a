@@ -22,7 +22,7 @@ require_once( PA_INC . 'shortcodes.php' );
 require_once( PA_INC . 'api.php' );
 
 // Include components
-foreach ( glob( PA_INC . 'components/*.php' ) as $filename )
+foreach ( glob( PA_PATH . 'components/*.php' ) as $filename )
 {
     require_once( $filename );
 }

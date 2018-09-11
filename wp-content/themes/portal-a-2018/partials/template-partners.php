@@ -24,7 +24,7 @@ ob_start(); ?>
                 $href = $link ? 'href="'.esc_url($link).'"' : '';
                 ?>
             
-                <div class="pa-l-flex pa-l-span-6 pa-l-span-4-md pa-l-span-3-lg pa-u-text-center pa-l-mb-4">
+                <div class="pa-l-flex span-6 span-4-md span-3-lg pa-u-text-center pa-l-mb-4">
                     <?php echo "<$tag $href $class>" ?>
                         <?php the_post_thumbnail( 'medium', array( 'style' => 'display:inline-block; max-width:200px; max-height: 75px; width:auto; height: auto;' ) ) ?>
                         <?php if ( $link ) : ?>

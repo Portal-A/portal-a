@@ -6,7 +6,7 @@
     padding-right: $container-padding;
 }
 
-.pa-l-flex[class*="pa-l-span-"] {
+.pa-l-flex[class*="span-"] {
     flex-basis: 100%;
     flex-grow: 0;
     flex-shrink: 0;
@@ -22,10 +22,10 @@
 
 @for $i from 1 through $columns {
 
-    // .pa-l-span-#{$i} {
+    // .span-#{$i} {
     //     width: #{$i/$columns}%;
     // }
-    .pa-l-flex.pa-l-span-#{$i} {
+    .pa-l-flex.span-#{$i} {
         flex-basis: $i / $columns * 100%;
         
         .pa-l-with-gutters & {
@@ -41,7 +41,7 @@
 
         @for $i from 1 through $columns {
             
-            .pa-l-flex.pa-l-span-#{$i}-#{$bp} {
+            .pa-l-flex.span-#{$i}-#{$bp} {
                 flex-basis: $i / $columns * 100%;
 
                 .pa-l-with-gutters & {

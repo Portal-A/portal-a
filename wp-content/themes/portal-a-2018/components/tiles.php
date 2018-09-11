@@ -28,30 +28,30 @@ function pa_block_tiles( $data, $options = array(), $return = false ) {
                     
                     switch( $tile['columns'] ) :
                         case '3':
-                            $span = 'pa-l-span-6-md pa-l-span-3-lg';
+                            $span = 'span-6-md span-3-lg';
                             break;
                         case 'third':
                         case '4':
-                            $span = 'pa-l-span-6-md pa-l-span-4-lg';
+                            $span = 'span-6-md span-4-lg';
                             break;
                         case '5':
-                            $span = 'pa-l-span-6-md pa-l-span-5-lg';
+                            $span = 'span-6-md span-5-lg';
                             break;
                         case 'half':
                         case '6':
-                            $span = 'pa-l-span-6-md';
+                            $span = 'span-6-md';
                             break;
                         case '7':
-                            $span = 'pa-l-span-12-md pa-l-span-7-lg';
+                            $span = 'span-12-md span-7-lg';
                             break;
                         case '8':
-                            $span = 'pa-l-span-12-md pa-l-span-8-lg';
+                            $span = 'span-12-md span-8-lg';
                             break;
                         case '9':
-                            $span = 'pa-l-span-12-md pa-l-span-9-lg';
+                            $span = 'span-12-md span-9-lg';
                             break;
                         default :
-                            $span = 'pa-l-span-12';
+                            $span = 'span-12';
                     endswitch;
                     
                     $span = 'pa-l-flex ' . $span;

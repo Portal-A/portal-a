@@ -42,7 +42,7 @@ get_header();
                 
                 <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters pa-l-mt-5">
         
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
                         <p class="pa-l-mt-half">
                             <strong>New Projects</strong><br/>
@@ -50,7 +50,7 @@ get_header();
                         </p>
                     </div>
                     
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
                         <p class="pa-l-mt-half">
                             <strong>Join Our Team</strong><br/>
@@ -58,7 +58,7 @@ get_header();
                         </p>
                     </div>
                     
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
                         <p class="pa-l-mt-half">
                             <strong>Say Hello</strong><br/>
@@ -66,7 +66,7 @@ get_header();
                         </p>
                     </div>
                     
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
                         <p class="pa-l-mt-half">
                             <strong>Press Inquiries</strong><br/>
@@ -74,7 +74,7 @@ get_header();
                         </p>
                     </div>
                     
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
                         <p class="pa-l-mt-half">
                             <strong>Representation</strong><br/>
@@ -82,7 +82,7 @@ get_header();
                         </p>
                     </div>
                     
-                    <div class="pa-l-flex pa-l-span-6-md pa-l-span-4-lg pa-u-text-center pa-l-mb-4">
+                    <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         <form >
                             <div class="pa-u-center" style="position:relative;width:100%;max-width:220px">
                                 <input type="email" placeholder="Email" name="email" class="pa-b-input pa-u-display-block" style="width:100%" />
@@ -113,7 +113,7 @@ get_header();
                 <?php
                 while ( $locations->have_posts() ) : $locations->the_post(); ?>
 
-                    <div class="pa-l-flex pa-l-span-6-md">
+                    <div class="pa-l-flex span-6-md">
                         <div class="pa-c-cover-media does-scale" style="padding-top:43%">
                             <?php the_post_thumbnail('large'); ?>
                             <div class="pa-c-cover-media__cover does-fade">
