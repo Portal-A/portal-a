@@ -8,7 +8,7 @@
     var APP = function() {
     
         this.scrollCallbacks = [];
-        this.active_view = document.body.classList.contains('page-template-about') ? 'page-7861' : '';
+        this.active_view = document.body.classList.contains('page-template-about') ? 'page-7887' : '';
         // scroll watch
         this.initScrollLoop();
 
