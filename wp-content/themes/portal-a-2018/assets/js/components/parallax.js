@@ -47,6 +47,14 @@
         if ( transform === "FAIL" )
             return;
 
+        if ( transform === 'none' ) {
+            return {
+                el: el,
+                x: 0,
+                y: 0
+            };
+        }
+        
         var transformVals = transform.split('(')[1].split(')')[0].split(','),
             x = parseInt(transformVals[4]),
             y = parseInt(transformVals[5]);
@@ -63,7 +71,7 @@
         var newY = distance * this.scrollMultiplier,
             newOpacity = 1 - ((distance / this.height) * 1.4);
 
-        this.child.el.style.transform = 'translate3d(-50%,calc(-50% - '+ newY +'px), 0)';
+        this.child.el.style.transform = 'translate3d(0,calc(-'+ newY +'px), 0)';
         this.child.el.style.opacity = newOpacity;
 
     };

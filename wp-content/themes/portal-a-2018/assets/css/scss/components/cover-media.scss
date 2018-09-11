@@ -30,19 +30,18 @@
         }
     }
 
-    & > img, & > video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 101%;
-        height: auto;
-        max-height: none;
-        max-width: none;
-        min-height: 101%;
-        transform: translate(-50%, -50%);
-        transition: $transition-slow;
-    }
+    
+}
 
+.pa-c-cover-media__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: $transition-slow;
 }
 
 .pa-c-cover-media__content {

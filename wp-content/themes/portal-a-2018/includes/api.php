@@ -146,6 +146,6 @@ function get_blocks( $object, $field_name, $request ) {
 function get_featured_image( $object, $field_name, $request ) {
 
     $attachment_id = get_post_thumbnail_id( $object['id'] );
-    return wp_get_attachment_image( $attachment_id, 'large', false, array() );
+    return wp_get_attachment_image( $attachment_id, 'medium', false, array() );
 
 }

@@ -14,9 +14,12 @@ $queried_object_id = get_queried_object_id();
 
 <div class="pa-c-hero is-fixed">
 
-    <div class="pa-c-hero__media pa-c-cover-media js-parallax">
-        <?php get_the_post_thumbnail( $blog_page, 'hero', array( 'class' => 'js-parallax-child' ) ); ?>
-    </div>
+    <?php pa_cover_media( array(
+        'classes' => array( 'pa-c-hero__media' ),
+        'image' => get_post_thumbnail_id( $blog_page ),
+        'image_size' => 'hero',
+        'parallax' => true
+    ) ) ?>
     
 </div>
 
