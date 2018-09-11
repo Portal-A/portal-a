@@ -29,6 +29,9 @@
 
 		<!-- Fetch Polyfill -->
 		<script>window.fetch || document.write('<script src="<?php echo PA_ASSETS . 'js/polyfills/fetch.polyfill.js' ?>"><\/script>')</script>
+		
+		<!-- Typekit -->
+		<link rel="stylesheet" href="https://use.typekit.net/cql2uhn.css">
 
 	</head>
 

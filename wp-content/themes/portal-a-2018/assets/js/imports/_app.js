@@ -8,7 +8,7 @@
     var APP = function() {
     
         this.scrollCallbacks = [];
-
+        this.active_view = document.body.classList.contains('page-template-about') ? 'page-7861' : '';
         // scroll watch
         this.initScrollLoop();
 
@@ -24,7 +24,7 @@
         var that = this;
 
         // check if a specific view is being queried
-        if ( this.hasViewQuery() ) {
+        if ( this.active_view || this.hasViewQuery() ) {
             // if so, load it up
             this.handleViewQuery();
         }
@@ -127,8 +127,16 @@
      */
     APP.prototype.handleViewQuery = function( query ) {
         
-        query = query ? query : location.search;
+        if ( ! query ) {
+            if ( this.active_view ) {
+                query = '?active_view=' + this.active_view;
+            } else {
+                query = location.search;
+            }
+        }
+        console.log(query);
         query = this.parseQuery(query);
+        console.log(query);
         
         if ( ! query.active_view ) 
             return;
@@ -267,12 +275,12 @@
             },10);
 
             // scroll to view
-            viewTop = viewEl.offsetTop;
-            if ( dataViewTop ) {
-                var viewTopEl = document.querySelector(dataViewTop);
-                viewTop = viewTopEl ? viewTopEl.offsetTop : viewTop;
-            }
-            UTIL.scrollTo( viewTop );
+            // viewTop = viewEl.offsetTop;
+            // if ( dataViewTop ) {
+            //     var viewTopEl = document.querySelector(dataViewTop);
+            //     viewTop = viewTopEl ? viewTopEl.offsetTop : viewTop;
+            // }
+            // UTIL.scrollTo( viewTop );
         }
 
     };
