@@ -8,7 +8,10 @@
     var APP = function() {
     
         this.scrollCallbacks = [];
-        this.active_view = document.body.classList.contains('page-template-about') ? 'page-7887' : '';
+        
+        var startPage = document.querySelector('.js-view-start');
+        this.active_view = startPage ? startPage.id : null;
+
         // scroll watch
         this.initScrollLoop();
 
@@ -128,15 +131,14 @@
     APP.prototype.handleViewQuery = function( query ) {
         
         if ( ! query ) {
-            if ( this.active_view ) {
-                query = '?active_view=' + this.active_view;
-            } else {
+            if ( location.search ) {
                 query = location.search;
+            } else {
+                query = '?active_view=' + this.active_view;
             }
         }
-        console.log(query);
+
         query = this.parseQuery(query);
-        console.log(query);
         
         if ( ! query.active_view ) 
             return;

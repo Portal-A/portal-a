@@ -67,9 +67,15 @@ get_header();
                     <?php endwhile; ?>
                 </nav>
 
-                <?php while ( $children->have_posts() ) : $children->the_post(); ?>
+                <?php while ( $children->have_posts() ) : $children->the_post();
+                
+                    $is_start_view = get_post_meta($post->ID, 'start_page', true) ? 'js-view-start' : ''; ?>
 
-                    <article id="<?php echo "{$post->post_type}-{$post->ID}" ?>" class="js-view-target pa-l-mb-4" data-view-top="#view-nav" data-load-content="<?php echo $post->ID; ?>" style="display:none" >
+                    <article id="<?php echo "{$post->post_type}-{$post->ID}" ?>" 
+                             class="js-view-target pa-l-mb-4 <?php echo $is_start_view ?>"
+                             data-view-top="#view-nav" 
+                             data-load-content="<?php echo $post->ID; ?>" 
+                             style="display:none" >
 
                         <?php get_template_part( 'partials/template', $post->post_name ); ?>
 
