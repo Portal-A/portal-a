@@ -3,7 +3,8 @@
     padding: 0 1rem 0 $container-padding;
     display: flex;
     align-items: center;
-    min-height: 60px;
+    border-bottom: 1px solid #5d5d5d;
+    margin-bottom: 5px;
 }
 .pa-c-home-nav__menu {
     position: relative;
@@ -22,6 +23,7 @@
         text-shadow: 0 2px 4px rgba(black, 0.5);
         display: block;
         transition: $transition-normal;
+        padding: 24px 0;
         &:hover,
         &:focus {
             opacity: 1;
@@ -35,7 +37,7 @@
         &:after {
             content: "";
             position: absolute;
-            top: calc(100% + 8px);
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
