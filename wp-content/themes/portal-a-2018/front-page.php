@@ -26,7 +26,7 @@ get_header(); ?>
 			
 			<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
 			
-				<h1 class="pa-c-home-video__title"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h1>
+				<h1 class="pa-c-home-video__title pa-l-mt-0"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h1>
 
 				<button href="#reel" 
 						class="pa-b-clean-button pa-u-scale-hover pa-u-transition-fast js-lightbox-toggle"
