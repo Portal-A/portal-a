@@ -10,13 +10,7 @@ get_header();
 
 	<article <?php post_class('pa-c-post pa-l-pb-5') ?>>
 
-		<div class="pa-c-hero is-fixed">
-		
-			<div class="pa-c-hero__media pa-c-cover-media js-parallax">
-				<?php the_post_thumbnail( 'hero', array( 'class' => 'js-parallax-child' ) ); ?>
-			</div>
-			
-		</div>
+		<?php pa_hero() ?>
 
 		<div class="pa-c-page-content">
 		

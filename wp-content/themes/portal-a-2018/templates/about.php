@@ -13,7 +13,6 @@ get_header();
 		<?php pa_hero() ?>
 
         <div class="pa-c-page-content">
-
             
             <div class="pa-l-container">
             
