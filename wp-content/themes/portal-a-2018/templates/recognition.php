@@ -14,20 +14,6 @@ get_header();
 
 		<div class="pa-c-page-content">
 		
-			<div class="pa-c-hero-tab">
-				<div class="pa-c-hero-tab__inner">
-					<h1 class="pa-u-text-center pa-l-mt-0">
-						<?php 
-						if ( $post->post_excerpt ) :
-							echo $post->post_excerpt;
-						else :
-							the_title();
-						endif; 
-						?>
-					</h1>
-				</div>
-			</div>
-
 			<div class="pa-l-container">
 			
 				<?php pa_block_wysiwyg( array( 

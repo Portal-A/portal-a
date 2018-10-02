@@ -1,21 +1,31 @@
 <?php
 
-function pa_hero( $args = array() ) {
+function pa_hero( $args = array(), $hero_post = 0 ) {
     global $post;
+
+    if ( ! $hero_post && $post ) {
+        $hero_post = $post;
+    }
 
     $defaults = array(
         'align' => 'center',
-        'image_id' => get_post_meta( get_the_ID(), 'hero_image', true ),
-        'bg_image_url' => get_the_post_thumbnail_url( $post, 'hero' ),
-        'scrim' => has_post_thumbnail( $post ),
-        'embed_url' => get_post_meta( get_the_ID(), 'hero_embed', true ),
-        'bg_color' => ''
+        'image_id' => get_post_meta( $hero_post->ID, 'hero_image', true ),
+        'bg_image_url' => get_the_post_thumbnail_url( $hero_post, 'hero' ),
+        'scrim' => has_post_thumbnail( $hero_post ),
+        'embed_url' => get_post_meta( $hero_post->ID, 'hero_embed', true ),
+        'bg_color' => '',
+        'title' => '',
+        'content' => '',
     );
 
     $args = array_merge( $defaults, $args );
     extract($args);
 
-    $bg_color = $bg_color ?: get_post_meta( get_the_ID(), 'hero_bg_color', true );
+    if ( $hero_post && ! $title ) {
+        $title = $hero_post->post_excerpt ?: apply_filters( 'the_title', $hero_post->post_title );
+    }
+
+    $bg_color = $bg_color ?: get_post_meta( $hero_post->post_title, 'hero_bg_color', true );
     $color = $bg_color ? pa_readable_color( $bg_color ) : '#000';
     
     $has_media = $image_id || $embed_url;
@@ -45,7 +55,8 @@ function pa_hero( $args = array() ) {
 
             <div class="pa-l-container">
                 
-                <h1 class="pa-l-my-0 pa-l-mx-auto" style="max-width:830px"><?php echo $post->post_excerpt ?: get_the_title() ?></h1>
+                <h1 class="pa-l-my-0 pa-l-mx-auto" style="max-width:830px"><?php echo $title ?></h1>
+                <?php echo $content ?>
 
             </div>
         

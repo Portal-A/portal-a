@@ -14,18 +14,15 @@ get_header();
 
 		<div class="pa-c-page-content">
 		
-			<div class="pa-c-hero-tab">
-				<div class="pa-c-hero-tab__inner">
-					<?php 
-					if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image_dark', true ) ) {
-						echo wp_get_attachment_image( $client_image_id, 'full' );
-					} else {
-						echo get_post_meta( get_the_ID(), 'client', true );
-					} ?>
-				</div>
-			</div>
+			<p class="pa-u-text-center"><?php 
+				if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image_dark', true ) ) {
+					echo wp_get_attachment_image( $client_image_id, 'full' );
+				} else {
+					echo get_post_meta( get_the_ID(), 'client', true );
+				} ?>
+			</p>
 
-			<h1 class="pa-u-text-center"><?php the_title(); ?></h1>
+			<h1 class="pa-h4 pa-u-text-center"><?php the_title(); ?></h1>
 
 			<?php get_template_part( 'partials/blocks' ); ?>
 

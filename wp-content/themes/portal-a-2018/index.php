@@ -12,33 +12,11 @@ $blog_page = get_post($blog_page_id);
 $queried_object_id = get_queried_object_id();
 ?>
 
-<div class="pa-c-hero is-fixed">
-
-    <?php pa_cover_media( array(
-        'classes' => array( 'pa-c-hero__media' ),
-        'image' => get_post_thumbnail_id( $blog_page ),
-        'image_size' => 'hero',
-        'parallax' => true
-    ) ) ?>
-    
-</div>
+<?php 
+    pa_hero( array( 'content' => '<span class="pa-h3 js-cat-display">&nbsp;</span>' ), $blog_page ) 
+?>
 
 <div class="pa-c-page-content pa-l-pb-5">
-
-    <div class="pa-c-hero-tab">
-        <div class="pa-c-hero-tab__inner">
-            <h1 class="pa-u-text-center pa-l-mt-0">
-                <?php 
-                if ( $blog_page->post_excerpt ) :
-                    echo $blog_page->post_excerpt;
-                else :
-                    echo apply_filters( 'the_title', $blog_page->post_title );
-                endif; 
-                ?>
-            </h1>
-            <span class="pa-h3 js-cat-display">&nbsp;</span>
-        </div>
-    </div>
 
     <?php if ( $blog_page->post_content ) : ?>
 
@@ -52,7 +30,7 @@ $queried_object_id = get_queried_object_id();
 
     <?php endif; ?>
 
-    <div class="pa-l-mt-5 js-post-carousel">
+    <div class="js-post-carousel">
 
         <div class="pa-c-post-slide">
             <?php while ( have_posts() ) : the_post(); ?>
