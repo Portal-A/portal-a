@@ -28,7 +28,7 @@ function pa_readable_color( $hex ) {
 
 	$brightness = ( hexdec( $color_parts[0] ) * 0.299 ) + ( hexdec( $color_parts[1] ) * 0.587 ) + ( hexdec( $color_parts[2] ) * 0.114 );
 
-	if ( $brightness > 128 ) {
+	if ( $brightness > 150 ) {
 		return '#000';
 	} else {
 		return '#fff';
