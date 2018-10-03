@@ -1,14 +1,19 @@
 .pa-c-hero {
-    @extend .pa-l-py-5;
+    @extend .pa-l-pt-5;
+    @extend .pa-l-pb-2;
     position: relative;
     text-align: center;
     margin-top: 141px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    
     &.is-left-aligned {
         text-align: left;
+    }
+    
+    &.has-bg-image {
+        @extend .pa-l-pb-5;
     }
 
     &.has-media {

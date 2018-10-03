@@ -26,12 +26,14 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
     }
 
     $bg_color = $bg_color ?: get_post_meta( $hero_post->ID, 'hero_bg_color', true );
-    $color = $bg_color ? pa_readable_color( $bg_color ) : '#000';
+    $color = $bg_color ? pa_readable_color( $bg_color ) : '#fff';
+    $color = ! $bg_color && ! $bg_image_url ? '#000' : $color;
     
     $has_media = $image_id || $embed_url;
 
     $class = array( 'pa-c-hero' );
     $class[] = $align === 'left' ? 'is-left-aligned' : '';
+    $class[] = $bg_image_url ? 'has-bg-image' : '';
     $class[] = $has_media ? 'has-media' : '';
     $class[] = $scrim ? 'has-scrim' : '';
     $class = 'class="'.implode( ' ', $class ).'"';
