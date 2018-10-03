@@ -25,7 +25,7 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
         $title = $hero_post->post_excerpt ?: apply_filters( 'the_title', $hero_post->post_title );
     }
 
-    $bg_color = $bg_color ?: get_post_meta( $hero_post->post_title, 'hero_bg_color', true );
+    $bg_color = $bg_color ?: get_post_meta( $hero_post->ID, 'hero_bg_color', true );
     $color = $bg_color ? pa_readable_color( $bg_color ) : '#000';
     
     $has_media = $image_id || $embed_url;
