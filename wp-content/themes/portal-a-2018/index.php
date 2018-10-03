@@ -16,7 +16,7 @@ $queried_object_id = get_queried_object_id();
     pa_hero( array( 'content' => '<span class="pa-h3 js-cat-display">&nbsp;</span>' ), $blog_page ) 
 ?>
 
-<div class="pa-c-page-content pa-l-pb-5">
+<div class="pa-c-page-content pa-l-mt-4 pa-l-pb-5">
 
     <?php if ( $blog_page->post_content ) : ?>
 
