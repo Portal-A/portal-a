@@ -1,11 +1,10 @@
 .pa-c-post__back-link {
     @extend .pa-h6;
-    margin-left: rem(30);
 
-    @include media(map-get($breakpoints, 'lg')) {
+    @include media( $lg ) {
         position: absolute;
-        top: 8px;
-        right: 100%;
+        top: 0;
+        right: calc( 100% + #{$gutter * 2} );
         margin: 0 rem(-40) 0 0;
         white-space: nowrap;
     }

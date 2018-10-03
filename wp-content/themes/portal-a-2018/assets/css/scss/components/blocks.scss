@@ -25,9 +25,10 @@
     text-align: center;
     
     &.is-left-aligned {
-        margin-left: rem(30);
-        margin-right: rem(30);
+        // margin-left: rem(30);
+        // margin-right: rem(30);
         text-align: left;
+        margin-left: 0;
     }
     
     h1, h2 {

@@ -8,30 +8,15 @@ get_header();
 
 	<?php while( have_posts() ) : the_post(); ?>
 
-	<article <?php post_class('pa-c-post pa-l-pb-5') ?>>
-
-		<?php pa_hero() ?>
+	<article <?php post_class('pa-c-post pa-l-pb-4 pa-l-py-6') ?>>
 
 		<div class="pa-c-page-content">
 		
-			<div class="pa-l-container">
-				<div class="pa-c-hero-tab pa-u-text-left">
-					<div class="pa-c-hero-tab__inner">
-						<p class="pa-h3 pa-l-mt-0"><?php the_date() ?></p>
-						<h1 class="pa-h2 pa-u-weight-bold">
-							<?php 
-							if ( $post->post_excerpt ) :
-								echo $post->post_excerpt;
-							else :
-								the_title();
-							endif; 
-							?>
-						</h1>
-					</div>
-				</div>
-			</div>
-
 			<div class="pa-l-container" style="position:relative">
+
+				<h6><?php the_date() ?></h6>
+
+				<h4><?php the_title() ?></h4>
 			
 				<?php pa_block_wysiwyg( array( 
 					'wysiwyg' => apply_filters( 'the_content', get_the_content() )
