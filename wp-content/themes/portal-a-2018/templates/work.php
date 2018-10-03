@@ -43,7 +43,7 @@ $originals = new WP_Query( array(
 
 <?php pa_hero() ?>
 
-<div class="pa-c-page-content">
+<div class="pa-c-page-content pa-l-mt-4">
 
 	<?php get_template_part( 'partials/blocks' ) ?>
 
