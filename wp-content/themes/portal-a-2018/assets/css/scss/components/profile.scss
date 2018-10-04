@@ -1,16 +1,7 @@
 .pa-c-profile {
     text-align: center;
     position: relative;
-}
-
-.pa-c-profile__image,
-.pa-c-profile__hover-image {
-
-    img {
-        display: block;
-        transition: $transition-normal
-    }
-
+    // overflow: hidden;
 }
 
 .pa-c-profile__image {
@@ -19,21 +10,10 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    background: none;
+    transition: $transition-slow;
 
-    img {
-        .pa-c-profile:hover & {
-            transform : translate(-50%, -50%) scale(1.1);
-            opacity: 0;
-        }
-    }
-}
-
-.pa-c-profile__hover-image {
-    img {
-        transform : translate(-50%, -50%) scale(0.9);
-        .pa-c-profile:hover & {
-            transform : translate(-50%, -50%) scale(1);
-        }
+    .pa-c-profile:hover & {
+        transform : translate3d(0,50%,0);
+        opacity: 0;
     }
 }

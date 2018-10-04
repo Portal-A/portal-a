@@ -8,6 +8,9 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
         return;
     }
 
+    $column_width = intval( $data['grid'] );
+    $team_members = $data['team_members'];
+
     ob_start();
     ?>
 
@@ -16,7 +19,7 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
             <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
             
                 <?php 
-                $columns = 12 / intval( $data['grid'] );
+                $columns = 12 / $column_width;
                 $lg = "span-$columns-lg";
                 if ( $columns > 6 ) :
                     $md = "span-12-md";
@@ -25,24 +28,37 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
                 endif;
                 $grid_class = "$md $lg";
 
-                foreach ( $data['team_members'] as $member ) :
+                foreach ( $team_members as $member ) :
 
                     $thumb_id = get_post_thumbnail_id( $member );
-                    $image = wp_get_attachment_image( $thumb_id, 'large' );
-                    $hover_image = wp_get_attachment_image( get_post_meta( $member, 'hover_photo', true ), 'large' );
+                    $image_url = wp_get_attachment_image_url( $thumb_id, 'large' );
+                    $hover_image_url = wp_get_attachment_image_url( get_post_meta( $member, 'hover_photo', true ), 'large' );
                     $title = get_post_meta( $member, 'title', true );
                     ?>
+
                     <div class="pa-l-flex <?php echo $grid_class ?>">
 
                         <div class="pa-c-profile pa-l-mb-3">
-                            <div class="pa-c-profile__image pa-c-cover-media" style="padding-top:75%"><?php echo $image ?></div>
-                            <div class="pa-c-profile__hover-image pa-c-cover-media" style="padding-top:75%"><?php echo $hover_image ?></div>
-                            <p><strong><?php echo get_the_title( $member ) ?></strong></p>
+
+                            <div style="overflow:hidden; position:relative">
+                                <div class="pa-c-profile__image">
+                                    <div class="pa-c-tile no-hover">
+                                        <span class="pa-c-tile__image" style="background-image:url( <?php echo $image_url ?> )"></span>
+                                    </div>
+                                </div>
+                                <div class="pa-c-profile__hover-image">
+                                    <div class="pa-c-tile no-hover">
+                                        <span class="pa-c-tile__image" style="background-image:url( <?php echo $hover_image_url ?> )"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="pa-h5"><strong><?php echo get_the_title( $member ) ?></strong></p>
                             <p class="pa-h5 pa-l-mt-nudge"><?php echo $title ?></p>
+
                         </div>
 
                     </div>
-
                 <?php endforeach; ?>
 
             </div>
