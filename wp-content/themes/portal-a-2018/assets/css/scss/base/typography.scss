@@ -33,46 +33,46 @@ h6,.pa-h6 {
 }
 
 h1,.pa-h1 {
-    font-size: rem(40);
+    font-size: rem(45);
     font-weight: 700;
-    letter-spacing: 0.01em;
-    line-height: 1.375;
-    text-transform: none;
+    line-height: #{(60)/(45)};
+    letter-spacing: #{(1.5)/(45)}em;
+    // text-transform: none;
 }
 h2,.pa-h2 {
     font-size: rem(30);
     font-weight: 200;
-    letter-spacing: 0.01333em;
-    line-height: 1.5;
-    text-transform: none;
+    line-height: #{(45)/(30)};
+    letter-spacing: #{(0.4)/(30)}em;
+    // text-transform: none;
 }
 h3,.pa-h3 {
-    font-size: rem(14);
+    font-size: rem(16);
     font-weight: 700;
-    letter-spacing: 0.143em;
-    line-height: 1.43;
+    letter-spacing: inherit;
+    line-height: inherit;
     text-transform: uppercase;
 }
 h4,.pa-h4 {
-    font-size: rem(18);
+    font-size: rem(22);
     font-weight: 200;
-    letter-spacing: 0.0222em;
-    line-height: 1.555;
-    text-transform: none;
+    line-height: #{(35)/(22)};
+    letter-spacing: #{(0.4)/(22)}em;
+    // text-transform: none;
 }
 h5,.pa-h5 {
-    font-size: rem(14);
+    font-size: rem(18);
     font-weight: 200;
-    letter-spacing: 0.0222em;
-    line-height: 1.571;
-    text-transform: none;
+    line-height: #{(28)/(18)};
+    letter-spacing: #{(0.4)/(18)}em;
+    // text-transform: none;
 }
 
 h6,.pa-h6 {
     font-size: rem(12);
     font-weight: 700;
-    letter-spacing: 0.08333em;
-    line-height: 1;
+    line-height: inherit;
+    letter-spacing: #{(1)/(12)}em;
     text-transform: uppercase;
 }
 
@@ -90,8 +90,8 @@ strong {
 .pa-pullquote {
     font-weight: 700;
     font-size: rem(35);
-    letter-spacing: 0.043em;
-    line-height: 1.285;
+    letter-spacing: #{ (1.5) / (35) }em;
+    line-height: inherit;
 }
 
 blockquote {
