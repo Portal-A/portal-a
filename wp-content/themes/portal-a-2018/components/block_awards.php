@@ -23,7 +23,7 @@ function pa_block_awards( $data, $options = array(), $return = false ) {
 
         <div class="pa-c-block--awards pa-l-container">
             
-            <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
+            <div class="pa-l-flexbox does-wrap with-gutters">
 
             <?php foreach ( $data['awards'] as $award ) :
                 

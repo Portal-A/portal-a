@@ -30,13 +30,13 @@ function pa_block_job_listings( $data, $options = array(), $return = false ) {
 
                     <div class="pa-l-container">
                         
-                        <button class="pa-c-accordion__toggle pa-l-flexbox pa-l-flex-wrap js-accordion-toggle">
+                        <button class="pa-c-accordion__toggle pa-l-flexbox does-wrap js-accordion-toggle">
                             <p class="pa-l-mt-0 pa-l-flex span-6-md"><strong><?php echo $listing['position'] ?></strong></p>
                             <p class="pa-l-mt-0 pa-l-flex span-3-md" style="color:#9b9b9b"><?php echo $listing['location'] ?></p>
                             <p class="pa-l-mt-0 pa-l-flex span-3-md" style="color:#9b9b9b"><?php echo $listing['department'] ?></p>
                         </button>
 
-                        <div class="pa-c-accordion__content pa-l-flexbox pa-l-flex-wrap js-accordion-content">
+                        <div class="pa-c-accordion__content pa-l-flexbox does-wrap js-accordion-content">
                             <div class="pa-h5 pa-l-mt-0 pa-l-flex span-5-md">
                                 <?php echo $listing['description'] ?>
                             </div>

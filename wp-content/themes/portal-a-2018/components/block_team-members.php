@@ -16,7 +16,7 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
 
         <div class="pa-c-block--team-members">
 
-            <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters">
+            <div class="pa-l-flexbox does-wrap with-gutters">
             
                 <?php 
                 $columns = 12 / $column_width;

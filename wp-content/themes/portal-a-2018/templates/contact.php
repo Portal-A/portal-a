@@ -20,7 +20,7 @@ get_header();
                     'wysiwyg' => apply_filters( 'the_content', get_the_content() ),
                 ) ) ?>
                 
-                <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters pa-l-mt-5">
+                <div class="pa-l-flexbox does-wrap with-gutters pa-l-mt-5">
         
                     <div class="pa-l-flex span-6-md span-4-lg pa-u-text-center pa-l-mb-4">
                         [icon]<br/>
@@ -88,7 +88,7 @@ get_header();
 
             if ( $locations->have_posts() ) : ?>
 
-                <div class="pa-l-flexbox pa-l-flex-wrap">
+                <div class="pa-l-flexbox does-wrap">
 
                 <?php
                 while ( $locations->have_posts() ) : $locations->the_post(); ?>

@@ -8,14 +8,19 @@ function pa_block_images( $data, $options = array(), $return = false ) {
     ?>
 
         <div class="pa-c-block--images <?php echo "grid-{$data['grid']}" ?>">
+
+            <div class="pa-c-tiles">
+                
+                <?php foreach ( $data['images'] as $image ) : ?>
+                
+                    <div class="pa-c-tile"> 
+                        <span><?php echo wp_get_attachment_image( $image['image'], 'large' ) ?></span>
+                    </div>
+                
+                <?php endforeach; ?>
+
+            </div>
             
-            <?php foreach ( $data['images'] as $image ) : ?>
-            
-                <div class="pa-c-block__images-item"> 
-                    <?php echo wp_get_attachment_image( $image['image'], 'large' ) ?>    
-                </div>
-            
-            <?php endforeach; ?>
 
 		</div>
 

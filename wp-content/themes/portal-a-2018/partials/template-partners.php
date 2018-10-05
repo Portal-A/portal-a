@@ -9,7 +9,7 @@ ob_start(); ?>
 
     <div class="pa-l-container" style="max-width:1312px">
         
-        <div class="pa-l-flexbox pa-l-flex-wrap pa-l-with-gutters pa-l-mt-5">
+        <div class="pa-l-flexbox does-wrap with-gutters pa-l-mt-5">
 
             <?php while ( $partners->have_posts() ) : $partners->the_post();
             

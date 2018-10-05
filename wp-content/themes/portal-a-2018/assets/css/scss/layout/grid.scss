@@ -12,7 +12,7 @@
     flex-shrink: 0;
     max-width: 100%;
 
-    .pa-l-with-gutters & {
+    .with-gutters & {
         flex-basis: calc(100% - #{$gutter});
         max-width: calc(100% - #{$gutter});
         margin-left: $gutter/2;
@@ -28,7 +28,7 @@
     .pa-l-flex.span-#{$i} {
         flex-basis: $i / $columns * 100%;
         
-        .pa-l-with-gutters & {
+        .with-gutters & {
             flex-basis: calc(#{$i / $columns * 100%} - #{$gutter});
         }
     }
@@ -44,7 +44,7 @@
             .pa-l-flex.span-#{$i}-#{$bp} {
                 flex-basis: $i / $columns * 100%;
 
-                .pa-l-with-gutters & {
+                .with-gutters & {
                     flex-basis: calc(#{$i / $columns * 100%} - #{$gutter});
                 }
             }

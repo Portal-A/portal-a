@@ -80,30 +80,6 @@
     }
 }
 
-.pa-c-block--images {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.pa-c-block__images-item {
-    flex: 100% 0 0;
-
-    .grid-2 & {
-        flex: 50% 0 0;
-    }
-    .grid-3 & {
-        flex: 33.333% 0 0;
-    }
-    .grid-4 & {
-        flex: 25% 0 0;
-    }
-
-    img {
-        display: block;
-        width: 100%;
-    }
-}
-
 .pa-c-block--blockquote {
     blockquote {
         @extend .pa-pullquote;

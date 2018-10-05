@@ -64,7 +64,7 @@ $queried_object_id = get_queried_object_id();
 
     </div>
 
-    <nav class="pa-l-container pa-l-flexbox pa-l-justify-space-between pa-l-flex-wrap pa-l-py-3">
+    <nav class="pa-l-container pa-l-flexbox pa-l-justify-space-between does-wrap pa-l-py-3">
 
         <?php 
         $found_posts = $wp_query->found_posts;
