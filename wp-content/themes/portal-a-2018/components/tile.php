@@ -3,17 +3,17 @@
 function pa_tile( $tile ) {
 
     $defaults = array(
-        'columns'      => (string) '',
-        'hover'        => (bool) true,
-        'has_spacing'  => (bool) false,
-        'icon'         => (string) '',
-        'image'        => (int) 0,
-        'options'      => (array) array(),
-        'source_image' => (int) 0,
-        'source'       => (string) '',
-        'text'         => (string) '',
-        'type'         => (string) '',
-        'url'          => (string) '',
+        'columns'      => '',
+        'hover'        => true,
+        'has_spacing'  => false,
+        'icon'         => '',
+        'image'        => 0,
+        'options'      => array(),
+        'source_image' => 0,
+        'source'       => '',
+        'text'         => '',
+        'type'         => '',
+        'url'          => '',
     );
 
     $tile = array_merge( $defaults, $tile );
@@ -40,6 +40,7 @@ function pa_tile( $tile ) {
             "pa-c-tile", 
             "is-$type", 
             "pa-u-bg-$bg_color",
+            $gutter,
             $span, 
             $hover, 
         ) );
