@@ -94,13 +94,16 @@ get_header();
                 while ( $locations->have_posts() ) : $locations->the_post(); ?>
 
                     <div class="pa-l-flex span-6-md">
-                        <div class="pa-c-cover-media does-scale" style="padding-top:43%">
-                            <?php the_post_thumbnail('large'); ?>
-                            <div class="pa-c-cover-media__cover does-fade">
-                                <p class="pa-h1 pa-l-mt-0"><?php the_title(); ?></p>
-                            </div>
-                        </div>
+                        
+                        <?php pa_tile(array(
+                            'type' => 'image',
+                            'image' => get_post_thumbnail_id(),
+                            'reveal_content' => false,
+                            'text' => get_the_title()
+                        )) ?>
+
                         <p class="pa-u-text-center pa-l-mb-3"><?php echo nl2br( get_post_meta( get_the_ID(), 'address', true ) ) ?></p>
+                    
                     </div>
 
                 <?php 

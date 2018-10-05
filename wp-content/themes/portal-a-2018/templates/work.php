@@ -60,7 +60,20 @@ $originals = new WP_Query( array(
 
 			<article <?php post_class() ?> style="<?php echo $count !== 0 ? 'margin-top:10px' : '' ?>" >
 			
-				<?php pa_work_preview() ?>
+				<?php
+				$client_image_id = get_post_meta( get_the_ID(), 'client_image', true );
+				
+				pa_tile(array(
+					'content_x'      => 'left',
+					'content_y'      => 'bottom',
+					'image'          => get_post_thumbnail_id(),
+					'reveal_content' => false,
+					'source_image'   => wp_get_attachment_image( $client_image_id, 'medium', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) ),
+					'source'         => get_post_meta( get_the_ID(), 'client', true ),
+					'text'           => get_the_title(),
+					'type'           => 'image',
+					'url'            => get_permalink(),
+				)); ?>
 		
 			</article>
 
@@ -76,7 +89,21 @@ $originals = new WP_Query( array(
 
 			<article <?php post_class() ?> style="<?php echo $count !== 0 ? 'margin-top:10px' : '' ?>" >
 			
-				<?php pa_work_preview() ?>
+				<?php
+				$client_image_id = get_post_meta( get_the_ID(), 'client_image', true );
+				
+				pa_tile(array(
+					'content_x'      => 'left',
+					'content_y'      => 'bottom',
+					'image'          => get_post_thumbnail_id(),
+					'reveal_content' => false,
+					'source_image'   => wp_get_attachment_image( $client_image_id, 'medium', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) ),
+					'source'         => get_post_meta( get_the_ID(), 'client', true ),
+					'text'           => get_the_title(),
+					'type'           => 'image',
+					'url'            => get_permalink(),
+				));
+				?>
 		
 			</article>
 

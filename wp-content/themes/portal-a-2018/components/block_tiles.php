@@ -23,11 +23,14 @@ function pa_block_tiles( $data, $options = array(), $return = false ) {
         <div class="pa-c-block--tiles <?php echo $has_container ? 'pa-l-container' : '' ?>" style="<?php echo $options['style'] ?>">
 
             <div class="pa-l-flexbox does-wrap <?php echo $has_spacing ? 'with-gutters' : '' ?>">
-    
+
                 <?php foreach ( $data['tiles'] as $tile ) {
 
                     pa_tile( array_merge( array(
-                        'has_spacing' => $has_spacing
+                        'has_spacing' => $has_spacing,
+                        'text_align' => in_array( 'center', (array) $tile['options'] ) ? 'center' : 'left',
+                        'large_icon' => in_array( 'large_icon', (array) $tile['options'] ),
+                        'text_align' => $tile['type'] === 'image' ? 'center' : 'left',
                     ), $tile ) );
 
                 } ?>

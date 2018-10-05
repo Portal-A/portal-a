@@ -3,37 +3,43 @@
 function pa_tile( $tile ) {
 
     $defaults = array(
-        'columns'      => '',
-        'hover'        => true,
-        'has_spacing'  => false,
-        'icon'         => '',
-        'image'        => 0,
-        'options'      => array(),
-        'source_image' => 0,
-        'source'       => '',
-        'text'         => '',
-        'type'         => '',
-        'url'          => '',
+        'columns'        => '',
+        'content_x'      => 'center',
+        'content_y'      => 'center',
+        'has_spacing'    => false,
+        'icon'           => '',
+        'image'          => 0,
+        'large_icon'     => false,
+        'reveal_content' => true,
+        'source_image'   => 0,
+        'source'         => '',
+        'text_align'     => 'center',
+        'text'           => '',
+        'type'           => '',
+        'url'            => '',
     );
 
     $tile = array_merge( $defaults, $tile );
     extract($tile);
     
     ob_start();
-
-        $type = $type;
+        
+        // layout        
         $span = pa_get_span( $columns );
         $span = 'pa-l-flex ' . $span;
-        $url = $url;
+
+        // attributes
+        $text_align = "pa-u-text-$text_align";
+        $gutter = $has_spacing ? 'pa-l-mb-gutter' : '';
         $tag = $url ? 'a' : 'div';
         $href = $url ? "href=\"$url\"" : "";
-        $gutter = $has_spacing ? 'pa-l-mb-gutter' : '';
-        $options = $options ? $options : array();
-        $is_centered = in_array( 'center', $options );
-        $text_align = $is_centered ? 'pa-u-text-center' : '';
-        $icon_size = in_array( 'large_icon', $options ) ? 'font-size:4rem' : '';
+        $icon_size = $large_icon ? 'font-size:4rem' : '';
+        
+        // appearance
         $bg_color = $type === 'image' ? 'black' : 'primary';
-        $hover = ! $hover ? 'no-hover' : '';
+        $reveal = $reveal_content ? 'is-revealed' : '';
+        
+        // image
         $image = wp_get_attachment_image_url( $image, 'large' );
 
         $tile_class = implode( ' ', array( 
@@ -41,8 +47,15 @@ function pa_tile( $tile ) {
             "is-$type", 
             "pa-u-bg-$bg_color",
             $gutter,
-            $span, 
-            $hover, 
+            $span,
+        ) );
+
+        $tile_content_class = implode( ' ', array( 
+            "pa-c-tile__content",
+            "x-$content_x",
+            "y-$content_y",
+            $reveal,
+            $text_align,
         ) );
         ?>
 
@@ -52,7 +65,7 @@ function pa_tile( $tile ) {
                 <span class="pa-c-tile__image" style="background-image:url(<?php echo $image ?>)"></span>
             <?php endif; ?>
             
-            <div class="pa-c-tile__content">
+            <div class="<?php echo $tile_content_class ?>">
 
                 <?php if ( ! empty( $icon ) ) : ?>
                     <div><?php echo "<span class=\"pa-b-icon icon-{$icon[0]}\" aria-hidden=\"true\" style=\"$icon_size\"></span>" ?></div>

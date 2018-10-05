@@ -42,12 +42,12 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
 
                             <div style="overflow:hidden; position:relative">
                                 <div class="pa-c-profile__image">
-                                    <div class="pa-c-tile no-hover">
+                                    <div class="pa-c-tile" style="pointer-events:none">
                                         <span class="pa-c-tile__image" style="background-image:url( <?php echo $image_url ?> )"></span>
                                     </div>
                                 </div>
                                 <div class="pa-c-profile__hover-image">
-                                    <div class="pa-c-tile no-hover">
+                                    <div class="pa-c-tile" style="pointer-events:none">
                                         <span class="pa-c-tile__image" style="background-image:url( <?php echo $hover_image_url ?> )"></span>
                                     </div>
                                 </div>

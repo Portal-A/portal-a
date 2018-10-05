@@ -14,7 +14,7 @@ get_header();
 
 		<div class="pa-c-page-content">
 		
-			<p class="pa-u-text-center"><?php 
+			<p class="pa-u-text-center pa-l-mt-4"><?php 
 				if ( $client_image_id = get_post_meta( get_the_ID(), 'client_image_dark', true ) ) {
 					echo wp_get_attachment_image( $client_image_id, 'full' );
 				} else {
@@ -22,7 +22,11 @@ get_header();
 				} ?>
 			</p>
 
-			<h1 class="pa-h4 pa-u-text-center"><?php the_title(); ?></h1>
+			<h1 class="pa-h4 pa-l-mt-4 pa-u-text-center"><?php the_title(); ?></h1>
+
+			<?php pa_block_wysiwyg( array(
+				'wysiwyg' => get_the_content()
+			) ); ?>
 
 			<?php get_template_part( 'partials/blocks' ); ?>
 

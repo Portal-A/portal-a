@@ -14,7 +14,7 @@ function pa_block_images( $data, $options = array(), $return = false ) {
                 <?php foreach ( $data['images'] as $image ) : ?>
                 
                     <div class="pa-l-flex <?php echo pa_get_span( 12 / $data['grid'] ) ?>">
-                        <?php echo wp_get_attachment_image( $image['image'], 'large' ) ?>
+                        <?php echo wp_get_attachment_image( $image['image'], 'large', false, array( 'style' => 'width:100%' ) ) ?>
                     </div>
                 
                 <?php endforeach; ?>

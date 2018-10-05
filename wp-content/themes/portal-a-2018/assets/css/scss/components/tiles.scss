@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    min-height: 300px;
+    min-height: 400px;
     align-items: center;
     justify-content: center;
     color: white;
@@ -31,22 +31,36 @@
     background-size: cover;
     transition: $transition-slow;
 
-    .pa-c-tile:not(.no-hover):hover & {
+    .pa-c-tile:hover & {
         transform: scale(1.15);
         opacity: 0.5;
     }
 }
 
 .pa-c-tile__content {
-    padding-left: 10%;
-    padding-right: 10%;
+    flex: auto 1 0;
+    max-width: 100%;
+    padding: rem(32);
     transition: $transition-normal;
 
-    .pa-c-tile.is-image & {
+    &.x-left {
+        justify-self: flex-start;
+    }
+    &.x-right {
+        justify-self: flex-end;
+    }
+    &.y-top {
+        align-self: flex-start;
+    }
+    &.y-bottom {
+        align-self: flex-end;
+    }
+
+    .pa-c-tile.is-image &.is-revealed {
         transform: translate3d(0,150px,0);
         opacity: 0;
     }
-    .pa-c-tile.is-image:hover & {
+    .pa-c-tile.is-image:hover &.is-revealed {
         transform: translate3d(0,0,0);
         opacity: 1;
     }
