@@ -7,14 +7,14 @@ function pa_block_images( $data, $options = array(), $return = false ) {
     ob_start(); 
     ?>
 
-        <div class="pa-c-block--images <?php echo "grid-{$data['grid']}" ?>">
+        <div class="pa-c-block--images">
 
-            <div class="pa-c-tiles">
+            <div class="pa-l-flexbox does-wrap">
                 
                 <?php foreach ( $data['images'] as $image ) : ?>
                 
-                    <div class="pa-c-tile"> 
-                        <span><?php echo wp_get_attachment_image( $image['image'], 'large' ) ?></span>
+                    <div class="pa-l-flex <?php echo pa_get_span( 12 / $data['grid'] ) ?>">
+                        <?php echo wp_get_attachment_image( $image['image'], 'large' ) ?>
                     </div>
                 
                 <?php endforeach; ?>

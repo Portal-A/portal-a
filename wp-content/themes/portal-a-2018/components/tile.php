@@ -5,6 +5,7 @@ function pa_tile( $tile ) {
     $defaults = array(
         'columns'      => (string) '',
         'hover'        => (bool) true,
+        'has_spacing'  => (bool) false,
         'icon'         => (string) '',
         'image'        => (int) 0,
         'options'      => (array) array(),
@@ -20,35 +21,8 @@ function pa_tile( $tile ) {
     
     ob_start();
 
-        switch( $tile['columns'] ) :
-            case '3':
-                $span = 'span-6-md span-3-lg';
-                break;
-            case 'third':
-            case '4':
-                $span = 'span-6-md span-4-lg';
-                break;
-            case '5':
-                $span = 'span-6-md span-5-lg';
-                break;
-            case 'half':
-            case '6':
-                $span = 'span-6-md';
-                break;
-            case '7':
-                $span = 'span-12-md span-7-lg';
-                break;
-            case '8':
-                $span = 'span-12-md span-8-lg';
-                break;
-            case '9':
-                $span = 'span-12-md span-9-lg';
-                break;
-            default :
-                $span = 'span-12';
-        endswitch;
-        
         $type = $type;
+        $span = pa_get_span( $columns );
         $span = 'pa-l-flex ' . $span;
         $url = $url;
         $tag = $url ? 'a' : 'div';
