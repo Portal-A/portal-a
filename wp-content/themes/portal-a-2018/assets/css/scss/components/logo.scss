@@ -16,11 +16,10 @@
         flex-shrink: 0;
         margin-right: $container-padding;
     }
-    .pa-c-masthead.is-minimized & {
-        width: 42px;
-        height: 42px;
-        transform: rotate(360deg);
-    }
+    // .pa-c-masthead.is-minimized & {
+    //     width: 42px;
+    //     height: 42px;
+    // }
     
     .pa-c-logo__static { display: block; }
     .pa-c-logo__active { display: none; }
