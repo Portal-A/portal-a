@@ -67,7 +67,7 @@ function pa_tile( $tile ) {
             
             <div class="<?php echo $tile_content_class ?>">
 
-                <?php if ( ! empty( $icon ) ) : ?>
+                <?php if ( $type !== 'image' && ! empty( $icon ) ) : ?>
                     <div><?php echo "<span class=\"pa-b-icon icon-{$icon[0]}\" aria-hidden=\"true\" style=\"$icon_size\"></span>" ?></div>
                 <?php endif; ?>
 
