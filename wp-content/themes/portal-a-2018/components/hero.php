@@ -76,8 +76,10 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
 
                 <?php if ( $embed_url ) : ?>
 
-                    <div class="pa-c-media--16x9 pa-l-mx-auto" style="max-width:1180px">
-                        <?php echo wp_oembed_get( $embed_url ) ?>
+                    <div class="pa-l-mx-auto" style="max-width:1100px">
+                        <div class="pa-c-media--16x9">
+                            <?php echo wp_oembed_get( $embed_url ) ?>
+                        </div>
                     </div>
 
                 <?php else : ?>
