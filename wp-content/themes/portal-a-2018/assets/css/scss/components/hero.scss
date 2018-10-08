@@ -1,5 +1,5 @@
 .pa-c-hero {
-    @extend .pa-l-pt-5;
+    @extend .pa-l-pt-4;
     @extend .pa-l-pb-2;
     position: relative;
     text-align: center;
@@ -13,7 +13,7 @@
     }
     
     &.has-bg-image {
-        @extend .pa-l-pb-5;
+        @extend .pa-l-pb-4;
     }
 
     &.has-media {

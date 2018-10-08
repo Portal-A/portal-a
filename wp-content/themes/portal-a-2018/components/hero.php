@@ -30,8 +30,8 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
     }
 
     $bg_color = $bg_color ?: get_post_meta( $hero_post->ID, 'hero_bg_color', true );
-    $color = $bg_color ? pa_readable_color( $bg_color ) : '#fff';
-    $color = ! $bg_color && ! $bg_image_url ? '#000' : $color;
+    $color = $bg_color ? pa_readable_color( $bg_color ) : '#000';
+    // $color = ! $bg_color && ! $bg_image_url ? '#000' : $color;
     
     $has_media = $image_id || $embed_url;
 
@@ -43,10 +43,12 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
     $class = 'class="'.implode( ' ', $class ).'"';
     
     $style = array(
-        "background-image: url($bg_image_url)",
         "background-color: $bg_color",
         "color: $color",
     );
+    if ( ! $image_id && ! $embed_url ) {
+        $style[] = "background-image: url($bg_image_url)";
+    }
     $style = 'style="'.implode( '; ', $style ).'"';
     
     ob_start(); ?>
@@ -72,7 +74,7 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
 
         <?php if ( $has_media ) : ?>
 
-            <div class="pa-c-hero__media pa-l-mt-5" style="<?php echo $gradient ?>">
+            <div class="pa-c-hero__media pa-l-mt-4" style="<?php echo $gradient ?>">
 
                 <?php if ( $embed_url ) : ?>
 
