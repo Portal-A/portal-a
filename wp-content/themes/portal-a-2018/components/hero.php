@@ -25,7 +25,7 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
         $title = $hero_post->post_excerpt ? nl2br( $hero_post->post_excerpt ) : apply_filters( 'the_title', $hero_post->post_title );
     }
 
-    if ( $image_id ) {
+    if ( $image_id || $embed_url ) {
         $bg_image_url = '';
     }
 
