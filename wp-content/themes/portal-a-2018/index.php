@@ -12,7 +12,7 @@ $queried_object_id = get_queried_object_id();
 
 <?php 
     pa_hero( array( 
-        'content' => '<span class="pa-h3 js-cat-display">&nbsp;</span>'
+        'content' => '<div class="pa-h3 js-cat-display">'.( is_archive() ? get_the_archive_title() : '&nbsp;' ).'</div>'
     ), $blog_page );
 ?>
 
