@@ -14,7 +14,8 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
         'scrim' => has_post_thumbnail( $hero_post ),
         'embed_url' => get_post_meta( $hero_post->ID, 'hero_embed', true ),
         'bg_color' => '',
-        'title' => '',
+        'title' => get_post_meta( $hero_post->ID, 'hero_title', true ),
+        'title_source' => get_post_meta( $hero_post->ID, 'hero_title_source', true ),
         'content' => '',
     );
 
@@ -22,7 +23,7 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
     extract($args);
 
     if ( $hero_post && ! $title ) {
-        $title = $hero_post->post_excerpt ? nl2br( $hero_post->post_excerpt ) : apply_filters( 'the_title', $hero_post->post_title );
+        $title = apply_filters( 'the_title', $hero_post->post_title );
     }
 
     if ( $image_id || $embed_url ) {
@@ -64,6 +65,9 @@ function pa_hero( $args = array(), $hero_post = 0 ) {
             <div class="pa-l-container">
                 
                 <h1 class="pa-l-my-0 pa-l-mx-auto" style="max-width:830px"><?php echo $title ?></h1>
+                <?php if ( $title_source ) {
+                    echo wp_get_attachment_image($title_source, 'medium', false, array( 'class' => 'pa-u-display-block pa-l-my-1 pa-l-mx-auto', 'style' => 'max-width: 180px' ));
+                } ?>
                 <?php echo $content ?>
 
             </div>
