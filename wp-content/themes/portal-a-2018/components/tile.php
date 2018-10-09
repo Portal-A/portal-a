@@ -72,7 +72,7 @@ function pa_tile( $tile ) {
                 <?php endif; ?>
 
                 <?php if ( $text ) : ?>
-                <p class="pa-h5 pa-u-weight-bold pa-l-mt-0 <?php echo $text_align ?>"><?php echo $text ?></span>
+                <p class="pa-h3 pa-u-weight-bold pa-l-mt-0 <?php echo $text_align ?>"><?php echo $text ?></span>
                 <?php endif; ?>
                 
                 <?php if ( $source_image || $source ) : ?>

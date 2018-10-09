@@ -8,8 +8,9 @@
     max-width: rem(820);
 
     a {
-        @extend .pa-h6;
-        font-size: 12px;
+        font-size: rem(12);
+        font-weight: 700;
+        text-transform: uppercase;
         margin: 0;
         position: relative;
         display: block;
