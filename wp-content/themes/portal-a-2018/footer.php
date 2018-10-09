@@ -1,9 +1,9 @@
 </main>
 <!-- .content -->
 
-<footer class="mainfoot">
+<footer class="pa-c-footer pa-u-uppercase">
 	
-	<p class="pa-h6 pa-u-weight-light pa-l-mt-0" style="letter-spacing: 0.0526em">
+	<p class="pa-h4 pa-u-weight-light pa-l-mt-0" style="letter-spacing: 0.0526em">
 		Portal A Limited <?php echo date('Y') ?> //
 		<?php echo get_post_meta(2, 'locations', TRUE) ?> //
 		<a href="mailto:<?php echo get_post_meta(2, 'info_email', TRUE) ?>">
@@ -32,7 +32,7 @@
 			<span class="pa-u-hide">LinkedIn</span>
 			<i class="pa-b-icon icon-linkedin" aria-hidden="true"></i>
 		</a>
-		<a href="<?php echo get_permalink(87) ?>" class="blog-link pa-h6 pa-l-mt-0 pa-u-weight-light">Portal A Blog</a>
+		<a href="<?php echo get_permalink(87) ?>" class="blog-link pa-h4 pa-l-mt-0 pa-u-weight-light">Portal A Blog</a>
 	</span>
 
 </footer>

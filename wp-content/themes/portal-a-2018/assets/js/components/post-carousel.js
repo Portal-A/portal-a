@@ -16,20 +16,21 @@
         var post_count = Math.max( PA.wp_query.post_count, 9 ),
             found_posts = PA.wp_query.found_posts,
             pa_query = PA.wp_query.query,
-            pa_query_vars = PA.wp_query.query_vars,
-            pa_queried_object = PA.wp_query.queried_object;
+            pa_query_vars = PA.wp_query.query_vars;
+            // pa_queried_object = PA.wp_query.queried_object;
 
         this.el = el;
         this.page = pa_query_vars.paged || 1;
         this.perPage = parseInt( post_count );
         this.postCount = parseInt( found_posts );
-        this.max_num_pages = Math.ceil( this.postCount / this.perPage );
+        this.max_num_pages = this.getMaxPages( this.postCount, this.perPage );
         this.postsUrl = PA.api + 'posts/';
         this.populatedPages = [this.page];
-        this.prevBtn = document.querySelector('.js-prev');
-        this.nextBtn = document.querySelector('.js-next');
-        this.currentPageEl = document.querySelector('.js-current-page');
-        this.totalPagesEl = document.querySelector('.js-total-pages');
+        this.upperPaging = document.querySelector('.js-upper-paging');
+        this.prevBtn = document.querySelectorAll('.js-prev');
+        this.nextBtn = document.querySelectorAll('.js-next');
+        this.currentPageEl = document.querySelectorAll('.js-current-page');
+        this.totalPagesEl = document.querySelectorAll('.js-total-pages');
         this.carousel = null;
         this.carouselSettings = {
             arrows: false,
@@ -42,8 +43,11 @@
         var postTemplateEl = el.querySelector('.js-post-template');
         this.postTemplate = postTemplateEl.innerText ? postTemplateEl.innerText : '';
         this.el.removeChild(postTemplateEl);
+        
+        console.log(this);
 
         this.init();
+
     };
 
     PostCarousel.prototype.init = function(){ 
@@ -59,15 +63,19 @@
         var that = this;
 
         // prev button
-        this.prevBtn.addEventListener('click', function(event){
-            event.preventDefault();
-            that.prevPage();
+        this.prevBtn.forEach(function(el){
+            el.addEventListener('click', function(event){
+                event.preventDefault();
+                that.prevPage();
+            });
         });
         
         // next button
-        this.nextBtn.addEventListener('click', function(event){
-            event.preventDefault();
-            that.nextPage();
+        this.nextBtn.forEach(function(el){
+            el.addEventListener('click', function(event){
+                event.preventDefault();
+                that.nextPage();
+            });
         });
 
         // browser back/forward buttons
@@ -189,15 +197,25 @@
     PostCarousel.prototype.updateControls = function() {
         // prev button
         if ( this.page === 1 ) {
-            this.prevBtn.classList.add('is-disabled');
+            this.upperPaging.style.opacity = '0';
+            this.prevBtn.forEach(function(el){
+                el.classList.add('is-disabled');
+            });
         } else {
-            this.prevBtn.classList.remove('is-disabled');
+            this.upperPaging.style.opacity = '1';
+            this.prevBtn.forEach(function(el){
+                el.classList.remove('is-disabled');
+            });
         }
         // next button
         if ( this.page === this.max_num_pages ) {
-            this.nextBtn.classList.add('is-disabled');
+            this.nextBtn.forEach(function(el){
+                el.classList.add('is-disabled');
+            });
         } else {
-            this.nextBtn.classList.remove('is-disabled');
+            this.nextBtn.forEach(function(el){
+                el.classList.remove('is-disabled');
+            });
         }
     };
     
@@ -219,7 +237,7 @@
             listHtml.push(postHtml);
         });
 
-        postSlide.innerHTML = listHtml.join('');
+        postSlide.innerHTML = '<div class="pa-l-flexbox does-wrap with-gutters">' + listHtml.join('') + '</div>';
 
         this.carousel.slick( 'slickAdd', postSlide.outerHTML, addBefore );
 
@@ -319,8 +337,12 @@
         current = current ? current : this.page;
         total = total ? total : this.max_num_pages;
 
-        this.currentPageEl.innerText = current;
-        this.totalPagesEl.innerText = total;
+        this.currentPageEl.forEach(function(el){
+            el.innerText = current;
+        });
+        this.totalPagesEl.forEach(function(el){
+            el.innerText = total;
+        });
 
     };
 

@@ -1,7 +1,6 @@
 .pa-c-post-slide {
-    display: flex !important;
-    @extend .with-gutters;
-    @extend .does-wrap;
+    // display: flex !important;
+    // @extend .does-wrap;
     // width: 100%;
-    transition: $transition-slow;
+    // transition: $transition-slow;
 }

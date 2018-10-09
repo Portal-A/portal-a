@@ -1,6 +1,6 @@
 
-.pa-l-flexbox { display: flex }
-.pa-l-flex { box-sizing: border-box }
+.pa-l-flexbox { display: flex !important; }
+.pa-l-flex { box-sizing: border-box; }
 
 .does-wrap { flex-wrap: wrap }
 .does-grow { flex-grow: 1 }
