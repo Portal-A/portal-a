@@ -14,10 +14,11 @@ html {
 body {
     color: #000000;
     font-family: $font-primary; 
-    font-size: rem(18);
+    font-size: rem(15);
     font-weight: 200;
     letter-spacing: 0.0222em;
-    line-height: 1.555;
+    line-height: #{(22)/(15)};
+    letter-spacing: #{(0.2)/(15)}em;
 }
 
 h1,.pa-h1,
@@ -33,47 +34,41 @@ h6,.pa-h6 {
 }
 
 h1,.pa-h1 {
-    font-size: rem(45);
+    font-size: rem(30);
     font-weight: 700;
-    line-height: #{(60)/(45)};
-    letter-spacing: #{(1.5)/(45)}em;
-    // text-transform: none;
+    line-height: #{(40)/(30)};
+    letter-spacing: #{(0.2)/(30)}em;
 }
 h2,.pa-h2 {
-    font-size: rem(30);
-    font-weight: 200;
-    line-height: #{(45)/(30)};
-    letter-spacing: #{(0.4)/(30)}em;
-    // text-transform: none;
+    font-size: rem(25);
+    line-height: #{(35)/(25)};
+    letter-spacing: #{(0.2)/(25)}em;
 }
 h3,.pa-h3 {
-    font-size: rem(16);
-    font-weight: 700;
-    letter-spacing: inherit;
-    line-height: inherit;
-    text-transform: uppercase;
+    font-size: rem(18);
+    line-height: #{(28)/(18)};
+    letter-spacing: #{(0.2)/(18)}em;
 }
 h4,.pa-h4 {
-    font-size: rem(22);
+    font-size: rem(12);
     font-weight: 200;
-    line-height: #{(35)/(22)};
-    letter-spacing: #{(0.4)/(22)}em;
-    // text-transform: none;
+    line-height: #{(18)/(12)};
+    letter-spacing: #{(1)/(12)}em;
 }
 h5,.pa-h5 {
-    font-size: rem(18);
-    font-weight: 200;
-    line-height: #{(28)/(18)};
-    letter-spacing: #{(0.4)/(18)}em;
-    // text-transform: none;
+    @extend .pa-h4;
+    // font-size: rem(18);
+    // font-weight: 200;
+    // line-height: #{(28)/(18)};
+    // letter-spacing: #{(0.4)/(18)}em;
 }
 
 h6,.pa-h6 {
-    font-size: rem(12);
-    font-weight: 700;
-    line-height: inherit;
-    letter-spacing: #{(1)/(12)}em;
-    text-transform: uppercase;
+    @extend .pa-h4;
+    // font-size: rem(12);
+    // font-weight: 700;
+    // line-height: inherit;
+    // letter-spacing: #{(1)/(12)}em;
 }
 
 p {
@@ -85,6 +80,9 @@ em {
 }
 strong {
     font-weight: 700;
+}
+small {
+    font-size: 80%;
 }
 
 .pa-pullquote {
