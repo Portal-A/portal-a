@@ -13,7 +13,9 @@ $queried_object_id = get_queried_object_id();
 ?>
 
 <?php 
-    pa_hero( array( 'content' => '<span class="pa-h3 js-cat-display">&nbsp;</span>' ), $blog_page ) 
+    pa_hero( array( 
+        'content' => '<span class="pa-h3 js-cat-display">&nbsp;</span>'
+    ), $blog_page );
 ?>
 
 <div class="pa-c-page-content pa-l-mt-4 pa-l-pb-5">
@@ -36,12 +38,15 @@ $queried_object_id = get_queried_object_id();
             <?php while ( have_posts() ) : the_post(); ?>
             
             <div class="pa-l-flex span-6-md span-4-lg">
-                <a href="<?php the_permalink() ?>" class="pa-c-cover-media pa-l-mb-gutter does-scale does-fade" style="padding-top:100%">
-                    <?php the_post_thumbnail('large') ?>
-                    <div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
-                        <p class="pa-h4 pa-l-mt-0"><?php the_title() ?></p>
-                    </div>
-                </a>
+
+                <?php pa_tile(array(
+                    'url' => get_permalink(),
+                    'type' => 'image',
+                    'has_spacing' => true,
+                    'image' => get_post_thumbnail_id(),
+                    'text' => get_the_title(),
+                )) ?>
+
             </div>
 
             <?php endwhile; ?>
@@ -50,14 +55,14 @@ $queried_object_id = get_queried_object_id();
         <script class="js-post-template" type="text/mustache-template">
         
             <div class="pa-l-flex span-6-md span-4-lg">
-                <a href="{{link}}" class="pa-c-cover-media pa-l-mb-gutter does-scale does-fade" style="padding-top:100%">
-                    {{{featured_image}}}
-                    {{#title.rendered}}
-                        <div class="pa-c-cover-media__content is-animated fade-in from-bottom use-light-ui pa-u-text-center" style="width:100%">
-                            <p class="pa-h4 pa-l-mt-0">{{{title.rendered}}}</p>
-                        </div>
-                    {{/title.rendered}}
+
+                <a href="{{link}}" class="pa-c-tile is-image pa-u-bg-black pa-l-mb-gutter pa-l-flex span-12">
+                    <span class="pa-c-tile__image" style="background-image:url({{featured_image}})"></span>
+                    <div class="pa-c-tile__content x-center y-center is-revealed pa-u-text-center">
+                        <p class="pa-h5 pa-u-weight-bold pa-l-mt-0 pa-u-text-center">{{{title.rendered}}}</p>
+                    </div>
                 </a>
+
             </div>
         
         </script>
