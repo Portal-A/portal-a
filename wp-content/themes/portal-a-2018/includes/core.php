@@ -92,6 +92,7 @@ function custom_queries($query) {
 
 		if ( $query->is_home() || is_archive() ) {
 			$query->set( 'posts_per_page', 9 );
+			$query->set( 'post_status', 'publish' );
 		}
 
 	}
