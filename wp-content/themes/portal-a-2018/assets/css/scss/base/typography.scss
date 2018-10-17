@@ -34,41 +34,32 @@ h6,.pa-h6 {
 }
 
 h1,.pa-h1 {
-    font-size: rem(40);
+    font-size: rem(30);
     font-weight: 700;
-    line-height: #{(55)/(40)};
-    letter-spacing: #{(0.4)/(40)}em;
+    line-height: #{(40)/(30)};
+    letter-spacing: #{(0.2)/(30)}em;
 }
 h2,.pa-h2 {
-    font-size: rem(25);
-    line-height: #{(35)/(25)};
-    letter-spacing: #{(0.2)/(25)}em;
+    font-size: rem(22);
+    line-height: #{(32)/(22)};
+    letter-spacing: #{(0.2)/(22)}em;
+    font-weight: 200;
 }
 h3,.pa-h3 {
     font-size: rem(18);
     line-height: #{(28)/(18)};
     letter-spacing: #{(0.2)/(18)}em;
+    font-weight: 700;
 }
 h4,.pa-h4 {
-    font-size: rem(12);
-    font-weight: 200;
-    line-height: #{(18)/(12)};
-    letter-spacing: #{(1)/(12)}em;
+    @extend .pa-h3;
 }
 h5,.pa-h5 {
-    @extend .pa-h4;
-    // font-size: rem(18);
-    // font-weight: 200;
-    // line-height: #{(28)/(18)};
-    // letter-spacing: #{(0.4)/(18)}em;
+    @extend .pa-h3;
 }
 
 h6,.pa-h6 {
-    @extend .pa-h4;
-    // font-size: rem(12);
-    // font-weight: 700;
-    // line-height: inherit;
-    // letter-spacing: #{(1)/(12)}em;
+    @extend .pa-h3;
 }
 
 p {
