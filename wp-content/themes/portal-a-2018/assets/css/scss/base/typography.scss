@@ -15,7 +15,7 @@ body {
     color: #000000;
     font-family: $font-primary; 
     font-size: rem(15);
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 0.0222em;
     line-height: #{(22)/(15)};
     letter-spacing: #{(0.2)/(15)}em;
@@ -43,7 +43,7 @@ h2,.pa-h2 {
     font-size: rem(22);
     line-height: #{(32)/(22)};
     letter-spacing: #{(0.2)/(22)}em;
-    font-weight: 200;
+    font-weight: 300;
 }
 h3,.pa-h3 {
     font-size: rem(18);
@@ -102,7 +102,7 @@ blockquote {
         margin-top: 1rem;
         font-size: rem(30);
         line-height: 1;
-        font-weight: 200;
+        font-weight: 300;
         letter-spacing: 0;
 
         img {
