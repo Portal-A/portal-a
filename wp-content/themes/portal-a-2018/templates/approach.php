@@ -27,65 +27,60 @@ get_header();
                     <a href="#originals" class="pa-b-view-toggle js-view-toggle">Originals</a>
                 </nav>
 
-                <section id="branded" data-view-top="#view-nav" class="js-view-target" style="background-image:url(//picsum.photos/1200/1170); background-size:cover; background-position:center">
-                    <div class="pa-c-ability-grid">
+                <?php 
+                $branded_image_id = get_field( 'branded_image' );
+                $branded_image_url = wp_get_attachment_image_url($branded_image_id, 'large'); 
+                ?>
+
+                <section id="branded" data-view-top="#view-nav" class="js-view-target">
+                    <div class="pa-c-ability-grid" style="background-image:url(<?php echo $branded_image_url ?>)">
                         <div class="pa-c-ability-column">
-                            <?php foreach ( [0,1,2] as $item ) : ?>
-                                <a href="#" class="pa-c-ability js-ability">
-                                    <h2 class="pa-c-ability__title">Branded</h2>
-                                    <div class="pa-c-ability__content">
-                                        <p>We develop big ideas built for small screens – formats and concepts that break through the noise, and are designed for a connected audience. We develop big ideas built for small screens – formats and concepts that break through the noise. We develop big ideas built for small screens – formats and concepts that break through the noise.</p>
-                                        <div class="pa-l-flexbox pa-l-mt-2">
-                                            <div class="pa-l-flex">lower content here</div>
-                                        </div>
+                            <?php 
+                            $count = 1;
+                            foreach ( (array) get_field( 'branded_abilities' ) as $item ) {
+                                pa_ability($item);
+
+                                if ( $count === 3 ) { ?>
                                     </div>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-                        <div class="pa-c-ability-column">
-                            <?php foreach ( [0,1,2] as $item ) : ?>
-                                <a href="#" class="pa-c-ability js-ability">
-                                    <h2 class="pa-c-ability__title">Branded</h2>
-                                    <div class="pa-c-ability__content">
-                                        <p>We develop big ideas built for small screens – formats and concepts that break through the noise, and are designed for a connected audience. We develop big ideas built for small screens – formats and concepts that break through the noise. We develop big ideas built for small screens – formats and concepts that break through the noise.</p>
-                                        <div class="pa-l-flexbox pa-l-mt-2">
-                                            <div class="pa-l-flex">lower content here</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            <?php endforeach; ?>
+                                    <div class="pa-c-ability-column">
+                                <?php }
+
+                            $count++;
+                            } ?>
                         </div>
                     </div>
                 </section>
 
-                <section id="originals" data-view-top="#view-nav" class="js-view-target" style="display:none; background-image:url(//picsum.photos/1170/1170); background-size:cover; background-position:center">
-                    <div class="pa-l-flexbox" style="width:100%">
+                <?php 
+                $originals_image_id = get_field( 'originals_image' );
+                $originals_image_url = wp_get_attachment_image_url($originals_image_id, 'large'); 
+                ?>
+
+                <section id="originals" data-view-top="#view-nav" class="js-view-target" style="display:none">
+                    <div class="pa-c-ability-grid" style="background-image:url(<?php echo $originals_image_url ?>)">
                         <div class="pa-c-ability-column">
-                            <?php foreach ( [0,1,2] as $item ) : ?>
-                                <a href="#" class="pa-c-ability js-ability">
-                                    <h2 class="pa-c-ability__title">Original</h2>
-                                    <div class="pa-c-ability__content">
-                                        <p>We develop big ideas built for small screens – formats and concepts that break through the noise, and are designed for a connected audience. We develop big ideas built for small screens – formats and concepts that break through the noise. We develop big ideas built for small screens – formats and concepts that break through the noise.</p>
-                                        <div class="pa-l-flexbox pa-l-mt-2">
-                                            <div class="pa-l-flex">lower content here</div>
-                                        </div>
+                            <?php 
+                            $count = 1;
+                            foreach ( (array) get_field( 'originals_abilities' ) as $item ) {
+                                pa_ability($item);
+
+                                if ( $count === 3 ) { ?>
                                     </div>
-                                </a>
-                            <?php endforeach; ?>
+                                    <div class="pa-c-ability-column">
+                                <?php }
+
+                            $count++;
+                            } ?>
                         </div>
-                        <div class="pa-c-ability-column">
-                            <?php foreach ( [0,1,2] as $item ) : ?>
-                                <a href="#" class="pa-c-ability js-ability">
-                                    <h2 class="pa-c-ability__title">Original</h2>
-                                    <div class="pa-c-ability__content">
-                                        <p>We develop big ideas built for small screens – formats and concepts that break through the noise, and are designed for a connected audience. We develop big ideas built for small screens – formats and concepts that break through the noise. We develop big ideas built for small screens – formats and concepts that break through the noise.</p>
-                                        <div class="pa-l-flexbox pa-l-mt-2">
-                                            <div class="pa-l-flex">lower content here</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
+                    </div>
+                </section>
+
+                <section id="additional-capabilities" class="pa-l-mt-5">
+                    <p class="pa-u-uppercase pa-u-text-center"><small>Additional Capabilities</small></p>
+                    <div class="pa-l-flexbox with-gutters does-wrap pa-l-mt-3">
+                        <?php while ( have_rows('additional_abilities') ) : the_row(); ?>
+                            <div class="pa-l-flex span-6 span-4-sm span-3-lg span-2-xl"><?php echo get_sub_field('name'); ?></div>
+                        <?php endwhile; ?>
                     </div>
                 </section>
 
