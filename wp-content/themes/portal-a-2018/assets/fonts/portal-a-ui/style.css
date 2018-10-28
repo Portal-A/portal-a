@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'portal-a-ui';
   src:
-    url('fonts/portal-a-ui.ttf?ye1m7r') format('truetype'),
-    url('fonts/portal-a-ui.woff?ye1m7r') format('woff'),
-    url('fonts/portal-a-ui.svg?ye1m7r#portal-a-ui') format('svg');
+    url('fonts/portal-a-ui.ttf?bd9z52') format('truetype'),
+    url('fonts/portal-a-ui.woff?bd9z52') format('woff'),
+    url('fonts/portal-a-ui.svg?bd9z52#portal-a-ui') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,6 +23,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-hand:before {
+  content: "\e908";
+}
+.icon-envelope:before {
+  content: "\e909";
+}
+.icon-suitcase:before {
+  content: "\e90a";
+}
+.icon-pencil:before {
+  content: "\e90b";
+}
+.icon-team:before {
+  content: "\e90c";
+}
+.icon-arrow-down:before {
+  content: "\e904";
+}
+.icon-arrow-left:before {
+  content: "\e905";
+}
+.icon-arrow-up:before {
+  content: "\e906";
+}
+.icon-arrow-right:before {
+  content: "\e907";
+}
 .icon-muted:before {
   content: "\e900";
 }
@@ -35,18 +62,18 @@
 .icon-hand-wave:before {
   content: "\e903";
 }
-.icon-linkedin-square:before {
+.icon-linkedin:before {
   content: "\f08c";
 }
 .icon-twitter:before {
   content: "\f099";
 }
-.icon-youtube-play:before {
+.icon-youtube:before {
   content: "\f16a";
 }
 .icon-instagram:before {
   content: "\f16d";
 }
-.icon-facebook-official:before {
+.icon-facebook:before {
   content: "\f230";
 }

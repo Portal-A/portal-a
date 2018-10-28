@@ -1,18 +1,18 @@
 @import "variables";
 
 @font-face {
-  font-family: 'portal-a-ui';
+  font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/portal-a-ui.ttf?ye1m7r') format('truetype'),
-    url('#{$icomoon-font-path}/portal-a-ui.woff?ye1m7r') format('woff'),
-    url('#{$icomoon-font-path}/portal-a-ui.svg?ye1m7r#portal-a-ui') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?bd9z52') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?bd9z52') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?bd9z52##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 .pa-b-icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'portal-a-ui' !important;
+  font-family: '#{$icomoon-font-family}' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -25,53 +25,94 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@function unicode($str) {
-  @return unquote("\"") + $str + unquote("\"");
+.icon-hand {
+  &:before {
+    content: $icon-hand; 
+  }
 }
-
+.icon-envelope {
+  &:before {
+    content: $icon-envelope; 
+  }
+}
+.icon-suitcase {
+  &:before {
+    content: $icon-suitcase; 
+  }
+}
+.icon-pencil {
+  &:before {
+    content: $icon-pencil; 
+  }
+}
+.icon-team {
+  &:before {
+    content: $icon-team; 
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down; 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left; 
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up; 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right; 
+  }
+}
 .icon-muted {
   &:before {
-    content: unicode($icon-muted); 
+    content: $icon-muted; 
   }
 }
 .icon-sound {
   &:before {
-    content: unicode($icon-sound); 
+    content: $icon-sound; 
   }
 }
 .icon-left-quote {
   &:before {
-    content: unicode($icon-left-quote); 
+    content: $icon-left-quote; 
   }
 }
 .icon-hand-wave {
   &:before {
-    content: unicode($icon-hand-wave); 
+    content: $icon-hand-wave; 
   }
 }
-.icon-linkedin-square {
+.icon-linkedin {
   &:before {
-    content: unicode($icon-linkedin-square); 
+    content: $icon-linkedin; 
   }
 }
 .icon-twitter {
   &:before {
-    content: unicode($icon-twitter); 
+    content: $icon-twitter; 
   }
 }
-.icon-youtube-play {
+.icon-youtube {
   &:before {
-    content: unicode($icon-youtube-play); 
+    content: $icon-youtube; 
   }
 }
 .icon-instagram {
   &:before {
-    content: unicode($icon-instagram); 
+    content: $icon-instagram; 
   }
 }
-.icon-facebook-official {
+.icon-facebook {
   &:before {
-    content: unicode($icon-facebook-official); 
+    content: $icon-facebook; 
   }
 }
 
