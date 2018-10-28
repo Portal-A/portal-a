@@ -71,6 +71,7 @@ $originals = new WP_Query( array(
 					'source_image'   => wp_get_attachment_image( $client_image_id, 'medium', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) ),
 					'source'         => get_post_meta( get_the_ID(), 'client', true ),
 					'text'           => get_the_title(),
+					'text_align'	 => 'left',
 					'type'           => 'image',
 					'url'            => get_permalink(),
 				)); ?>
@@ -100,6 +101,7 @@ $originals = new WP_Query( array(
 					'source_image'   => wp_get_attachment_image( $client_image_id, 'medium', false, array( 'style' => 'width:auto;height:auto;max-width:70px;max-height:70px' ) ),
 					'source'         => get_post_meta( get_the_ID(), 'client', true ),
 					'text'           => get_the_title(),
+					'text_align'	 => 'left',
 					'type'           => 'image',
 					'url'            => get_permalink(),
 				));
