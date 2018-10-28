@@ -36,7 +36,6 @@ function pa_tile( $tile ) {
         $icon_size = $large_icon ? 'font-size:4rem' : '';
         
         // appearance
-        $bg_color = $type === 'image' ? 'black' : 'primary';
         $reveal = $reveal_content ? 'is-revealed' : '';
         
         // image
@@ -45,7 +44,6 @@ function pa_tile( $tile ) {
         $tile_class = implode( ' ', array( 
             "pa-c-tile", 
             "is-$type", 
-            "pa-u-bg-$bg_color",
             $gutter,
             $span,
         ) );
