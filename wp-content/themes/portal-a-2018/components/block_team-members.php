@@ -54,7 +54,7 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
                             </div>
 
                             <p class="pa-h5"><strong><?php echo get_the_title( $member ) ?></strong></p>
-                            <p class="pa-h5 pa-l-mt-nudge"><?php echo $title ?></p>
+                            <p class="pa-h5 pa-l-mt-0 pa-u-weight-light"><?php echo $title ?></p>
 
                         </div>
 

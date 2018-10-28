@@ -10,10 +10,8 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    transition: $transition-slow;
 
     .pa-c-profile:hover & {
-        transform : translate3d(0,50%,0);
         opacity: 0;
     }
 }
