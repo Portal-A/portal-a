@@ -22,10 +22,12 @@ get_header();
 				} ?>
 			</p>
 
-			<h1 class="pa-h4 pa-l-mt-4 pa-u-text-center"><?php the_title(); ?></h1>
+			<h1 class="pa-h2 pa-u-weight-bold pa-l-mt-2 pa-u-text-center"><?php the_title(); ?></h1>
 
 			<?php pa_block_wysiwyg( array(
-				'wysiwyg' => get_the_content()
+				'wysiwyg' => get_the_content(),
+			), array(
+				'class' => 'pa-l-mt-2'
 			) ); ?>
 
 			<?php get_template_part( 'partials/blocks' ); ?>
