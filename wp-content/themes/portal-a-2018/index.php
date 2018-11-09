@@ -12,7 +12,7 @@ $queried_object_id = get_queried_object_id();
 
 <?php 
     pa_hero( array( 
-        'content' => '<div class="pa-h3 js-cat-display">'.( is_archive() ? get_the_archive_title() : '&nbsp;' ).'</div>'
+        // 'content' => '<div class="pa-h3 js-cat-display">'.( is_archive() ? get_the_archive_title() : '&nbsp;' ).'</div>'
     ), $blog_page );
 ?>
 
@@ -74,14 +74,14 @@ $queried_object_id = get_queried_object_id();
 
         <?php 
         $found_posts = $wp_query->found_posts;
-        $link_class = 'pa-h3 pa-l-px-1 pa-l-my-half pa-l-flex pa-u-color-hover-primary js-cat-link';
+        $link_class = 'pa-h3 pa-u-weight-light pa-l-px-1 pa-l-my-half pa-l-flex pa-u-color-hover-primary js-cat-link';
 
         if ( is_category() ) {
             $query = new WP_Query(array( 'post_type' => 'post' ));
             $found_posts = $query->found_posts;
             $class = $link_class;
         } else {
-            $class = $link_class . ' pa-u-color-primary pa-u-underline';
+            $class = $link_class . ' pa-u-color-primary';
         } ?>
 
         <a href="<?php echo get_permalink( $blog_page_id ) ?>" 
@@ -95,7 +95,7 @@ $queried_object_id = get_queried_object_id();
         <?php $cats = get_terms( 'category' );
         foreach ( $cats as $cat ) :
             
-            $class = $queried_object_id === $cat->term_id ? $link_class . ' pa-u-color-primary pa-u-underline' : $link_class; ?>
+            $class = $queried_object_id === $cat->term_id ? $link_class . ' pa-u-color-primary pa-u-weight-bold' : $link_class; ?>
 
             <a href="<?php echo get_term_link( $cat, 'category' ) ?>" 
             data-cat-id="<?php echo $cat->term_id ?>"
