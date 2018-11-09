@@ -100,7 +100,7 @@ get_header();
                             'type' => 'image',
                             'image' => get_post_thumbnail_id(),
                             'reveal_content' => false,
-                            'text' => get_the_title()
+                            'text' => '<h2 class="pa-h1 pa-l-mt-0 pa-u-uppercase pa-u-weight-black">'.get_the_title().'</h2>'
                         )) ?>
 
                         <p class="pa-u-text-center pa-l-mb-3"><?php echo nl2br( get_post_meta( get_the_ID(), 'address', true ) ) ?></p>
