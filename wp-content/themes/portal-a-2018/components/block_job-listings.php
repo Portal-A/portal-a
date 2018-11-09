@@ -37,8 +37,8 @@ function pa_block_job_listings( $data, $options = array(), $return = false ) {
                         </button>
 
                         <div class="pa-c-accordion__content pa-l-flexbox does-wrap js-accordion-content">
-                            <div class="pa-h5 pa-l-mt-0 pa-l-flex span-5-md">
-                                <?php echo $listing['description'] ?>
+                            <div class="pa-l-flex span-5-md">
+                                <small><?php echo $listing['description'] ?></small>
                             </div>
                         </div>
 
