@@ -14,7 +14,7 @@ function pa_block_team_members( $data, $options = array(), $return = false ) {
     ob_start();
     ?>
 
-        <div class="pa-c-block--team-members">
+        <div class="pa-c-block--team-members pa-l-mt-4">
 
             <div class="pa-l-flexbox does-wrap with-gutters">
             

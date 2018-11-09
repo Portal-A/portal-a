@@ -39,7 +39,7 @@ get_header();
 
                 <hr class="pa-l-mt-4"/>
 
-                <nav id="view-nav" class="pa-c-view-nav pa-u-text-center pa-l-py-4" aria-label="Child page navigation">
+                <nav id="view-nav" class="pa-c-view-nav pa-u-text-center pa-l-pt-4" aria-label="Child page navigation">
                     <?php while ( $children->have_posts() ) : $children->the_post(); ?>
                         
                         <a href="#<?php echo "{$post->post_type}-{$post->ID}" ?>" class="pa-b-view-toggle js-view-toggle"><?php the_title(); ?></a>
