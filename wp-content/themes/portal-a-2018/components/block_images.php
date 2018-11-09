@@ -9,7 +9,7 @@ function pa_block_images( $data, $options = array(), $return = false ) {
 
         <div class="pa-c-block--images">
 
-            <div class="pa-l-flexbox does-wrap">
+            <div class="pa-l-flexbox does-wrap with-gutters">
                 
                 <?php foreach ( $data['images'] as $image ) : ?>
                 
