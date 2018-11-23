@@ -24,7 +24,7 @@ get_header(); ?>
 		</div>
 		<div class="pa-c-home-video__content">
 			
-			<div class="pa-l-flexbox pa-l-justify-space-between" style="width:100%">
+			<div class="pa-l-flexbox justify-space-between" style="width:100%">
 			
 				<h1 class="pa-c-home-video__title pa-l-mt-0"><?php echo $post->post_excerpt ? $post->post_excerpt : get_the_title(); ?></h1>
 

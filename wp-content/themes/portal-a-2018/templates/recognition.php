@@ -35,8 +35,8 @@ get_header();
 						<h3 class="pa-l-mt-5 pa-u-faded" style="font-size:14px">Awards</h3>
 						<ul class="pa-l-mt-2 pa-u-clean-list">
 							{{#awards}}
-							<li class="pa-l-flexbox pa-l-align-center pa-l-justify-space-between pa-l-mb-2">
-								<span class="image pa-l-flexbox pa-l-align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
+							<li class="pa-l-flexbox align-center justify-space-between pa-l-mb-2">
+								<span class="image pa-l-flexbox align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 								<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
 							</li>
 							{{/awards}}
@@ -46,8 +46,8 @@ get_header();
 						<ul class="pa-l-mt-2 pa-u-clean-list">
 							{{#press}}
 							<li class="pa-l-mb-2">
-								<a href="{{url}}" class="pa-u-color-hover-primary pa-l-flexbox pa-l-align-center pa-l-justify-space-between" target="_blank">
-									<span class="image pa-l-flexbox pa-l-align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
+								<a href="{{url}}" class="pa-u-color-hover-primary pa-l-flexbox align-center justify-space-between" target="_blank">
+									<span class="image pa-l-flexbox align-center pa-u-faded" style="height:40px;width:72px">{{{ image }}}</span>
 									<span class="title pa-u-display-block" style="font-size:14px">{{ title }}</span>
 								</a>
 							</li>

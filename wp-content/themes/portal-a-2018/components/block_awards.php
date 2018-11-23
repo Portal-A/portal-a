@@ -33,15 +33,15 @@ function pa_block_awards( $data, $options = array(), $return = false ) {
                 
                     <div class="pa-c-revealer pa-u-text-center">
                         <div class="pa-c-revealer__static">
-                            <div class="pa-l-flexbox pa-l-align-center pa-l-justify-center" style="height:5.25rem;">
+                            <div class="pa-l-flexbox align-center justify-center" style="height:5.25rem;">
                                 <?php echo wp_get_attachment_image( $logo_id, 'medium', false, array( 'style' => 'max-width:7.5rem;max-height:100%;width:auto;height:auto' ) ) ?>
                             </div>
-                            <p class="pa-h4 pa-u-weight-bold"><?php echo get_the_title( $award ); ?></p>
-                            <p class="pa-h4 pa-l-mt-0"><?php echo nl2br( get_post_meta( $award, 'award_year', true ) ); ?></p>
+                            <p class="pa-u-weight-bold"><?php echo get_the_title( $award ); ?></p>
+                            <p class="pa-l-mt-0 pa-u-weight-light"><?php echo nl2br( get_post_meta( $award, 'award_year', true ) ); ?></p>
                         </div>
                         <div class="pa-c-revealer__active">
-                            <p class="pa-h4 pa-l-mt-0 pa-u-weight-bold"><?php echo get_the_title( $award ); ?></p>
-                            <p class="pa-h4 pa-l-mt-0"><?php echo nl2br( get_post_meta( $award, 'award_details', true ) ); ?></p>
+                            <p class="pa-l-mt-0 pa-u-weight-bold"><?php echo get_the_title( $award ); ?></p>
+                            <p class="pa-l-mt-0 weight-light"><?php echo nl2br( get_post_meta( $award, 'award_details', true ) ); ?></p>
                         </div>
                     </div>
                 
