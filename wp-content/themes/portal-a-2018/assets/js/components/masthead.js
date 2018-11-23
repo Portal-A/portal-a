@@ -15,15 +15,24 @@
     
     Masthead.prototype.init = function() {
 
-        var that = this;
+        var that = this,
+            prevScrollTop;
         
         APP.onScroll(function(scrollTop){
 
-            if ( scrollTop > that.height ) {
-                that.el.classList.add('is-minimized');
+            if ( prevScrollTop < scrollTop ) {
+                that.el.classList.remove('is-visible');
             } else {
-                that.el.classList.remove('is-minimized');
+                that.el.classList.add('is-visible');
             }
+
+            if ( scrollTop > that.height ) {
+                that.el.classList.add('is-fixed');
+            } else {
+                that.el.classList.remove('is-fixed');
+            }
+
+            prevScrollTop = scrollTop;
 
         });
 

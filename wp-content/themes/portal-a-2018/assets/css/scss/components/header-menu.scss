@@ -5,7 +5,7 @@
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 1;
-    max-width: rem(820);
+    max-width: rem(660);
 
     a {
         font-size: rem(12);
@@ -17,14 +17,10 @@
         transition: $transition-normal;
         padding: 42px 0px;
 
-        .pa-c-masthead.is-minimized & {
-            padding: 24px 0;
-        }
-
         &:after {
             content: "";
             position: absolute;
-            top: 100%;
+            top: calc(100% - 2px);
             left: 50%;
             transform: translateX(-50%);
             width: 0;
