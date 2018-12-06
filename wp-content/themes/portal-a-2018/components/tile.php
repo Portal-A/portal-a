@@ -75,8 +75,12 @@ function pa_tile( $tile ) {
                 
                 <?php if ( $source_image || $source ) : ?>
                     <p>
-                        <?php echo wp_get_attachment_image( $source_image, 'thumbnail', false, array( 'style' => 'max-height: 24px;width:auto;height:auto' ) ) ?>
-                        <?php echo $source ?>
+                        <?php
+                        if ( $source_image ) {
+                            echo is_int( $source_image ) ? wp_get_attachment_image( $source_image, 'thumbnail', false, array( 'style' => 'max-height: 24px;width:auto;height:auto' ) ) : $source_image;
+                        }
+                        else { echo $source; }
+                        ?>
                     </p>
                 <?php endif; ?>
 
